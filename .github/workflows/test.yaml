@@ -36,7 +36,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: taiki-e/install-action@4cef1412cce204788f482e778a0b9187f9626a29 # v2.87.21
+      - uses: taiki-e/install-action@e407f7bafb71fd004bc5c2da3032e5470cbb6ef0 # v2.87.24
         with:
           tool: just
 
@@ -63,7 +63,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: taiki-e/install-action@4cef1412cce204788f482e778a0b9187f9626a29 # v2.87.21
+      - uses: taiki-e/install-action@e407f7bafb71fd004bc5c2da3032e5470cbb6ef0 # v2.87.24
         with:
           tool: just,wasm-bindgen-cli@0.2.128
 
@@ -103,7 +103,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: taiki-e/install-action@4cef1412cce204788f482e778a0b9187f9626a29 # v2.87.21
+      - uses: taiki-e/install-action@e407f7bafb71fd004bc5c2da3032e5470cbb6ef0 # v2.87.24
         with:
           tool: just
 
@@ -167,7 +167,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: taiki-e/install-action@4cef1412cce204788f482e778a0b9187f9626a29 # v2.87.21
+      - uses: taiki-e/install-action@e407f7bafb71fd004bc5c2da3032e5470cbb6ef0 # v2.87.24
         with:
           tool: just
 
@@ -245,7 +245,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: taiki-e/install-action@4cef1412cce204788f482e778a0b9187f9626a29 # v2.87.21
+      - uses: taiki-e/install-action@e407f7bafb71fd004bc5c2da3032e5470cbb6ef0 # v2.87.24
         with:
           tool: just
 

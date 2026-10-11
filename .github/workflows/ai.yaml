@@ -68,7 +68,7 @@ jobs:
 
       # it may only read the workspace (not /proc, where the AWS session is), and must answer in
       # the schema: a reply and related issues
-      - uses: anthropics/claude-code-action@756cc22e19660d20e8cc9496b4f242475a7f7790 # v1.0.235
+      - uses: anthropics/claude-code-action@cab360f6565aa35a51d6ce9e43f1f4287c0a32ea # v1.0.241
         id: claude
         with:
           use_bedrock: "true"
@@ -161,7 +161,7 @@ jobs:
           role-to-assume: ${{ vars.AWS_ROLE }}
           aws-region: ${{ env.AWS_REGION }}
 
-      - uses: anthropics/claude-code-action@756cc22e19660d20e8cc9496b4f242475a7f7790 # v1.0.235
+      - uses: anthropics/claude-code-action@cab360f6565aa35a51d6ce9e43f1f4287c0a32ea # v1.0.241
         with:
           use_bedrock: "true"
           plugin_marketplaces: https://github.com/anthropics/claude-code.git
@@ -210,7 +210,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: taiki-e/install-action@4cef1412cce204788f482e778a0b9187f9626a29 # v2.87.21
+      - uses: taiki-e/install-action@e407f7bafb71fd004bc5c2da3032e5470cbb6ef0 # v2.87.24
         with:
           tool: just
 
@@ -245,7 +245,7 @@ jobs:
 
       # its commands reach only GitHub, PyPI, crates.io and npm, and never see the AWS session; on a
       # fork's pull request it may only read
-      - uses: anthropics/claude-code-action@756cc22e19660d20e8cc9496b4f242475a7f7790 # v1.0.235
+      - uses: anthropics/claude-code-action@cab360f6565aa35a51d6ce9e43f1f4287c0a32ea # v1.0.241
         with:
           use_bedrock: "true"
           additional_permissions: |
