@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 5: Inspected partial title reveal and enlarged white glyphs. One glyph-baseline pixel changes; visible text shape and placement are preserved.",
+  "facts": "sha256:9369a4e19ea4b45c95702ed3e35b95dc48dec351a76b593a1c58fccce0a0cb10",
+  "at": "2026-10-06"
+}

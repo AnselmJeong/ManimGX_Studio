@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 48: Inspected light-background logo and enlarged a contour. Two tiny glyph-edge changes preserve lettering, shape overlaps, colors and background.",
+  "facts": "sha256:efdd9496f2a35b2aba8d7d6e310fd3844765a83002a49d000a2ad372a4a54389",
+  "at": "2026-10-06"
+}

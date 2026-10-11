@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 25: Inspected the title, early axes and enlarged cyan derivative formula; the isolated glyph-edge adjustment preserves notation and positions.",
+  "facts": "sha256:d0b14e578037801e198c08b9c9bf4e42b64c012661481273d46ce169db15194b",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 12: Inspected partial title and enlarged Hamming lettering. Six tiny lower-serif changes preserve text readability, reveal extent and layout.",
+  "facts": "sha256:5b652ec7a22390057bd463e73d9f350cf25acefb95a4c3b7f800bd0d5a65a519",
+  "at": "2026-10-06"
+}

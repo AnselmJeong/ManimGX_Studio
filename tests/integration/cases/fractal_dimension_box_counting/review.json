@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 13: Inspected box-counting title and enlarged N expression. Two glyph-edge differences preserve notation and typography.",
+  "facts": "sha256:9fcc60be9dd4a2a7f9a0c22ce6296d277f4ccf9ac2dccb8503ba28c2795ba1b5",
+  "at": "2026-10-06"
+}

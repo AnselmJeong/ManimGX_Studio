@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 32: Inspected matrix label, grid and enlarged basis arrows. Small overlap-edge changes preserve common origin, arrow lengths/directions and grid alignment.",
+  "facts": "sha256:52abce1ed2d9335d326d43484b6f6482161ace112692fa0363a92ffad4284399",
+  "at": "2026-10-06"
+}

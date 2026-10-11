@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 62: Inspected both full frames and enlarged yellow sin expression. One edge pixel changes at the glyph baseline; equation structure, colors and placement remain intact.",
+  "facts": "sha256:d13226820240e5149ec489d2c469ec4cece25db90a849514ade10f705a0cfdc4",
+  "at": "2026-10-06"
+}

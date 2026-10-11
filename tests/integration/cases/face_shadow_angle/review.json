@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 8: Inspected partial title and enlarged shadow lettering. Small glyph-baseline changes preserve the title reveal and letter shapes.",
+  "facts": "sha256:ba944d1d3bf8fd87d9939ef7a59365bbadaa0e04d2af42996983f3290730edce",
+  "at": "2026-10-06"
+}

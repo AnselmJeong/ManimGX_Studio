@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 59: Both transformed grids preserve different orientations and captions; sparse cyan-line crossing samples change.",
+  "facts": "sha256:918da2705d7ba0b274038c50d9f48c31666e997ae38ceca818dc816d021fceb3",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 0: All table cells, values, highlighted borders and tic-tac-toe elements remain intact; two shared-border intersection samples differ.",
+  "facts": "sha256:856a43dafedf92a3cff3f2ccba733cfd15037c1a5f24a6061c4d16321c7af2a4",
+  "at": "2026-10-06"
+}

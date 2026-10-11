@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 60: Inspected random chords, triangle and enlarged crossing region. Sparse intersection/edge changes preserve chord endpoints, triangle, title and visible probability labels.",
+  "facts": "sha256:81bf910412851207984fd14eb00dcaf738d0f1042f63c66b23669eaba149d1c3",
+  "at": "2026-10-06"
+}

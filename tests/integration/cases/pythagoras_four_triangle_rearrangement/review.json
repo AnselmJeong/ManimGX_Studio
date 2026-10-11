@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 51: Blue triangles, central quadrilateral and labels preserve their layout; isolated thin-edge contact adjustment at a bottom vertex.",
+  "facts": "sha256:658978bb78f2a4f5dbc63ff9a8be054256dc38e28d80c335bd13c02481591134",
+  "at": "2026-10-06"
+}

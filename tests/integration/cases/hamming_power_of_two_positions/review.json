@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 47: Inspected position/binary labels and enlarged explanatory footer. Tiny glyph-edge differences preserve all values and table alignment.",
+  "facts": "sha256:07387469d49176eadbb11e071551277b89d6f2804701d0a5b14ea93982857d3a",
+  "at": "2026-10-06"
+}

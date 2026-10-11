@@ -1,0 +1,85 @@
+# Preserved upstream engine workflow; Studio uses its documented local checks.
+# The timed benchmarks (`just bench`): a pull request's ManimGX against its base's, and each
+# push to main against the commit before it, rendered in turns on one macOS runner. Retired
+# CPU instructions, when exposed, or CPU seconds judge host work; GPU work and waits appear
+# in the reported wall time. Each workload's summary names the measure used.
+# A workload that became slower fails the job; every workload's change is in its summary.
+# The laws of cost and functional rendering run with the tests on every system.
+
+name: Benchmark
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/benchmark.yaml
+      - src/**
+      - fonts/**
+      - rust/**
+      - examples/**
+      - tests/benchmarks/**
+      - pyproject.toml
+      - uv.lock
+  pull_request:
+    paths:
+      - .github/workflows/benchmark.yaml
+      - src/**
+      - fonts/**
+      - rust/**
+      - examples/**
+      - tests/benchmarks/**
+      - pyproject.toml
+      - uv.lock
+  workflow_dispatch:
+    inputs:
+      against:
+        description: The commit, branch or tag to compare with
+        required: true
+        default: main
+
+permissions: {}
+
+concurrency:
+  group: benchmark-${{ github.event.pull_request.number || github.ref }}
+  # a newer commit supersedes a pull request's run; main's active run finishes
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  benchmark:
+    if: ${{ github.repository == 'academa-labs/manimgx' }}
+    name: Benchmark against the base
+    runs-on: macos-26
+    timeout-minutes: 120
+    permissions:
+      contents: read
+    steps:
+      # all of history: the commit compared with is made from it
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - uses: taiki-e/install-action@4cef1412cce204788f482e778a0b9187f9626a29 # v2.87.21
+        with:
+          tool: just
+
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+
+      # This checkout's compiled dependencies; a different base engine owns its build tree.
+      - uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        with:
+          workspaces: rust
+          shared-key: engine
+          save-if: ${{ github.ref == 'refs/heads/main' }}
+
+      # a pull request is checked out merged into its base: the merge's first parent is the base
+      - name: Benchmark
+        run: |
+          # A force push can leave the previous commit outside the fetched history.
+          git cat-file -e "${AGAINST}^{commit}" || git fetch --no-tags -- origin "${AGAINST}"
+          just bench "${AGAINST}" -v
+        env:
+          AGAINST: >-
+            ${{ github.event_name == 'pull_request' && 'HEAD^1'
+            || github.event_name == 'push' && github.event.before
+            || inputs.against }}

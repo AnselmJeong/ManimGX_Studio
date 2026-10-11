@@ -1,0 +1,73 @@
+cff-version: 1.2.0
+message: >-
+  If you use ManimGX in your work, please cite it as below. ManimGX builds on Manim Community
+  Edition, which grew out of 3Blue1Brown's manim, and on Typst: they are listed under
+  references.
+type: software
+title: ManimGX
+abstract: >-
+  ManimGX is a self-contained animation engine for AI agents: it makes mathematical and 3D
+  videos from Python scenes. Scenes use the API of Manim Community Edition, and ManimGX
+  annotates all of it with types, so a type checker finds errors before a render. A Rust core
+  draws each frame on the GPU, typesets text and LaTeX mathematics with Typst, and encodes the
+  video and its sound to MP4. The engine evaluates animations at each frame's authored time.
+  The inspect command runs a scene without video, prints its
+  timeline and layout problems, for example text over other text, and writes a storyboard. In
+  a web browser, Pyodide runs the same scenes in a Web Worker, and a WebAssembly build of the
+  core draws them with WebGPU.
+authors:
+  - given-names: Sina
+    family-names: Atalay
+    email: sina.atalay@academa.ai
+    affiliation: Academa, Inc.
+    orcid: https://orcid.org/0009-0000-4969-8604
+  - given-names: Abdullah
+    family-names: Geduk
+    email: geduk@academa.ai
+    affiliation: Academa, Inc.
+    orcid: https://orcid.org/0009-0002-1154-1542
+repository-code: https://github.com/academa-labs/manimgx
+url: https://manimgx.academa.ai/
+license: MIT
+keywords:
+  - animation
+  - manim
+  - mathematics
+  - gpu
+  - typst
+  - visualization
+# the works ManimGX builds on, under the titles and authors their own CITATION.cff files give;
+# 3Blue1Brown's manim has none, so it is cited by its repository's name and its package's
+# author. ManimGX has Manim CE's API, and source ported from CE 0.21: the version cited, with
+# its Zenodo DOI. CE was forked in 2020 from 3Blue1Brown's manim, before ManimGL, its OpenGL
+# rewrite. Typst is compiled into the engine and sets every text. Their licenses are in
+# LICENSE-THIRD-PARTY.
+references:
+  - type: software
+    title: Manim – Mathematical Animation Framework
+    authors:
+      - name: The Manim Community Developers
+    version: v0.21.0
+    date-released: 2026-08-10
+    doi: 10.5281/zenodo.21879335
+    url: https://www.manim.community/
+    repository-code: https://github.com/ManimCommunity/manim
+    license: MIT
+  - type: software
+    title: manim
+    authors:
+      - given-names: Grant
+        family-names: Sanderson
+    repository-code: https://github.com/3b1b/manim
+    license: MIT
+  - type: software
+    title: Typst
+    authors:
+      - given-names: Laurenz
+        family-names: Mädje
+      - given-names: Martin
+        family-names: Haug
+      - name: The Typst Project Developers
+    url: https://typst.app/
+    repository-code: https://github.com/typst/typst
+    license: Apache-2.0

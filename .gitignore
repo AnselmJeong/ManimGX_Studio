@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+build/
+dist/
+/sources/
+/release-sources/
+
+# Docs: the built site, its cache, the rendered examples, the generated gallery and the command
+# line's reference
+# (`just build-docs`)
+site/
+.cache/
+docs/content/films/
+docs/content/gallery/
+docs/content/reference/rendering/command-line.md
+
+# uv's environment
+.venv/
+
+# Rust
+/rust/target/
+
+# Compiled extension module (rebuilt by maturin; never committed)
+*.so
+*.pyd
+/src/manimgx/dxcompiler.dll
+
+# Test / lint / type-check caches
+.pytest_cache/
+.ruff_cache/
+.hypothesis/
+mutants/
+.coverage
+.coverage.*
+htmlcov/
+
+# Render output (media/: Manim CE's, from the corpus's CE runs)
+media/
+*.mp4
+*.mkv
+*.wav
+*.storyboard*.png
+!tests/integration/cases/*/*.wav
+tests/**/_testoutput/
+tests/**/_diffs/
+
+# Editors / OS
+.DS_Store
+.vscode/
+.idea/
+
+# Local provider credentials and environment settings
+.env
+.env.*
+!.env.example
+.codex/
+auth.json
+
+# the npm package's copy of manimgx's license (just build-npm)
+browser/LICENSE
+
+# TypeScript dependencies and incremental compiler state
+node_modules/
+*.tsbuildinfo

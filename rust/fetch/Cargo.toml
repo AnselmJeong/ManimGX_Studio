@@ -1,0 +1,11 @@
+[package]
+name = "fetch"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+publish = false
+description = "Others' sources for a build script: fetched at build time, named by the hash of their files."
+
+[dependencies]
+sha2 = "0.11.0"
+tempfile = "3.27.0"

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 37: Waveform, transform symbol and yellow arrow retain geometry; small arrowhead/shaft join change.",
+  "facts": "sha256:aa21bb8dc47a729d2ab903508ae65cf7d85ef59965610e4294f79fde4e9728f5",
+  "at": "2026-10-06"
+}

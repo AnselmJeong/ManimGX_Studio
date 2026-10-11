@@ -1,0 +1,68 @@
+# Preserved upstream engine workflow; Studio uses its documented local checks.
+# Publication consumes the signed GitHub release, so it can be retried with current
+# publishing tools without rebuilding the package or moving an already published tag.
+name: Publish npm
+run-name: Publish npm ${{ inputs.tag }}
+
+on:
+  workflow_call:
+    inputs:
+      tag:
+        required: true
+        type: string
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Published GitHub release tag
+        required: true
+        type: string
+
+permissions: {}
+
+concurrency:
+  group: publish-npm-${{ inputs.tag }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: ${{ github.repository == 'academa-labs/manimgx' && (github.event_name != 'workflow_dispatch' || github.ref == 'refs/heads/main') }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    environment:
+      name: npm
+      url: https://www.npmjs.com/package/manimgx
+    permissions:
+      contents: read
+      attestations: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          sparse-checkout: scripts/release
+
+      - name: Acquire the signed release and confirm its Python dependency is public
+        run: |
+          test "$(gh release view --repo "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft -- "$TAG")" = false
+          gh release download --repo "$GITHUB_REPOSITORY" --dir dist --pattern "manimgx-${TAG#v}.tgz" -- "$TAG"
+          commit="$(gh api "repos/$GITHUB_REPOSITORY/commits/$TAG" --jq .sha)"
+          gh attestation verify dist/*.tgz --repo "$GITHUB_REPOSITORY" \
+            --signer-workflow "$GITHUB_REPOSITORY/.github/workflows/release.yaml" \
+            --source-ref "refs/tags/$TAG" --source-digest "$commit"
+          curl --fail --silent --show-error "https://pypi.org/pypi/manimgx/${TAG#v}/json" \
+            | jq -e '.urls | any(.filename | endswith("_wasm32.whl"))' > /dev/null
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag }}
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+
+      - name: Publish and verify the exact built tarball
+        run: python3 scripts/release/publish_npm.py dist/*.tgz
+        env:
+          # Only needed for the first release, before npm allows a trusted publisher.
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the before/after frames: accept corrected depth-tested surface strokes and projective plane derivatives (80a7b06, 25f40ad), preserving the scene geometry, materials and labels. Previous review: Codex visual review of the compact Surface topology reference update: unique sample positions and derived cell topology preserve the reviewed geometry, lighting and color behavior; changed floating-point packing produces sparse raster/edge/stroke differences. Baseline and candidate movies were compared across all 8 frames; frame count, duration and timeline are unchanged. Largest changed area: 20 pixels/frame out of 518400; maximum channel delta 28/255; maximum frame RMSE 0.051107/255. This is a new review, not an attribution to an earlier reviewer, and it does not assert Manim CE equivalence. CE comparisons were recomputed from this movie and the existing unchanged CE movie; the automatic CE verdict remains authoritative. Evidence: topology-v3 proof sha256:91f4ac3378af19d1782176eade8c2868aa74fa1a4e10cd124400c35886c55929.",
+  "facts": "sha256:4db0334595a69daa7b40e4050fb7b941e46b0b3da16455c94515f1f2e6b521c5",
+  "at": "2026-10-06"
+}

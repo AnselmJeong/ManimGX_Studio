@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 39: Cyan disk, surface-area formula and yellow arrow retain geometry; local yellow arrowhead/shaft coverage adjustment.",
+  "facts": "sha256:afbe80c277a75d749e3414bd05e59925a870f2a784d655cce6de2b23be9cdc5b",
+  "at": "2026-10-06"
+}

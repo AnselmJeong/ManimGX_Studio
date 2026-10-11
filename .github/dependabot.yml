@@ -1,0 +1,73 @@
+# Group weekly dependency updates by ecosystem, with a seven-day release cooldown.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      actions:
+        patterns: ["*"]
+
+  - package-ecosystem: uv
+    directory: /
+    schedule:
+      interval: weekly
+    versioning-strategy: increase-if-necessary
+    cooldown:
+      default-days: 7
+    groups:
+      python:
+        patterns: ["*"]
+
+  - package-ecosystem: cargo
+    directory: /rust
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      rust:
+        patterns: ["*"]
+
+  - package-ecosystem: pre-commit
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      pre-commit:
+        patterns: ["*"]
+
+  - package-ecosystem: docker
+    directory: /docker
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      docker:
+        patterns: ["*"]
+
+  - package-ecosystem: bun
+    directory: /browser
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      browser-package:
+        patterns: ["*"]
+
+  - package-ecosystem: bun
+    directory: /tests/integration/review/web
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      review-panel:
+        patterns: ["*"]

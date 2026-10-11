@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 55: Rotational cyan arrows and yellow trajectory retain their positions and continuity; small arrowhead/shaft coverage adjustments.",
+  "facts": "sha256:2d8e80f163ea6bf0bf218ce6b1aba46b92b597e26adc793cc26e610edda96e75",
+  "at": "2026-10-06"
+}

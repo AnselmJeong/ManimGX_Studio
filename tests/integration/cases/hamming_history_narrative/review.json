@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 19: Inspected historical title and enlarged year. Two small digit-edge changes preserve the text, year and placement.",
+  "facts": "sha256:a58681d6e64b9bd21117d7a4ea36d2984428b13b1b28376ffa8455bc66a4fdc1",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 5: Inspected the early cardioid title and enlarged lettering; the isolated one-level edge change preserves the title and reveal.",
+  "facts": "sha256:ce725b997922a5546dca86c0eef650f6f3ec770d695c50c8e7d5c92095ea24b7",
+  "at": "2026-10-06"
+}

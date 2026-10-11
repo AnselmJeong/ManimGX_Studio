@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 10: Inspected initial grid and enlarged horizontal-axis endpoint. Two overlap-edge differences preserve grid alignment and growing-line extent.",
+  "facts": "sha256:b8a3ef93d9ea1df4d4a6c665779eeb40deef7ad51ab8001fb1d5ab3b1e01308a",
+  "at": "2026-10-06"
+}

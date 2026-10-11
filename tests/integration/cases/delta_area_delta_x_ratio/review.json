@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 40: Colored area regions under the cyan curve retain boundaries and formula; one sample at the yellow/green split meeting the curve changes.",
+  "facts": "sha256:5b02f1ff0a92e206a7fedabb818533d76a9281a3a5f5b555370e29f2982b738b",
+  "at": "2026-10-06"
+}

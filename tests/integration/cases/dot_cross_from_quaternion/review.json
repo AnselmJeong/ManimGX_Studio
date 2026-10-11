@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 39: Inspected two vectors and dot/cross expressions with enlarged cyan number. Tiny digit-edge differences preserve vector geometry, colors and displayed values.",
+  "facts": "sha256:0980cd1a097311a57c5483386e1449c546b587d1d5ff80a3ac96bf510a560913",
+  "at": "2026-10-06"
+}

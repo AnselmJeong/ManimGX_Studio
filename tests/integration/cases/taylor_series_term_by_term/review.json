@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 19: Inspected exponential and linear curves with the enlarged series label. Isolated glyph-edge coverage differs; curves, axes, colors and expression placement are preserved.",
+  "facts": "sha256:acddea1d08803b66c6a3f6863830ced241fd0a7af9930b47c40913b23f1931b2",
+  "at": "2026-10-06"
+}

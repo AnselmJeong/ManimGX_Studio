@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 6: Partial quaternion title retains letter forms and placement; two isolated glyph-edge samples differ.",
+  "facts": "sha256:ff7c1de175c0bbd676de857d20571101530f86c01ec7b55eba9bf89edeabc6d5",
+  "at": "2026-10-06"
+}

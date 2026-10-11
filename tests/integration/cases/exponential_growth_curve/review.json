@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 5: Partial exponential caption retains glyph shapes and location; one white glyph-edge sample changes.",
+  "facts": "sha256:c22addb4e42a34fef5b6820b2a9c443db9e47bb434508bca3fe77f0c69bca4b0",
+  "at": "2026-10-06"
+}

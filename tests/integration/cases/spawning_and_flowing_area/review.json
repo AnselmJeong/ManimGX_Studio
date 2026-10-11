@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 0: Flow curves, two rectangular bounds and centered labels keep their positions. Scattered low-level differences lie on thin strokes near their ends and crossings.",
+  "facts": "sha256:2e451676963a7f143201cc45e2fc094b66bdb77549797f392a38af0bb742c9ce",
+  "at": "2026-10-06"
+}

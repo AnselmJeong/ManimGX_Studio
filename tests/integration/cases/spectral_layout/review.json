@@ -1,0 +1,6 @@
+{
+  "verdict": null,
+  "note": "Reviewed the graph vertices, edges and labels: accept the deterministic basis of the complete spectral eigenspace (266ec9e).",
+  "facts": "sha256:a4b2cdc3e0a3c8f694f6e4a88c67ac786c6952d5ca19e5f73ad451bae3d77cf8",
+  "at": "2026-10-06"
+}

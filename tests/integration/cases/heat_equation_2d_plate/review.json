@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 15: Partially written heat-diffusion title is unchanged in content/progress; one letter-boundary sample differs.",
+  "facts": "sha256:9216fc22c4d29993829a4bee9ac45048dacdea61ab496bb4cf75c0d5e6bf7467",
+  "at": "2026-10-06"
+}

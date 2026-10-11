@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 35: Cyan guide circles, yellow vector and green traced curve remain continuous; tiny changes where vector and trace meet.",
+  "facts": "sha256:50b80645a2dc00b7e66d6beca43d1fa5d835bd57c3d60097ccdd80f061e4abc4",
+  "at": "2026-10-06"
+}

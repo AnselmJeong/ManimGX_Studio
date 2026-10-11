@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 9: Inspected the early heart phase title and enlarged lettering; three one-level glyph-edge changes preserve content and placement.",
+  "facts": "sha256:ae0fe040c4d72b1c8b5b60d095032ededa17391d31b6450b188c329873a19286",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 30: Inspected the outward field and axes with enlarged arrowheads; four one-level edge changes preserve direction, gradient and spacing.",
+  "facts": "sha256:1d10c9114c596211f7d2a33c3bbec1726d655c86270060a3e9b8abf6eccbb698",
+  "at": "2026-10-06"
+}

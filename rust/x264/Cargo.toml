@@ -1,0 +1,13 @@
+[package]
+name = "x264"
+version = "0.165.3223"
+edition = "2024"
+license = "MIT AND GPL-2.0-or-later AND ISC"
+publish = false
+description = "x264 r3223 (0480cb05), the H.264 encoder, fetched and built from its source, behind a few safe calls."
+links = "x264"
+
+[build-dependencies]
+cc = { version = "1.5.1", features = ["parallel"] }
+fetch = { path = "../fetch" }
+nasm = { path = "../nasm" }

@@ -1,0 +1,20 @@
+# Noto Sans CJK, which ManimGX sets Chinese, Japanese and Korean text in: a package of its own,
+# released only when it changes, which ManimGX requires at an exact version everywhere but in the
+# browser (pyproject.toml). The version is the date the font was taken from Noto.
+[project]
+name = "manimgx-fonts-cjk"
+version = "2026.9.26.post1"
+description = "Noto Sans CJK, the font ManimGX sets Chinese, Japanese and Korean text in."
+readme = "README.md"
+license = "OFL-1.1"
+license-files = ["LICENSE"]
+authors = [{ name = "Academa Team", email = "team@academa.ai" }]
+classifiers = ["Topic :: Text Processing :: Fonts"]
+
+[project.urls]
+Documentation = "https://manimgx.academa.ai/"
+Repository = "https://github.com/academa-labs/manimgx"
+
+[build-system]
+requires = ["uv_build>=0.12.21,<0.13"]
+build-backend = "uv_build"

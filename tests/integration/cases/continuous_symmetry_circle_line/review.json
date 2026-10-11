@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 11: Inspected partial symmetry title and enlarged letters; one glyph-edge change preserves wording and position.",
+  "facts": "sha256:e1e01face67805ecba3c916a7cfc182d0729a36ae73f284ea1f24e04db2dd784",
+  "at": "2026-10-06"
+}

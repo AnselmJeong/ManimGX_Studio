@@ -1,0 +1,33 @@
+{
+  "source": "sha256:97927736e9baa1a1e21b52e09bf96f57bea7f8d4aa4ff48ca32026d3ebf8ccd6",
+  "size": [960, 540],
+  "fps": 10,
+  "manimgx": {
+    "duration": 0.1,
+    "frames": [
+      ["c64b995f31df978a", 2]
+    ],
+    "timeline": [
+      [0.0, 2]
+    ],
+    "id": "sha256:8baad405ae6cebb1afa05146d537ff08e512ebafb4859da9006621445e4e6305"
+  },
+  "ce": {
+    "manim": "0.21.0",
+    "duration": 0.1,
+    "frames": [
+      ["23ff81df63b2fbc0", 1]
+    ],
+    "timeline": [
+      [0.0, 1]
+    ],
+    "id": "sha256:e4c93821ca178896bb46968886fb72e858760e94574282104e3f56dcbb328873"
+  },
+  "comparison": {
+    "metrics": ["local_max", "mae", "rmse", "max"],
+    "pairs": [
+      [0, 0, 2.35, 0.0, 0.18, 58.0]
+    ],
+    "unpaired": []
+  }
+}

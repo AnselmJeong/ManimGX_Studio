@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 47: Inspected logo lettering and colored shapes with enlarged n shoulder. Tiny glyph-boundary differences preserve contours, fills, overlaps and placement.",
+  "facts": "sha256:c0ed94f2677114c92071ab2e1dbbc84ed3e43f934864481039b5deb90f09a1e3",
+  "at": "2026-10-06"
+}

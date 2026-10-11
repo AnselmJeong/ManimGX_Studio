@@ -1,0 +1,27 @@
+{#-
+  A module's named colors as a palette, in the order the module defines them: a swatch for
+  each color, with its names (the names of one color defined one after another, as GRAY_A and
+  GREY_A, share a swatch) and its hex code. Context: module.
+-#}
+{% set swatches = namespace(items=[]) %}
+{% for name, member in module.members.items() if not member.is_alias and member.is_attribute and name.isupper() %}
+  {% set value = member.value|string %}
+  {% if value.startswith("ManimColor(") %}
+    {% set hex = value.split("(", 1)[1].strip("()'\" \n") %}
+    {% if swatches.items and swatches.items[-1][0] == hex %}
+      {% set last = swatches.items[-1] %}
+      {% set swatches.items = swatches.items[:-1] + [(hex, last[1] + [name])] %}
+    {% else %}
+      {% set swatches.items = swatches.items + [(hex, [name])] %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+<div class="mx-palette">
+  {% for hex, names in swatches.items %}
+    <div class="mx-swatch">
+      <span class="mx-swatch__color" style="background: {{ hex }}"></span>
+      <span class="mx-swatch__names">{% for name in names %}<code>{{ name }}</code>{% endfor %}</span>
+      <span class="mx-swatch__hex">{{ hex }}</span>
+    </div>
+  {% endfor %}
+</div>

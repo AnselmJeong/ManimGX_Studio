@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 0: Inspected both tables, their dark backgrounds and the outer green rectangle; three one-level seam changes preserve text, rule alignment and backgrounds.",
+  "facts": "sha256:1c9a6f59db100faedd713379dde5d52562a6ea59328e507ac2fe9a7cbb3bcf88",
+  "at": "2026-10-06"
+}

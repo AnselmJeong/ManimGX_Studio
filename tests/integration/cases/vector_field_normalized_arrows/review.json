@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 45: Inspected normalized saddle field and enlarged arrows crossing grid lines. Sparse arrowhead/grid overlap differences preserve field directions, arrow sizes and text.",
+  "facts": "sha256:bb21d585e59e50739e1ca03ac9556e12507dcf2e55db8ade2306f148f09c57c7",
+  "at": "2026-10-06"
+}

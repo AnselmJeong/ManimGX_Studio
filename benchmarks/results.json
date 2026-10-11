@@ -1,0 +1,1670 @@
+{
+  "date": "2026-10-07T01:14:22-0400",
+  "machine": {
+    "os": "macOS-15.7.9-arm64-arm-64bit-Mach-O",
+    "cpu": "arm",
+    "cpus": 12
+  },
+  "settings": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 60,
+    "crf": 23,
+    "manim_preset": "ultrafast",
+    "blender_preset": "REALTIME",
+    "scenes": {
+      "orbit": 10.0,
+      "matrix": 7.2,
+      "pendulums": 13.0,
+      "hierarchy": 3.0,
+      "linked_rings": 3.0
+    },
+    "repeats": {
+      "manimgx": 3,
+      "manimgl": 3,
+      "manim_ce": 1,
+      "blender_workbench": 1,
+      "blender_eevee": 1
+    }
+  },
+  "source_sha256": {
+    "chart.py": "9e7f299d3fba57bf6f761ec3b3758b3778a4ddb0a167882e03a79d2cca24255b",
+    "quality.py": "2f1c66d590fbdea52ebb5423bc199e1ea83da42abc0791dcdf101630cf69dcf7",
+    "run.py": "a08724a45c3a6c372bd4b2e6893b8ca9afcb4192a9cb4f3ae8739e8bff778166",
+    "scenes/ce_cli.py": "7f0559c764a293807af6f42875c0016675952d3c437e458e93821051d908af73",
+    "scenes/ffmpeg.py": "146d074015a06a7da10e493ba4c1c5ad7c0134f7e57246ec661c16a729c0d957",
+    "scenes/lighting.py": "a1a0dada3d492a9544ba548917dd385a09aaebc1cc4cc5cfaa4fe50aae8f53c6",
+    "scenes/linked_rings_blender.py": "f0d0bc4c0cdc5a3c94498cb0f77abe6d5cf0b57bd7d6c823ea3032637a22a105",
+    "scenes/matrix_manim_ce.py": "d6380a2199bad4787c37a48987fe699fe6cbe92ff6ba68098aa935751d2d0d5d",
+    "scenes/matrix_manimgl.py": "e4da1ef5a1f99b9efa5401609fa708045b31e992691ae93dc5869758d1c81d62",
+    "scenes/matrix_manimgx.py": "11ad07fe96177bdd8e0fadc54114d0f5dae6897c67506cedcd0866879c9588e9",
+    "scenes/orbit_blender.py": "22e99b266d47529bab7e38b3a93d252663edb4238cd5bca861f0b0d7c7e3c688",
+    "scenes/orbit_manim_ce.py": "0588b15ff3e961816fd13674b4c5a8817202fa5a677391ca4525d12f22db8320",
+    "scenes/orbit_manimgl.py": "9246f6273156ca6560e9feba11eadfc578b35c9a0bbc3d004ef90dd83b6063e1",
+    "scenes/orbit_manimgx.py": "2cec6cc45ba2eb8d1917e1d8ebf9cad5411f946c912b1d4e4788a4adcee40aeb",
+    "scenes/pendulums_manim_ce.py": "b57d46a71b521238e19a39eec4d9d1349641659cba798a0bcaaf3582189b69d7",
+    "scenes/pendulums_manimgl.py": "90507a023135d6518571b5e3206d4fd854f9d85fc42955cad2f4a6633ca19019",
+    "scenes/pendulums_manimgx.py": "afc0acf1948f3ea659f66b47018c37869370d8f6d0c9688b2287827f1a47623e",
+    "scenes/quality_manim.py": "394100048bf6819cb14bbec8ed4da986c22cdf740a77ebaa996d60c2111b39d2",
+    "scenes/suite_blender.py": "45d2b897392735fd6baf8e47cafd10f4956288b2761fce05f400aa16b32f958f",
+    "scenes/suite_data.py": "aad0247751f5eae240f87bf87919367e87210eac645cd58a0b20cbaa1ae0a2c8",
+    "scenes/suite_manim.py": "bfc84687b2b9b44f2cfbf492956d1ef30c3029b85de0d5b5f949c55095f976ee",
+    "scenes/two_d_blender.py": "71062f6bd216a098ac90af9ed6e92a5c66969b3277f40f97ece24cb8a5f8c58b"
+  },
+  "per_scene": {
+    "orbit": {
+      "manimgx": {
+        "mean_seconds": 1.1839671526492264,
+        "samples_seconds": [
+          1.1549583750311285,
+          1.1032197499880567,
+          1.2937233329284936
+        ]
+      },
+      "manimgl": {
+        "mean_seconds": 6.463257069660661,
+        "samples_seconds": [
+          6.362686374923214,
+          6.147806541994214,
+          6.879278292064555
+        ]
+      },
+      "manim_ce": {
+        "mean_seconds": 211.80927754205186,
+        "samples_seconds": [
+          211.80927754205186
+        ]
+      },
+      "blender_workbench": {
+        "mean_seconds": 16.563321500085294,
+        "samples_seconds": [
+          16.563321500085294
+        ]
+      },
+      "blender_eevee": {
+        "mean_seconds": 220.242049625027,
+        "samples_seconds": [
+          220.242049625027
+        ]
+      }
+    },
+    "matrix": {
+      "manimgx": {
+        "mean_seconds": 0.3602115419926122,
+        "samples_seconds": [
+          0.32985283399466425,
+          0.3224517919588834,
+          0.4283300000242889
+        ]
+      },
+      "manimgl": {
+        "mean_seconds": 8.28727691663274,
+        "samples_seconds": [
+          8.176305125001818,
+          8.14448562497273,
+          8.541039999923669
+        ]
+      },
+      "manim_ce": {
+        "mean_seconds": 7.139898875029758,
+        "samples_seconds": [
+          7.139898875029758
+        ]
+      },
+      "blender_workbench": {
+        "mean_seconds": 11.04514066700358,
+        "samples_seconds": [
+          11.04514066700358
+        ]
+      },
+      "blender_eevee": {
+        "mean_seconds": 90.7981860000873,
+        "samples_seconds": [
+          90.7981860000873
+        ]
+      }
+    },
+    "pendulums": {
+      "manimgx": {
+        "mean_seconds": 0.7559397220223522,
+        "samples_seconds": [
+          0.7350382909644395,
+          0.7372282500145957,
+          0.7955526250880212
+        ]
+      },
+      "manimgl": {
+        "mean_seconds": 16.81176720831233,
+        "samples_seconds": [
+          16.556698707980104,
+          16.64203266694676,
+          17.236570250010118
+        ]
+      },
+      "manim_ce": {
+        "mean_seconds": 4.745277915964834,
+        "samples_seconds": [
+          4.745277915964834
+        ]
+      },
+      "blender_workbench": {
+        "mean_seconds": 19.860451874905266,
+        "samples_seconds": [
+          19.860451874905266
+        ]
+      },
+      "blender_eevee": {
+        "mean_seconds": 165.88973137491848,
+        "samples_seconds": [
+          165.88973137491848
+        ]
+      }
+    },
+    "hierarchy": {
+      "manimgx": {
+        "mean_seconds": 0.33400323637761176,
+        "samples_seconds": [
+          0.32685616705566645,
+          0.3377790420781821,
+          0.3373744999989867
+        ]
+      },
+      "manimgl": {
+        "mean_seconds": 1.7887499580392614,
+        "samples_seconds": [
+          1.7833502501016483,
+          1.7423528330400586,
+          1.8405467909760773
+        ]
+      },
+      "manim_ce": {
+        "mean_seconds": 16.169242208008654,
+        "samples_seconds": [
+          16.169242208008654
+        ]
+      },
+      "blender_workbench": {
+        "mean_seconds": 4.979416083078831,
+        "samples_seconds": [
+          4.979416083078831
+        ]
+      },
+      "blender_eevee": {
+        "mean_seconds": 62.26514262496494,
+        "samples_seconds": [
+          62.26514262496494
+        ]
+      }
+    },
+    "linked_rings": {
+      "manimgx": {
+        "mean_seconds": 0.44338433366889757,
+        "samples_seconds": [
+          0.43137791694607586,
+          0.4366209590807557,
+          0.4621541249798611
+        ]
+      },
+      "manimgl": {
+        "mean_seconds": 1.9331649863161147,
+        "samples_seconds": [
+          1.8965265000006184,
+          1.9064397499896586,
+          1.996528708958067
+        ]
+      },
+      "manim_ce": {
+        "mean_seconds": 38.962085749953985,
+        "samples_seconds": [
+          38.962085749953985
+        ]
+      },
+      "blender_workbench": {
+        "mean_seconds": 5.162881792057306,
+        "samples_seconds": [
+          5.162881792057306
+        ]
+      },
+      "blender_eevee": {
+        "mean_seconds": 62.20007633406203,
+        "samples_seconds": [
+          62.20007633406203
+        ]
+      }
+    }
+  },
+  "totals": {
+    "manimgx": 3.0775059867107,
+    "manimgl": 35.284216138961106,
+    "manim_ce": 278.8257822910091,
+    "blender_workbench": 57.61121191713028,
+    "blender_eevee": 601.3951859590597
+  },
+  "complete": true,
+  "runs": [
+    {
+      "scene": "orbit",
+      "tool": "manimgx",
+      "repeat": 1,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.venv/bin/manimgx",
+        "render",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/orbit_manimgx.py",
+        "Orbit",
+        "-o",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/orbit/manimgx/1/out.mp4",
+        "--preset",
+        "ultrafast",
+        "--crf",
+        "23",
+        "--resolution",
+        "1920x1080",
+        "--fps",
+        "60"
+      ],
+      "status": "complete",
+      "wall_seconds": 1.1549583750311285,
+      "cpu_seconds": 4.986966,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/orbit/manimgx/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/orbit/manimgx/1/out.mp4",
+        "decoded_frames": 601,
+        "timeline_frames": 601.0,
+        "bytes": 43769464,
+        "sha256": "ab65319844fd8e033eba89cd9b9f8c9dee5ff5bb09934b092ca65a84b6662620",
+        "encoder_evidence": "Explicit ultrafast / CRF 23 CLI arguments"
+      }
+    },
+    {
+      "scene": "orbit",
+      "tool": "manimgl",
+      "repeat": 1,
+      "command": [
+        "/private/tmp/manimgx-comparison-gl/bin/manimgl",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/orbit_manimgl.py",
+        "Orbit",
+        "-w",
+        "--hd",
+        "--video_dir",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/orbit/manimgl/1",
+        "--config_file",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/orbit/manimgl/1/config.yml"
+      ],
+      "status": "complete",
+      "wall_seconds": 6.362686374923214,
+      "cpu_seconds": 9.075293,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/orbit/manimgl/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/orbit/manimgl/1/Orbit.mp4",
+        "decoded_frames": 600,
+        "timeline_frames": 600.0,
+        "bytes": 23939383,
+        "sha256": "e70b8da70481af2b0a9c09ccfae6cce5c5fdf94e954db91260a5392cee89e0c9",
+        "encoder_evidence": "x264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0"
+      }
+    },
+    {
+      "scene": "orbit",
+      "tool": "manimgx",
+      "repeat": 2,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.venv/bin/manimgx",
+        "render",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/orbit_manimgx.py",
+        "Orbit",
+        "-o",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/orbit/manimgx/2/out.mp4",
+        "--preset",
+        "ultrafast",
+        "--crf",
+        "23",
+        "--resolution",
+        "1920x1080",
+        "--fps",
+        "60"
+      ],
+      "status": "complete",
+      "wall_seconds": 1.1032197499880567,
+      "cpu_seconds": 5.035039,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/orbit/manimgx/2/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/orbit/manimgx/2/out.mp4",
+        "decoded_frames": 601,
+        "timeline_frames": 601.0,
+        "bytes": 43769464,
+        "sha256": "ab65319844fd8e033eba89cd9b9f8c9dee5ff5bb09934b092ca65a84b6662620",
+        "encoder_evidence": "Explicit ultrafast / CRF 23 CLI arguments"
+      }
+    },
+    {
+      "scene": "orbit",
+      "tool": "manimgl",
+      "repeat": 2,
+      "command": [
+        "/private/tmp/manimgx-comparison-gl/bin/manimgl",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/orbit_manimgl.py",
+        "Orbit",
+        "-w",
+        "--hd",
+        "--video_dir",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/orbit/manimgl/2",
+        "--config_file",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/orbit/manimgl/2/config.yml"
+      ],
+      "status": "complete",
+      "wall_seconds": 6.147806541994214,
+      "cpu_seconds": 9.1868,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/orbit/manimgl/2/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/orbit/manimgl/2/Orbit.mp4",
+        "decoded_frames": 600,
+        "timeline_frames": 600.0,
+        "bytes": 23939383,
+        "sha256": "e70b8da70481af2b0a9c09ccfae6cce5c5fdf94e954db91260a5392cee89e0c9",
+        "encoder_evidence": "x264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0"
+      }
+    },
+    {
+      "scene": "matrix",
+      "tool": "manimgx",
+      "repeat": 1,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.venv/bin/manimgx",
+        "render",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/matrix_manimgx.py",
+        "TeacherScene",
+        "-o",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/matrix/manimgx/1/out.mp4",
+        "--preset",
+        "ultrafast",
+        "--crf",
+        "23",
+        "--resolution",
+        "1920x1080",
+        "--fps",
+        "60"
+      ],
+      "status": "complete",
+      "wall_seconds": 0.32985283399466425,
+      "cpu_seconds": 1.133066,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/matrix/manimgx/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/matrix/manimgx/1/out.mp4",
+        "decoded_frames": 243,
+        "timeline_frames": 433.0,
+        "bytes": 333761,
+        "sha256": "fba64cdeaa1d5f0f2f78814538245fed72acedcabe602b2bda25b69c67e1da21",
+        "encoder_evidence": "Explicit ultrafast / CRF 23 CLI arguments"
+      }
+    },
+    {
+      "scene": "matrix",
+      "tool": "manimgl",
+      "repeat": 1,
+      "command": [
+        "/private/tmp/manimgx-comparison-gl/bin/manimgl",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/matrix_manimgl.py",
+        "TeacherScene",
+        "-w",
+        "--hd",
+        "--video_dir",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/matrix/manimgl/1",
+        "--config_file",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/matrix/manimgl/1/config.yml"
+      ],
+      "status": "complete",
+      "wall_seconds": 8.176305125001818,
+      "cpu_seconds": 10.124938,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/matrix/manimgl/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/matrix/manimgl/1/TeacherScene.mp4",
+        "decoded_frames": 432,
+        "timeline_frames": 432.0,
+        "bytes": 324583,
+        "sha256": "9a528c2da5f474cb7f471b57bb0c3754f8bc3695a6f57e74b77619548aef74cc",
+        "encoder_evidence": "x264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0"
+      }
+    },
+    {
+      "scene": "matrix",
+      "tool": "manimgx",
+      "repeat": 2,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.venv/bin/manimgx",
+        "render",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/matrix_manimgx.py",
+        "TeacherScene",
+        "-o",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/matrix/manimgx/2/out.mp4",
+        "--preset",
+        "ultrafast",
+        "--crf",
+        "23",
+        "--resolution",
+        "1920x1080",
+        "--fps",
+        "60"
+      ],
+      "status": "complete",
+      "wall_seconds": 0.3224517919588834,
+      "cpu_seconds": 1.139669,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/matrix/manimgx/2/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/matrix/manimgx/2/out.mp4",
+        "decoded_frames": 243,
+        "timeline_frames": 433.0,
+        "bytes": 333761,
+        "sha256": "fba64cdeaa1d5f0f2f78814538245fed72acedcabe602b2bda25b69c67e1da21",
+        "encoder_evidence": "Explicit ultrafast / CRF 23 CLI arguments"
+      }
+    },
+    {
+      "scene": "matrix",
+      "tool": "manimgl",
+      "repeat": 2,
+      "command": [
+        "/private/tmp/manimgx-comparison-gl/bin/manimgl",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/matrix_manimgl.py",
+        "TeacherScene",
+        "-w",
+        "--hd",
+        "--video_dir",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/matrix/manimgl/2",
+        "--config_file",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/matrix/manimgl/2/config.yml"
+      ],
+      "status": "complete",
+      "wall_seconds": 8.14448562497273,
+      "cpu_seconds": 10.091675,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/matrix/manimgl/2/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/matrix/manimgl/2/TeacherScene.mp4",
+        "decoded_frames": 432,
+        "timeline_frames": 432.0,
+        "bytes": 324583,
+        "sha256": "9a528c2da5f474cb7f471b57bb0c3754f8bc3695a6f57e74b77619548aef74cc",
+        "encoder_evidence": "x264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0"
+      }
+    },
+    {
+      "scene": "pendulums",
+      "tool": "manimgx",
+      "repeat": 1,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.venv/bin/manimgx",
+        "render",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/pendulums_manimgx.py",
+        "TeacherScene",
+        "-o",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/pendulums/manimgx/1/out.mp4",
+        "--preset",
+        "ultrafast",
+        "--crf",
+        "23",
+        "--resolution",
+        "1920x1080",
+        "--fps",
+        "60"
+      ],
+      "status": "complete",
+      "wall_seconds": 0.7350382909644395,
+      "cpu_seconds": 3.299182,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/pendulums/manimgx/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/pendulums/manimgx/1/out.mp4",
+        "decoded_frames": 721,
+        "timeline_frames": 781.0,
+        "bytes": 7183498,
+        "sha256": "27f2469328aef4f5eaac23f50961c92ea34fad38176149a4ff732eed4516defa",
+        "encoder_evidence": "Explicit ultrafast / CRF 23 CLI arguments"
+      }
+    },
+    {
+      "scene": "pendulums",
+      "tool": "manimgl",
+      "repeat": 1,
+      "command": [
+        "/private/tmp/manimgx-comparison-gl/bin/manimgl",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/pendulums_manimgl.py",
+        "TeacherScene",
+        "-w",
+        "--hd",
+        "--video_dir",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/pendulums/manimgl/1",
+        "--config_file",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/pendulums/manimgl/1/config.yml"
+      ],
+      "status": "complete",
+      "wall_seconds": 16.556698707980104,
+      "cpu_seconds": 18.432412,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/pendulums/manimgl/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/pendulums/manimgl/1/TeacherScene.mp4",
+        "decoded_frames": 780,
+        "timeline_frames": 780.0,
+        "bytes": 6662220,
+        "sha256": "b76fbedabc3fe9377f0843ba2c7eb1031509647d2b701e30a02830412a7dac5e",
+        "encoder_evidence": "x264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0"
+      }
+    },
+    {
+      "scene": "pendulums",
+      "tool": "manimgx",
+      "repeat": 2,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.venv/bin/manimgx",
+        "render",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/pendulums_manimgx.py",
+        "TeacherScene",
+        "-o",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/pendulums/manimgx/2/out.mp4",
+        "--preset",
+        "ultrafast",
+        "--crf",
+        "23",
+        "--resolution",
+        "1920x1080",
+        "--fps",
+        "60"
+      ],
+      "status": "complete",
+      "wall_seconds": 0.7372282500145957,
+      "cpu_seconds": 3.317985,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/pendulums/manimgx/2/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/pendulums/manimgx/2/out.mp4",
+        "decoded_frames": 721,
+        "timeline_frames": 781.0,
+        "bytes": 7183498,
+        "sha256": "27f2469328aef4f5eaac23f50961c92ea34fad38176149a4ff732eed4516defa",
+        "encoder_evidence": "Explicit ultrafast / CRF 23 CLI arguments"
+      }
+    },
+    {
+      "scene": "pendulums",
+      "tool": "manimgl",
+      "repeat": 2,
+      "command": [
+        "/private/tmp/manimgx-comparison-gl/bin/manimgl",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/pendulums_manimgl.py",
+        "TeacherScene",
+        "-w",
+        "--hd",
+        "--video_dir",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/pendulums/manimgl/2",
+        "--config_file",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/pendulums/manimgl/2/config.yml"
+      ],
+      "status": "complete",
+      "wall_seconds": 16.64203266694676,
+      "cpu_seconds": 18.592612000000003,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/pendulums/manimgl/2/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/pendulums/manimgl/2/TeacherScene.mp4",
+        "decoded_frames": 780,
+        "timeline_frames": 780.0,
+        "bytes": 6662220,
+        "sha256": "b76fbedabc3fe9377f0843ba2c7eb1031509647d2b701e30a02830412a7dac5e",
+        "encoder_evidence": "x264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0"
+      }
+    },
+    {
+      "scene": "hierarchy",
+      "tool": "manimgx",
+      "repeat": 1,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.venv/bin/manimgx",
+        "render",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/suite_manim.py",
+        "Benchmark",
+        "-o",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/hierarchy/manimgx/1/out.mp4",
+        "--preset",
+        "ultrafast",
+        "--crf",
+        "23",
+        "--resolution",
+        "1920x1080",
+        "--fps",
+        "60"
+      ],
+      "status": "complete",
+      "wall_seconds": 0.32685616705566645,
+      "cpu_seconds": 1.214933,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/hierarchy/manimgx/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/hierarchy/manimgx/1/out.mp4",
+        "decoded_frames": 181,
+        "timeline_frames": 181.0,
+        "bytes": 852479,
+        "sha256": "bfe196ac6786f614134f5ea63df7b03fd89f0f0bb11d31c2e5310e1dfa464acc",
+        "encoder_evidence": "Explicit ultrafast / CRF 23 CLI arguments"
+      }
+    },
+    {
+      "scene": "hierarchy",
+      "tool": "manimgl",
+      "repeat": 1,
+      "command": [
+        "/private/tmp/manimgx-comparison-gl/bin/manimgl",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/suite_manim.py",
+        "Benchmark",
+        "-w",
+        "--hd",
+        "--video_dir",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/hierarchy/manimgl/1",
+        "--config_file",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/hierarchy/manimgl/1/config.yml"
+      ],
+      "status": "complete",
+      "wall_seconds": 1.7833502501016483,
+      "cpu_seconds": 2.8002640000000003,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/hierarchy/manimgl/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/hierarchy/manimgl/1/Benchmark.mp4",
+        "decoded_frames": 180,
+        "timeline_frames": 180.0,
+        "bytes": 847100,
+        "sha256": "89986302c298eb1cf9334787f879b941766abe344adc17892544d529ec529083",
+        "encoder_evidence": "x264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0"
+      }
+    },
+    {
+      "scene": "hierarchy",
+      "tool": "manimgx",
+      "repeat": 2,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.venv/bin/manimgx",
+        "render",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/suite_manim.py",
+        "Benchmark",
+        "-o",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/hierarchy/manimgx/2/out.mp4",
+        "--preset",
+        "ultrafast",
+        "--crf",
+        "23",
+        "--resolution",
+        "1920x1080",
+        "--fps",
+        "60"
+      ],
+      "status": "complete",
+      "wall_seconds": 0.3377790420781821,
+      "cpu_seconds": 1.248132,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/hierarchy/manimgx/2/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/hierarchy/manimgx/2/out.mp4",
+        "decoded_frames": 181,
+        "timeline_frames": 181.0,
+        "bytes": 852479,
+        "sha256": "bfe196ac6786f614134f5ea63df7b03fd89f0f0bb11d31c2e5310e1dfa464acc",
+        "encoder_evidence": "Explicit ultrafast / CRF 23 CLI arguments"
+      }
+    },
+    {
+      "scene": "hierarchy",
+      "tool": "manimgl",
+      "repeat": 2,
+      "command": [
+        "/private/tmp/manimgx-comparison-gl/bin/manimgl",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/suite_manim.py",
+        "Benchmark",
+        "-w",
+        "--hd",
+        "--video_dir",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/hierarchy/manimgl/2",
+        "--config_file",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/hierarchy/manimgl/2/config.yml"
+      ],
+      "status": "complete",
+      "wall_seconds": 1.7423528330400586,
+      "cpu_seconds": 2.7407369999999998,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/hierarchy/manimgl/2/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/hierarchy/manimgl/2/Benchmark.mp4",
+        "decoded_frames": 180,
+        "timeline_frames": 180.0,
+        "bytes": 847100,
+        "sha256": "89986302c298eb1cf9334787f879b941766abe344adc17892544d529ec529083",
+        "encoder_evidence": "x264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0"
+      }
+    },
+    {
+      "scene": "linked_rings",
+      "tool": "manimgx",
+      "repeat": 1,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.venv/bin/manimgx",
+        "render",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/suite_manim.py",
+        "Benchmark",
+        "-o",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/linked_rings/manimgx/1/out.mp4",
+        "--preset",
+        "ultrafast",
+        "--crf",
+        "23",
+        "--resolution",
+        "1920x1080",
+        "--fps",
+        "60"
+      ],
+      "status": "complete",
+      "wall_seconds": 0.43137791694607586,
+      "cpu_seconds": 1.309997,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/linked_rings/manimgx/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/linked_rings/manimgx/1/out.mp4",
+        "decoded_frames": 181,
+        "timeline_frames": 181.0,
+        "bytes": 1560175,
+        "sha256": "15ba143a782cfebd6337432abb2f651462410ae9fbfa960df4050e5723d50334",
+        "encoder_evidence": "Explicit ultrafast / CRF 23 CLI arguments"
+      }
+    },
+    {
+      "scene": "linked_rings",
+      "tool": "manimgl",
+      "repeat": 1,
+      "command": [
+        "/private/tmp/manimgx-comparison-gl/bin/manimgl",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/suite_manim.py",
+        "Benchmark",
+        "-w",
+        "--hd",
+        "--video_dir",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/linked_rings/manimgl/1",
+        "--config_file",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/linked_rings/manimgl/1/config.yml"
+      ],
+      "status": "complete",
+      "wall_seconds": 1.8965265000006184,
+      "cpu_seconds": 2.963858,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/linked_rings/manimgl/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/linked_rings/manimgl/1/Benchmark.mp4",
+        "decoded_frames": 180,
+        "timeline_frames": 180.0,
+        "bytes": 1612753,
+        "sha256": "0bc24683c86d1c8db1680484fb7c663e2abd3822dd2e0c67e1b02342777766c7",
+        "encoder_evidence": "x264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0"
+      }
+    },
+    {
+      "scene": "linked_rings",
+      "tool": "manimgx",
+      "repeat": 2,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.venv/bin/manimgx",
+        "render",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/suite_manim.py",
+        "Benchmark",
+        "-o",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/linked_rings/manimgx/2/out.mp4",
+        "--preset",
+        "ultrafast",
+        "--crf",
+        "23",
+        "--resolution",
+        "1920x1080",
+        "--fps",
+        "60"
+      ],
+      "status": "complete",
+      "wall_seconds": 0.4366209590807557,
+      "cpu_seconds": 1.336935,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/linked_rings/manimgx/2/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/linked_rings/manimgx/2/out.mp4",
+        "decoded_frames": 181,
+        "timeline_frames": 181.0,
+        "bytes": 1560175,
+        "sha256": "15ba143a782cfebd6337432abb2f651462410ae9fbfa960df4050e5723d50334",
+        "encoder_evidence": "Explicit ultrafast / CRF 23 CLI arguments"
+      }
+    },
+    {
+      "scene": "linked_rings",
+      "tool": "manimgl",
+      "repeat": 2,
+      "command": [
+        "/private/tmp/manimgx-comparison-gl/bin/manimgl",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/suite_manim.py",
+        "Benchmark",
+        "-w",
+        "--hd",
+        "--video_dir",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/linked_rings/manimgl/2",
+        "--config_file",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/linked_rings/manimgl/2/config.yml"
+      ],
+      "status": "complete",
+      "wall_seconds": 1.9064397499896586,
+      "cpu_seconds": 2.963388,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/linked_rings/manimgl/2/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-idle/linked_rings/manimgl/2/Benchmark.mp4",
+        "decoded_frames": 180,
+        "timeline_frames": 180.0,
+        "bytes": 1612753,
+        "sha256": "0bc24683c86d1c8db1680484fb7c663e2abd3822dd2e0c67e1b02342777766c7",
+        "encoder_evidence": "x264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0"
+      }
+    },
+    {
+      "scene": "orbit",
+      "tool": "manim_ce",
+      "repeat": 1,
+      "command": [
+        "/private/tmp/manimgx-comparison-ce/bin/python",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/ce_cli.py",
+        "render",
+        "-qh",
+        "--disable_caching",
+        "--media_dir",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/orbit/manim_ce/1",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/orbit_manim_ce.py",
+        "Orbit"
+      ],
+      "status": "complete",
+      "wall_seconds": 211.80927754205186,
+      "cpu_seconds": 220.696687,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/orbit/manim_ce/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/orbit/manim_ce/1/videos/orbit_manim_ce/1080p60/Orbit.mp4",
+        "decoded_frames": 600,
+        "timeline_frames": 600.0,
+        "bytes": 44491959,
+        "sha256": "3ffcbbbbe4c97233acd4320271a95829553892125b3c4cd1ae75f8798f997acb",
+        "encoder_evidence": "x264 - core 165 - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=12 lookahead_threads=12 sliced_threads=1 slices=12 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0"
+      }
+    },
+    {
+      "scene": "orbit",
+      "tool": "blender_workbench",
+      "repeat": 1,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/tools/Blender.app/Contents/MacOS/Blender",
+        "-b",
+        "--factory-startup",
+        "--python-exit-code",
+        "1",
+        "-P",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/orbit_blender.py",
+        "--",
+        "--engine",
+        "WORKBENCH",
+        "--out",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/orbit/blender_workbench/1/out.mp4"
+      ],
+      "status": "complete",
+      "wall_seconds": 16.563321500085294,
+      "cpu_seconds": 51.751888,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/orbit/blender_workbench/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/orbit/blender_workbench/1/out.mp4",
+        "decoded_frames": 600,
+        "timeline_frames": 600.0,
+        "bytes": 6516294,
+        "sha256": "54ce2c83f10bde312323aaca8204856e565106d3fbc9286acf359df59affc675",
+        "encoder_evidence": "x264 - core 164 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x3 me=dia subme=1 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=1 keyint=18 keyint_min=1 scenecut=40 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00"
+      }
+    },
+    {
+      "scene": "orbit",
+      "tool": "blender_eevee",
+      "repeat": 1,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/tools/Blender.app/Contents/MacOS/Blender",
+        "-b",
+        "--factory-startup",
+        "--python-exit-code",
+        "1",
+        "-P",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/orbit_blender.py",
+        "--",
+        "--engine",
+        "EEVEE",
+        "--out",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/orbit/blender_eevee/1/out.mp4"
+      ],
+      "status": "complete",
+      "wall_seconds": 220.242049625027,
+      "cpu_seconds": 126.05103600000001,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/orbit/blender_eevee/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/orbit/blender_eevee/1/out.mp4",
+        "decoded_frames": 600,
+        "timeline_frames": 600.0,
+        "bytes": 6546919,
+        "sha256": "35b31cfeb863332b92540de1c30d89f78da1fbb86ec7fe69289e5ceac1c7f2cf",
+        "encoder_evidence": "x264 - core 164 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x3 me=dia subme=1 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=1 keyint=18 keyint_min=1 scenecut=40 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00"
+      }
+    },
+    {
+      "scene": "matrix",
+      "tool": "manim_ce",
+      "repeat": 1,
+      "command": [
+        "/private/tmp/manimgx-comparison-ce/bin/python",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/ce_cli.py",
+        "render",
+        "-qh",
+        "--disable_caching",
+        "--media_dir",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/matrix/manim_ce/1",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/matrix_manim_ce.py",
+        "TeacherScene"
+      ],
+      "status": "complete",
+      "wall_seconds": 7.139898875029758,
+      "cpu_seconds": 9.801266,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/matrix/manim_ce/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/matrix/manim_ce/1/videos/matrix_manim_ce/1080p60/TeacherScene.mp4",
+        "decoded_frames": 432,
+        "timeline_frames": 432.0,
+        "bytes": 490964,
+        "sha256": "08f3527dba079201178e6f5c2710c9a2b74c8470eb4cf3c224304e1fc7b3b183",
+        "encoder_evidence": "x264 - core 165 - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=12 lookahead_threads=12 sliced_threads=1 slices=12 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0"
+      }
+    },
+    {
+      "scene": "matrix",
+      "tool": "blender_workbench",
+      "repeat": 1,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/tools/Blender.app/Contents/MacOS/Blender",
+        "-b",
+        "--factory-startup",
+        "--python-exit-code",
+        "1",
+        "-P",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/two_d_blender.py",
+        "--",
+        "--engine",
+        "workbench",
+        "--out",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/matrix/blender_workbench/1/out.mp4",
+        "--scene",
+        "matrix"
+      ],
+      "status": "complete",
+      "wall_seconds": 11.04514066700358,
+      "cpu_seconds": 36.942752,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/matrix/blender_workbench/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/matrix/blender_workbench/1/out.mp4",
+        "decoded_frames": 432,
+        "timeline_frames": 432.0,
+        "bytes": 140573,
+        "sha256": "c6f3e93334c69a40e392856def3641325eb6f0bb2df766a8a7a51d7dd9f3bd82",
+        "encoder_evidence": "x264 - core 164 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x3 me=dia subme=1 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00"
+      }
+    },
+    {
+      "scene": "matrix",
+      "tool": "blender_eevee",
+      "repeat": 1,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/tools/Blender.app/Contents/MacOS/Blender",
+        "-b",
+        "--factory-startup",
+        "--python-exit-code",
+        "1",
+        "-P",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/two_d_blender.py",
+        "--",
+        "--engine",
+        "eevee",
+        "--out",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/matrix/blender_eevee/1/out.mp4",
+        "--scene",
+        "matrix"
+      ],
+      "status": "complete",
+      "wall_seconds": 90.7981860000873,
+      "cpu_seconds": 81.127381,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/matrix/blender_eevee/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/matrix/blender_eevee/1/out.mp4",
+        "decoded_frames": 432,
+        "timeline_frames": 432.0,
+        "bytes": 285436,
+        "sha256": "a9529e1bf90723e70677d93e91784ca6337dd4efc86212a9e068c45e27f1f37e",
+        "encoder_evidence": "x264 - core 164 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x3 me=dia subme=1 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00"
+      }
+    },
+    {
+      "scene": "pendulums",
+      "tool": "manim_ce",
+      "repeat": 1,
+      "command": [
+        "/private/tmp/manimgx-comparison-ce/bin/python",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/ce_cli.py",
+        "render",
+        "-qh",
+        "--disable_caching",
+        "--media_dir",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/pendulums/manim_ce/1",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/pendulums_manim_ce.py",
+        "TeacherScene"
+      ],
+      "status": "complete",
+      "wall_seconds": 4.745277915964834,
+      "cpu_seconds": 10.849732,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/pendulums/manim_ce/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/pendulums/manim_ce/1/videos/pendulums_manim_ce/1080p60/TeacherScene.mp4",
+        "decoded_frames": 780,
+        "timeline_frames": 780.0,
+        "bytes": 7789689,
+        "sha256": "d2cb82a6d04646d91cc79496fe3d3ca986287be82960a9cd5021c63dcc6e3fee",
+        "encoder_evidence": "x264 - core 165 - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=12 lookahead_threads=12 sliced_threads=1 slices=12 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0"
+      }
+    },
+    {
+      "scene": "pendulums",
+      "tool": "blender_workbench",
+      "repeat": 1,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/tools/Blender.app/Contents/MacOS/Blender",
+        "-b",
+        "--factory-startup",
+        "--python-exit-code",
+        "1",
+        "-P",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/two_d_blender.py",
+        "--",
+        "--engine",
+        "workbench",
+        "--out",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/pendulums/blender_workbench/1/out.mp4",
+        "--scene",
+        "pendulums"
+      ],
+      "status": "complete",
+      "wall_seconds": 19.860451874905266,
+      "cpu_seconds": 68.022811,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/pendulums/blender_workbench/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/pendulums/blender_workbench/1/out.mp4",
+        "decoded_frames": 780,
+        "timeline_frames": 780.0,
+        "bytes": 4490281,
+        "sha256": "c1e3a2f7ab28048b964c5ec23c20ba606ad0e7d8c3ceecccfc861b253c5dab2e",
+        "encoder_evidence": "x264 - core 164 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x3 me=dia subme=1 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00"
+      }
+    },
+    {
+      "scene": "pendulums",
+      "tool": "blender_eevee",
+      "repeat": 1,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/tools/Blender.app/Contents/MacOS/Blender",
+        "-b",
+        "--factory-startup",
+        "--python-exit-code",
+        "1",
+        "-P",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/two_d_blender.py",
+        "--",
+        "--engine",
+        "eevee",
+        "--out",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/pendulums/blender_eevee/1/out.mp4",
+        "--scene",
+        "pendulums"
+      ],
+      "status": "complete",
+      "wall_seconds": 165.88973137491848,
+      "cpu_seconds": 151.14148799999998,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/pendulums/blender_eevee/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/pendulums/blender_eevee/1/out.mp4",
+        "decoded_frames": 780,
+        "timeline_frames": 780.0,
+        "bytes": 2741967,
+        "sha256": "6d1318a1650c7a83f398f097b648269ded0c84dabc6261af22683da8f64aff2c",
+        "encoder_evidence": "x264 - core 164 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x3 me=dia subme=1 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00"
+      }
+    },
+    {
+      "scene": "hierarchy",
+      "tool": "manim_ce",
+      "repeat": 1,
+      "command": [
+        "/private/tmp/manimgx-comparison-ce/bin/python",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/ce_cli.py",
+        "render",
+        "-qh",
+        "--disable_caching",
+        "--media_dir",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/hierarchy/manim_ce/1",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/suite_manim.py",
+        "Benchmark"
+      ],
+      "status": "complete",
+      "wall_seconds": 16.169242208008654,
+      "cpu_seconds": 17.711809,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/hierarchy/manim_ce/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/hierarchy/manim_ce/1/videos/suite_manim/1080p60/Benchmark.mp4",
+        "decoded_frames": 180,
+        "timeline_frames": 180.0,
+        "bytes": 1219162,
+        "sha256": "737f154481ac7b3e61ec02fd438f8d4000d2c56cc5dee62f04b9ebd075a0d043",
+        "encoder_evidence": "x264 - core 165 - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=12 lookahead_threads=12 sliced_threads=1 slices=12 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0"
+      }
+    },
+    {
+      "scene": "hierarchy",
+      "tool": "blender_workbench",
+      "repeat": 1,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/tools/Blender.app/Contents/MacOS/Blender",
+        "-b",
+        "--factory-startup",
+        "--python-exit-code",
+        "1",
+        "-P",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/suite_blender.py",
+        "--",
+        "--engine",
+        "workbench",
+        "--out",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/hierarchy/blender_workbench/1/out.mp4",
+        "--scene",
+        "hierarchy"
+      ],
+      "status": "complete",
+      "wall_seconds": 4.979416083078831,
+      "cpu_seconds": 15.76909,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/hierarchy/blender_workbench/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/hierarchy/blender_workbench/1/out.mp4",
+        "decoded_frames": 180,
+        "timeline_frames": 180.0,
+        "bytes": 215495,
+        "sha256": "06d5415e9190328bb398f50f99c030ee1ffd2d093f77ac60680d4bd9716b9ee9",
+        "encoder_evidence": "x264 - core 164 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x3 me=dia subme=1 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00"
+      }
+    },
+    {
+      "scene": "hierarchy",
+      "tool": "blender_eevee",
+      "repeat": 1,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/tools/Blender.app/Contents/MacOS/Blender",
+        "-b",
+        "--factory-startup",
+        "--python-exit-code",
+        "1",
+        "-P",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/suite_blender.py",
+        "--",
+        "--engine",
+        "eevee",
+        "--out",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/hierarchy/blender_eevee/1/out.mp4",
+        "--scene",
+        "hierarchy"
+      ],
+      "status": "complete",
+      "wall_seconds": 62.26514262496494,
+      "cpu_seconds": 42.975503,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/hierarchy/blender_eevee/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/hierarchy/blender_eevee/1/out.mp4",
+        "decoded_frames": 180,
+        "timeline_frames": 180.0,
+        "bytes": 214581,
+        "sha256": "9fa8a7863fd3bc6e56fa5ac9fa15cb46bc3e863f792a66e3fc6a6c7c48968fe7",
+        "encoder_evidence": "x264 - core 164 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x3 me=dia subme=1 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00"
+      }
+    },
+    {
+      "scene": "linked_rings",
+      "tool": "manim_ce",
+      "repeat": 1,
+      "command": [
+        "/private/tmp/manimgx-comparison-ce/bin/python",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/ce_cli.py",
+        "render",
+        "-qh",
+        "--disable_caching",
+        "--media_dir",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/linked_rings/manim_ce/1",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/suite_manim.py",
+        "Benchmark"
+      ],
+      "status": "complete",
+      "wall_seconds": 38.962085749953985,
+      "cpu_seconds": 40.193416,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/linked_rings/manim_ce/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/linked_rings/manim_ce/1/videos/suite_manim/1080p60/Benchmark.mp4",
+        "decoded_frames": 180,
+        "timeline_frames": 180.0,
+        "bytes": 2815689,
+        "sha256": "1a6ee56f2971ee3aa405de1ed5401369e2500307c204c15da330b9eeb842a812",
+        "encoder_evidence": "x264 - core 165 - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=12 lookahead_threads=12 sliced_threads=1 slices=12 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0"
+      }
+    },
+    {
+      "scene": "linked_rings",
+      "tool": "blender_workbench",
+      "repeat": 1,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/tools/Blender.app/Contents/MacOS/Blender",
+        "-b",
+        "--factory-startup",
+        "--python-exit-code",
+        "1",
+        "-P",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/linked_rings_blender.py",
+        "--",
+        "--engine",
+        "workbench",
+        "--out",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/linked_rings/blender_workbench/1/out.mp4",
+        "--animate"
+      ],
+      "status": "complete",
+      "wall_seconds": 5.162881792057306,
+      "cpu_seconds": 15.865897,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/linked_rings/blender_workbench/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/linked_rings/blender_workbench/1/out.mp4",
+        "decoded_frames": 180,
+        "timeline_frames": 180.0,
+        "bytes": 454550,
+        "sha256": "744439e824ca1b95bebec3fe1de2b6e4bc5d84856e5e35fbe27bd7e0563ffe5a",
+        "encoder_evidence": "x264 - core 164 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x3 me=dia subme=1 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00"
+      }
+    },
+    {
+      "scene": "linked_rings",
+      "tool": "blender_eevee",
+      "repeat": 1,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/tools/Blender.app/Contents/MacOS/Blender",
+        "-b",
+        "--factory-startup",
+        "--python-exit-code",
+        "1",
+        "-P",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/linked_rings_blender.py",
+        "--",
+        "--engine",
+        "eevee",
+        "--out",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/linked_rings/blender_eevee/1/out.mp4",
+        "--animate"
+      ],
+      "status": "complete",
+      "wall_seconds": 62.20007633406203,
+      "cpu_seconds": 42.583943000000005,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/linked_rings/blender_eevee/1/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-ce-blender/linked_rings/blender_eevee/1/out.mp4",
+        "decoded_frames": 180,
+        "timeline_frames": 180.0,
+        "bytes": 372884,
+        "sha256": "fc280d3595328724c01db83f895a8f14120cab003cf5721f806eb6f6739c1e81",
+        "encoder_evidence": "x264 - core 164 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x3 me=dia subme=1 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=1 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00"
+      }
+    },
+    {
+      "scene": "orbit",
+      "tool": "manimgx",
+      "repeat": 3,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.venv/bin/manimgx",
+        "render",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/orbit_manimgx.py",
+        "Orbit",
+        "-o",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/orbit/manimgx/3/out.mp4",
+        "--preset",
+        "ultrafast",
+        "--crf",
+        "23",
+        "--resolution",
+        "1920x1080",
+        "--fps",
+        "60"
+      ],
+      "status": "complete",
+      "wall_seconds": 1.2937233329284936,
+      "cpu_seconds": 5.275916,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/orbit/manimgx/3/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/orbit/manimgx/3/out.mp4",
+        "decoded_frames": 601,
+        "timeline_frames": 601.0,
+        "bytes": 43769464,
+        "sha256": "ab65319844fd8e033eba89cd9b9f8c9dee5ff5bb09934b092ca65a84b6662620",
+        "encoder_evidence": "Explicit ultrafast / CRF 23 CLI arguments"
+      }
+    },
+    {
+      "scene": "orbit",
+      "tool": "manimgl",
+      "repeat": 3,
+      "command": [
+        "/private/tmp/manimgx-comparison-gl/bin/manimgl",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/orbit_manimgl.py",
+        "Orbit",
+        "-w",
+        "--hd",
+        "--video_dir",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/orbit/manimgl/3",
+        "--config_file",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/orbit/manimgl/3/config.yml"
+      ],
+      "status": "complete",
+      "wall_seconds": 6.879278292064555,
+      "cpu_seconds": 9.64502,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/orbit/manimgl/3/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/orbit/manimgl/3/Orbit.mp4",
+        "decoded_frames": 600,
+        "timeline_frames": 600.0,
+        "bytes": 23939383,
+        "sha256": "e70b8da70481af2b0a9c09ccfae6cce5c5fdf94e954db91260a5392cee89e0c9",
+        "encoder_evidence": "x264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0"
+      }
+    },
+    {
+      "scene": "matrix",
+      "tool": "manimgx",
+      "repeat": 3,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.venv/bin/manimgx",
+        "render",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/matrix_manimgx.py",
+        "TeacherScene",
+        "-o",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/matrix/manimgx/3/out.mp4",
+        "--preset",
+        "ultrafast",
+        "--crf",
+        "23",
+        "--resolution",
+        "1920x1080",
+        "--fps",
+        "60"
+      ],
+      "status": "complete",
+      "wall_seconds": 0.4283300000242889,
+      "cpu_seconds": 1.147804,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/matrix/manimgx/3/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/matrix/manimgx/3/out.mp4",
+        "decoded_frames": 243,
+        "timeline_frames": 433.0,
+        "bytes": 333761,
+        "sha256": "fba64cdeaa1d5f0f2f78814538245fed72acedcabe602b2bda25b69c67e1da21",
+        "encoder_evidence": "Explicit ultrafast / CRF 23 CLI arguments"
+      }
+    },
+    {
+      "scene": "matrix",
+      "tool": "manimgl",
+      "repeat": 3,
+      "command": [
+        "/private/tmp/manimgx-comparison-gl/bin/manimgl",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/matrix_manimgl.py",
+        "TeacherScene",
+        "-w",
+        "--hd",
+        "--video_dir",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/matrix/manimgl/3",
+        "--config_file",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/matrix/manimgl/3/config.yml"
+      ],
+      "status": "complete",
+      "wall_seconds": 8.541039999923669,
+      "cpu_seconds": 10.526752,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/matrix/manimgl/3/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/matrix/manimgl/3/TeacherScene.mp4",
+        "decoded_frames": 432,
+        "timeline_frames": 432.0,
+        "bytes": 324583,
+        "sha256": "9a528c2da5f474cb7f471b57bb0c3754f8bc3695a6f57e74b77619548aef74cc",
+        "encoder_evidence": "x264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0"
+      }
+    },
+    {
+      "scene": "pendulums",
+      "tool": "manimgx",
+      "repeat": 3,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.venv/bin/manimgx",
+        "render",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/pendulums_manimgx.py",
+        "TeacherScene",
+        "-o",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/pendulums/manimgx/3/out.mp4",
+        "--preset",
+        "ultrafast",
+        "--crf",
+        "23",
+        "--resolution",
+        "1920x1080",
+        "--fps",
+        "60"
+      ],
+      "status": "complete",
+      "wall_seconds": 0.7955526250880212,
+      "cpu_seconds": 3.432343,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/pendulums/manimgx/3/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/pendulums/manimgx/3/out.mp4",
+        "decoded_frames": 721,
+        "timeline_frames": 781.0,
+        "bytes": 7183498,
+        "sha256": "27f2469328aef4f5eaac23f50961c92ea34fad38176149a4ff732eed4516defa",
+        "encoder_evidence": "Explicit ultrafast / CRF 23 CLI arguments"
+      }
+    },
+    {
+      "scene": "pendulums",
+      "tool": "manimgl",
+      "repeat": 3,
+      "command": [
+        "/private/tmp/manimgx-comparison-gl/bin/manimgl",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/pendulums_manimgl.py",
+        "TeacherScene",
+        "-w",
+        "--hd",
+        "--video_dir",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/pendulums/manimgl/3",
+        "--config_file",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/pendulums/manimgl/3/config.yml"
+      ],
+      "status": "complete",
+      "wall_seconds": 17.236570250010118,
+      "cpu_seconds": 19.056472,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/pendulums/manimgl/3/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/pendulums/manimgl/3/TeacherScene.mp4",
+        "decoded_frames": 780,
+        "timeline_frames": 780.0,
+        "bytes": 6662220,
+        "sha256": "b76fbedabc3fe9377f0843ba2c7eb1031509647d2b701e30a02830412a7dac5e",
+        "encoder_evidence": "x264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0"
+      }
+    },
+    {
+      "scene": "hierarchy",
+      "tool": "manimgx",
+      "repeat": 3,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.venv/bin/manimgx",
+        "render",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/suite_manim.py",
+        "Benchmark",
+        "-o",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/hierarchy/manimgx/3/out.mp4",
+        "--preset",
+        "ultrafast",
+        "--crf",
+        "23",
+        "--resolution",
+        "1920x1080",
+        "--fps",
+        "60"
+      ],
+      "status": "complete",
+      "wall_seconds": 0.3373744999989867,
+      "cpu_seconds": 1.264108,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/hierarchy/manimgx/3/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/hierarchy/manimgx/3/out.mp4",
+        "decoded_frames": 181,
+        "timeline_frames": 181.0,
+        "bytes": 852479,
+        "sha256": "bfe196ac6786f614134f5ea63df7b03fd89f0f0bb11d31c2e5310e1dfa464acc",
+        "encoder_evidence": "Explicit ultrafast / CRF 23 CLI arguments"
+      }
+    },
+    {
+      "scene": "hierarchy",
+      "tool": "manimgl",
+      "repeat": 3,
+      "command": [
+        "/private/tmp/manimgx-comparison-gl/bin/manimgl",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/suite_manim.py",
+        "Benchmark",
+        "-w",
+        "--hd",
+        "--video_dir",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/hierarchy/manimgl/3",
+        "--config_file",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/hierarchy/manimgl/3/config.yml"
+      ],
+      "status": "complete",
+      "wall_seconds": 1.8405467909760773,
+      "cpu_seconds": 2.8272209999999998,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/hierarchy/manimgl/3/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/hierarchy/manimgl/3/Benchmark.mp4",
+        "decoded_frames": 180,
+        "timeline_frames": 180.0,
+        "bytes": 847100,
+        "sha256": "89986302c298eb1cf9334787f879b941766abe344adc17892544d529ec529083",
+        "encoder_evidence": "x264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0"
+      }
+    },
+    {
+      "scene": "linked_rings",
+      "tool": "manimgx",
+      "repeat": 3,
+      "command": [
+        "/Users/apoogdk/GIT/manimgx/.venv/bin/manimgx",
+        "render",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/suite_manim.py",
+        "Benchmark",
+        "-o",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/linked_rings/manimgx/3/out.mp4",
+        "--preset",
+        "ultrafast",
+        "--crf",
+        "23",
+        "--resolution",
+        "1920x1080",
+        "--fps",
+        "60"
+      ],
+      "status": "complete",
+      "wall_seconds": 0.4621541249798611,
+      "cpu_seconds": 1.381076,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/linked_rings/manimgx/3/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/linked_rings/manimgx/3/out.mp4",
+        "decoded_frames": 181,
+        "timeline_frames": 181.0,
+        "bytes": 1560175,
+        "sha256": "15ba143a782cfebd6337432abb2f651462410ae9fbfa960df4050e5723d50334",
+        "encoder_evidence": "Explicit ultrafast / CRF 23 CLI arguments"
+      }
+    },
+    {
+      "scene": "linked_rings",
+      "tool": "manimgl",
+      "repeat": 3,
+      "command": [
+        "/private/tmp/manimgx-comparison-gl/bin/manimgl",
+        "/private/tmp/manimgx-crf23-20261007/benchmark/scenes/suite_manim.py",
+        "Benchmark",
+        "-w",
+        "--hd",
+        "--video_dir",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/linked_rings/manimgl/3",
+        "--config_file",
+        "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/linked_rings/manimgl/3/config.yml"
+      ],
+      "status": "complete",
+      "wall_seconds": 1.996528708958067,
+      "cpu_seconds": 3.02868,
+      "log": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/linked_rings/manimgl/3/render.log",
+      "error": "",
+      "video": {
+        "path": "/Users/apoogdk/GIT/manimgx/.cache/comparison/20261007-five-scenes-fastest23-gx-gl-third/linked_rings/manimgl/3/Benchmark.mp4",
+        "decoded_frames": 180,
+        "timeline_frames": 180.0,
+        "bytes": 1612753,
+        "sha256": "0bc24683c86d1c8db1680484fb7c663e2abd3822dd2e0c67e1b02342777766c7",
+        "encoder_evidence": "x264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=18 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=250 keyint_min=25 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0"
+      }
+    }
+  ]
+}

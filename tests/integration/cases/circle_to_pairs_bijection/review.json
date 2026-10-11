@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 19: Inspected the full circle and chord-midpoint title; two one-level text-edge changes preserve circular geometry and the correspondence label.",
+  "facts": "sha256:5c2fdd78963acf44e981d3a2a85d4de706f9a310dcf0b22c464430fff0435b02",
+  "at": "2026-10-06"
+}

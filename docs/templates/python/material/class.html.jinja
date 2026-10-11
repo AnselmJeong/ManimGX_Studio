@@ -1,0 +1,79 @@
+{#-
+  SPDX-FileCopyrightText: 2026 Academa, Inc.
+  SPDX-FileCopyrightText: 2021 Timothée Mazzucotelli
+  SPDX-License-Identifier: MIT AND ISC
+
+  How a class is shown in the reference, as one entry of its page's story:
+
+  1. its film: the docstring's examples, first, as they show what the class makes;
+  2. what it is: the docstring's text;
+  3. how to make one: the call, as a scene writes it (`m.Circle(radius=None, …)`), without
+     types (an editor shows those);
+  4. what the call takes: the parameters, in words (mx/parameters.html.jinja), with the
+     keywords of the class's own options and links to the vocabularies it shares;
+  5. its source, one click away;
+  6. its members, as the page asks for them.
+
+  With the option `extra: {members_only: true}`, only the members are shown: a base the package doesn't
+  export, shown for what its subclasses share (`GenericGraph`'s, under Graph and DiGraph).
+
+  A TypedDict (a vocabulary of keyword options, as `Style`) is shown as its docstring, then
+  its keys: each with its whole docstring, the most derived class's first.
+-#}
+{% extends "_base/class.html.jinja" %}
+
+{% block labels scoped %}{% endblock labels %}
+
+{% block signature scoped %}{% endblock signature %}
+
+{% block contents scoped %}
+  {% set sections = class.docstring.parsed if class.docstring else [] %}
+  {% set found = namespace(typed_dict=false, keys=[]) %}
+  {% for cls in [class] + class.mro() %}
+    {% if "TypedDict" in cls.bases | map("string") | list %}
+      {% set found.typed_dict = true %}
+    {% endif %}
+  {% endfor %}
+  {% if config.extra.members_only %}
+    {# a base the package doesn't export, shown for what its subclasses share #}
+  {% elif found.typed_dict %}
+    {% include "mx/keywords.html.jinja" with context %}
+  {% else %}
+    {% with obj = class, docstring_sections = sections %}
+      {% include "mx/lead.html.jinja" with context %}
+    {% endwith %}
+    {# the call, by the name a scene reaches the class by: `m.Circle`, `m.voices.Fal`; a class
+       the package doesn't export (a configuration's, a clip's) is not made by a scene #}
+    {% set top = class.package.members %}
+    {% if class.name in top and not top[class.name].is_module %}
+      {% set reach = "m." %}
+    {% elif "audio" in top and class.name in top["audio"].members %}
+      {% set reach = "m.voices." %}
+    {% else %}
+      {% set reach = none %}
+    {% endif %}
+    {% if reach and "manimgx.scene.Scene" in ([class.canonical_path] + class.mro() | map(attribute="path") | list) %}
+      {# a scene is not called but made from: its own class, the scene's video #}
+      <div class="mx-call">
+        {{- ("class MyScene(" ~ reach ~ class.name ~ "):")|highlight(language="python", inline=False, linenums=False) -}}
+      </div>
+    {% elif reach and "__init__" in all_members %}
+      {% with function = all_members["__init__"], call = reach ~ class.name %}
+        {% include "mx/call.html.jinja" with context %}
+      {% endwith %}
+    {% endif %}
+    {% with obj = class, docstring_sections = sections, function = all_members.get("__init__"), entry = [class.path, class.canonical_path] %}
+      {% include "mx/details.html.jinja" with context %}
+    {% endwith %}
+    {% if config.show_source and "__init__" in all_members and all_members["__init__"].source %}
+      {% with source = all_members["__init__"] %}
+        {% include "mx/source.html.jinja" with context %}
+      {% endwith %}
+    {% endif %}
+  {% endif %}
+  {% block children scoped %}
+    {% set root = False %}
+    {% set heading_level = heading_level + 1 %}
+    {% include "children.html.jinja" with context %}
+  {% endblock children %}
+{% endblock contents %}

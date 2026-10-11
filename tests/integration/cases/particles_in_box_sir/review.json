@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 72: Inspected the box and red/cyan particles, including the near-wall particle; the isolated one-level boundary change preserves positions, colors and box geometry.",
+  "facts": "sha256:99d290f9df166ec9f52ba3ccc8659eadc14990efe6555680b0b80071d7dd3f1e",
+  "at": "2026-10-06"
+}

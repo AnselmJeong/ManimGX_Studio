@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 14: Phase-space grid and labels preserve alignment; two samples change where collinear grid and axis strokes meet.",
+  "facts": "sha256:3d05ff131217d14b797067e2dced94f2e27c3b2ff5f2b6fca5cdb57551bac914",
+  "at": "2026-10-06"
+}

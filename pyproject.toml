@@ -1,0 +1,281 @@
+# ManimGX: the package (src/manimgx, with its engine built from the crates in rust/), the
+# workspace it is developed in (with the font packages it requires, in fonts/), and what
+# developing it takes: the tools, in dependency groups, and their settings.
+[project]
+name = "manimgx"
+version = "0.1.1"
+description = "The animation engine for agents: blazingly fast math and 3D videos with Manim's Python API, on a Rust GPU core."
+requires-python = ">=3.13"
+# what the distributions hold: ManimGX (MIT, LICENSE); what others hold the copyright in
+# (LICENSE-THIRD-PARTY, which scripts/release/licenses.py writes, checking that this covers it): the
+# modules ported from Manim CE, the engine's 3D lighting (Apache-2.0), the crates compiled into
+# the engine, x264 (GPL-2.0-or-later), FFmpeg (LGPL-2.1-or-later) with libopus, and mitex's
+# Typst package among them, Typst's fonts (OFL-1.1, LPPL-1.3c as the GUST Font License,
+# GPL-3.0-or-later with its font exception, DejaVu's Bitstream Vera and Arev terms), HTML data
+# (W3C) and citation styles (CC-BY-SA-3.0); and in the Linux wheels, Mesa's lavapipe with LLVM
+# (Apache-2.0 WITH LLVM-exception; LICENSE-LAVAPIPE); and Windows wheels' DXC (NCSA,
+# LICENSE-DXC). The Noto fonts are manimgx-fonts'.
+license = "MIT AND GPL-2.0-or-later AND LGPL-2.1-or-later AND Apache-2.0 AND BSD-2-Clause AND BSD-3-Clause AND BSL-1.0 AND ISC AND MPL-2.0 AND Unicode-3.0 AND Zlib AND 0BSD AND OFL-1.1 AND LPPL-1.3c AND GPL-3.0-or-later WITH Font-exception-2.0 AND Bitstream-Vera AND LicenseRef-Arev-Fonts AND W3C-20150513 AND CC-BY-SA-3.0 AND Apache-2.0 WITH LLVM-exception AND NCSA AND MIT-Khronos-old"
+license-files = ["LICENSE", "LICENSE-THIRD-PARTY", "LICENSE-LAVAPIPE", "LICENSE-DXC"]
+authors = [{ name = "Academa Team", email = "team@academa.ai" }]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Rust",
+    "Topic :: Multimedia :: Graphics :: 3D Rendering",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Typing :: Typed",
+]
+readme = "README.md"
+# the fonts text is set in, at the versions ManimGX is made with; in the browser (Pyodide:
+# sys_platform "emscripten") the CJK font is too big to download with a page, there is no
+# command line, networkx is installed when a Graph needs it (Pyodide's own brings matplotlib),
+# and skia-pathops has no build: Union, Difference, Intersection and Exclusion can't be made there
+dependencies = [
+    "isosurfaces>=0.1.2",
+    "manimgx-fonts==2026.9.26.post1",
+    "manimgx-fonts-cjk==2026.9.26.post1; sys_platform != 'emscripten'",
+    "networkx>=3.6.1; sys_platform != 'emscripten'",
+    "numpy>=2.4.3",
+    "pillow>=12.2.0",
+    "skia-pathops>=0.8; sys_platform != 'emscripten'",
+    "svgelements>=1.9.6",
+    "typer>=0.27.2; sys_platform != 'emscripten'",
+    # closed TypedDicts (PEP 728) for the keyword arguments, which typing has from 3.15
+    "typing-extensions>=4.13",
+]
+
+[project.scripts]
+manimgx = "manimgx.cli:main"
+
+[project.urls]
+Documentation = "https://manimgx.academa.ai/"
+Repository = "https://github.com/academa-labs/manimgx"
+
+[build-system]
+requires = ["maturin>=1.15.0,<2.0"]
+build-backend = "maturin"
+
+[tool.maturin]
+module-name = "manimgx._engine"
+manifest-path = "rust/engine/Cargo.toml"
+locked = true
+# what a wheel takes besides the package's sources: the lavapipe a Linux wheel bundles, built
+# before it (scripts/release/build_lavapipe.sh) and ignored by git
+include = [
+    { path = "manimgx/lavapipe/libvulkan_lvp.so", format = "wheel" },
+    { path = "dxcompiler.dll", from = "out-dir", to = "manimgx/" },
+]
+
+# the font packages, as they are here: ManimGX requires them at exact versions, and in the
+# workspace those are fonts/'s, installed editable, like ManimGX, whose engine uv builds
+[tool.uv.workspace]
+members = ["fonts/*"]
+
+[tool.uv.sources]
+manimgx-fonts = { workspace = true }
+manimgx-fonts-cjk = { workspace = true }
+
+[tool.uv]
+default-groups = ["dev", "docs"]
+# `uv run` rebuilds the editable extension after the engine's crates change: their code and
+# shaders, manifests, build scripts (where the sources they fetch are pinned) and lockfile, and
+# mitex's lib.typ and spec
+cache-keys = [
+    { file = "pyproject.toml" },
+    { file = "rust/Cargo.toml" },
+    { file = "rust/Cargo.lock" },
+    { file = "rust/*/Cargo.toml" },
+    { file = "rust/*/build.rs" },
+    { file = "rust/*/src/**/*" },
+    { file = "rust/mitex-spec-gen/spec.rkyv" },
+    { file = "rust/mitex-spec-gen/lib.typ" },
+]
+
+[dependency-groups]
+dev = [
+    "av>=18.1.0",
+    "fastapi[standard]>=0.141.1",
+    "hypothesis>=6.168.1",
+    "prek>=0.3.13",
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "pytest-randomly>=5.0.0",
+    "pytest-timeout>=2.4.0",
+    "pytest-xdist>=3.8.0",
+    "reuse[charset-normalizer]>=6.2.0",
+    "ruff>=0.16.10",
+    "ty>=0.0.35",
+]
+docs = [
+    "mkdocstrings-python>=2.0.9",
+    "zensical>=0.0.67",
+]
+# Manim Community Edition, for the corpus's CE references (`uv sync --group ce`); its bindings
+# to Cairo and Pango build from source where they have no wheels (pycairo on macOS and Linux,
+# ManimPango on Linux), so they need those libraries
+ce = [
+    "manim[typst]>=0.21.0",
+]
+
+[tool.cibuildwheel]
+# one wheel per platform: the engine is abi3, so the wheel built for the first CPython that
+# requires-python allows is every later one's, tested on each (the free-threaded builds, which
+# abi3 excludes, and musl Linux are left out)
+skip = ["cp3??t-*", "*-musllinux_*"]
+archs = ["auto64"]
+build-frontend = "build[uv]"
+# the installed wheel renders a scene to a video, with the fonts it is released with: this
+# repository's, which PyPI may not have yet
+before-test = "uv pip install {project}/fonts/manimgx-fonts {project}/fonts/manimgx-fonts-cjk"
+test-sources = ["scripts/release/smoke_test.py"]
+test-command = "python scripts/release/smoke_test.py"
+
+[tool.cibuildwheel.linux]
+# the engine's build needs Rust; the wheel bundles Mesa's lavapipe, built first, which its test
+# draws with: the image has no GPU driver, nor Vulkan's loader
+before-all = [
+    "curl --proto '=https' --tlsv1.2 --silent --show-error --fail https://sh.rustup.rs | sh -s -- -y --profile minimal",
+    "sh scripts/release/build_lavapipe.sh {package}/src/manimgx/lavapipe",
+]
+environment = { PATH = "$HOME/.cargo/bin:$PATH" }
+environment-pass = ["MANIMGX_SOURCES"]
+repair-wheel-command = "auditwheel repair -w {dest_dir} {wheel} && python {project}/scripts/release/linux_sources.py {dest_dir}"
+
+[tool.cibuildwheel.pyodide]
+# the browser's wheel (`just build-wheel pyodide`): the engine without the GPU (typesetting,
+# content keys, the take a film records), built with Pyodide's Rust (its Emscripten links what
+# that Rust compiles); the player for a page, which the engine carries, plays the take
+environment = { MATURIN_PEP517_ARGS = "--no-default-features --features python,typeset", RUSTUP_TOOLCHAIN = "1.93.0" }
+# a scene recorded as a take in Pyodide (no GPU there: nothing to draw), with the browser's fonts
+# (manimgx-fonts' wheel, which Pyodide's pip installs)
+before-test = "uv build --package manimgx-fonts --wheel --out-dir build/fonts && pip install build/fonts/*.whl"
+test-command = "python scripts/release/smoke_test.py --take"
+# Pyodide 314: Python 3.14
+pyodide-version = "314.0.7"
+build = "cp314-*"
+archs = ["wasm32"]
+
+[tool.cibuildwheel.macos]
+environment = { MACOSX_DEPLOYMENT_TARGET = "11.0" }
+
+[tool.fastapi]
+# `uv run fastapi dev`: the corpus review panel's server
+entrypoint = "tests.integration.review.app:app"
+
+[tool.pytest]
+# strict config, markers, xfail and parametrize ids
+strict = true
+# a warning fails the test that raised it (the suite raises none)
+filterwarnings = ["error"]
+# `tests` is imported from the repository root (the corpus harness is `tests.integration.corpus`,
+# the shared `tests.strategies`); test modules are imported by path, so unit/ may repeat a name,
+# and named from the root as well: `tests.benchmarks`, not `benchmarks`, the root's benchmark
+pythonpath = ["."]
+consider_namespace_packages = true
+testpaths = ["tests"]
+# Workers finishing short tests can take queued renders from a busy worker.
+addopts = ["-ra", "--import-mode=importlib", "--dist=worksteal"]
+# a hung test fails with its traceback (Hypothesis explores degenerate geometry)
+timeout = "300"
+
+[tool.mutmut]
+# `just mutate`: mutation testing, on demand, of what the unit tests pin down; each mutant runs
+# the unit tests under the `mutation` Hypothesis profile (reproducible, stop at the first failing
+# example), with every cache cleared (tests/conftest.py)
+source_paths = [
+    "src/manimgx/drawing/geometry.py",
+    "src/manimgx/animation/easing.py",
+    "src/manimgx/drawing/paint.py",
+    "src/manimgx/animation/clock.py",
+    "src/manimgx/caches.py",
+]
+pytest_add_cli_args_test_selection = ["tests/unit/"]
+also_copy = ["src/manimgx/"]
+pytest_add_cli_args = ["-p", "no:randomly", "--hypothesis-profile=mutation"]
+
+[tool.coverage.run]
+# Bind coverage to the installed product's directory, including its subprocesses.
+# A frozen reference has the same import name but is not the code under test.
+# Reporting defaults to the checkout after the platform paths have been combined.
+source = ["${MANIMGX_COVERAGE_SOURCE-src/manimgx}"]
+patch = ["subprocess"]
+# paths relative to the repository, so each OS's runs combine into one report
+relative_files = true
+
+[tool.coverage.paths]
+source = ["src/manimgx", "*/site-packages/manimgx"]
+
+[tool.ruff]
+# first-party: the package (the tests import it as a third party would)
+src = ["src"]
+# Sina's notes, whose sketches are aligned by hand
+extend-exclude = ["SINA_NOTES.md"]
+
+[tool.ruff.format]
+# the examples in the docstrings too, as in the Markdown
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = [
+    "E4",
+    "E7",
+    "E9",
+    "F",
+    "B",
+    "I",
+    "C4",
+    "PT",
+    "SIM",
+    "UP",
+    "RUF",
+]
+ignore = [
+    "BLE001", # Broad catches are intentional at several renderer boundaries
+    "B007", # Iteration count may be the purpose of a loop
+    "B905", # Unequal sequence lengths are meaningful in some zip operations
+    "SIM112", # Internal environment variable names include mixed-case segments
+    "RUF001", # Mathematical notation in strings
+    "RUF002", # Mathematical notation in docstrings
+    "RUF003", # Mathematical notation in comments
+    "RUF005", # Keep explicit list concatenation where it reads more clearly
+    "RUF046", # Explicit integer conversions can document numeric intent
+]
+
+[tool.ruff.lint.per-file-ignores]
+# the re-export hub: the package's public names
+"src/manimgx/__init__.py" = ["F401", "F403"]
+# the command line starts the GPU for a command that draws before its modules load
+"src/manimgx/cli/__init__.py" = ["E402"]
+# the benchmark's scenes in Manim CE and ManimGL, in their idioms: everything from one import,
+# ManimGL's settings as class attributes
+"benchmarks/scenes/*_manim_ce.py" = ["F403", "F405"]
+"benchmarks/scenes/*_manimgl.py" = ["F403", "F405", "RUF012"]
+"tests/integration/**/*.py" = ["E731", "E741", "F841", "SIM110"]
+
+[tool.ty.src]
+include = ["src", "fonts", "docs", "scripts", "benchmarks", "tests"]
+# the benchmark's scenes in the other tools (Manim CE, ManimGL, Blender), which import them; the
+# corpus's scenes, which `tests/integration/test_corpus.py` checks with rules of their own
+exclude = ["benchmarks/scenes", "tests/integration/cases"]
+
+[tool.ty.analysis]
+# svgelements declares an ISO-8859-1 source encoding, which ty does not read (it sees an empty
+# module); pyright checks its uses against the source. Manim CE is installed only with the `ce`
+# group: the corpus's CE runner is checked the same with it or without it
+replace-imports-with-any = ["svgelements", "svgelements.*", "manim", "manim.**"]
+allowed-unresolved-imports = ["manim", "manim.**"]
+
+[tool.ty.rules]
+unused-ignore-comment = "error"
+
+# What ManimGX keeps for Manim CE's code but doesn't document is `@deprecated` (PEP 702), for
+# its users: ty flags it in their code, and in the docs' examples (tests/docs/test_hidden.py).
+# ManimGX's own code, its package, tests, docs build and scripts, calls that machinery itself.
+[[tool.ty.overrides]]
+include = ["src/**", "tests/**", "docs/**", "scripts/**"]
+
+[tool.ty.overrides.rules]
+deprecated = "ignore"

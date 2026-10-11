@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 105: Warped grid, white axes and title retain their geometry. Four changed pixels lie at a shallow white-curve crossing; no break or extra line appears.",
+  "facts": "sha256:cd7cb8711aa146082dddfd803201506e1ca29c610cce79fc8294836d78b32f98",
+  "at": "2026-10-06"
+}

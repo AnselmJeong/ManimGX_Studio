@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 10: Inspected the early pendulum title and enlarged letters; the isolated white edge pixel preserves title shape and placement.",
+  "facts": "sha256:6526887b254f83d0f670f917b9fed5a8ca4921850ae6cdd9e4a318f999089dc1",
+  "at": "2026-10-06"
+}

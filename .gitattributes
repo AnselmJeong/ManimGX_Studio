@@ -1,0 +1,3 @@
+# Source fingerprints identify the same bytes on every checkout, including Windows.
+# Git detects binary files and leaves their bytes intact.
+* text=auto eol=lf

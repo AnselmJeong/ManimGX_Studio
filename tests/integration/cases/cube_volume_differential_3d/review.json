@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 10: Transparent cyan cube, yellow top outline, axes and volume equation retain placement and depth. A few edge/corner samples change without cracks or face-color changes.",
+  "facts": "sha256:8317fb590ccb371dc7c7ad56eb1223ed3172a319795058619a6202387ef2e537",
+  "at": "2026-10-06"
+}

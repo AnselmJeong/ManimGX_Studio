@@ -1,0 +1,22 @@
+{#-
+  A TypedDict, a vocabulary of keyword options (as `Style`): its docstring, then its keys,
+  inherited ones too, the most derived class's first, each with its whole docstring.
+  Context: class, heading_level, html_id, config.
+-#}
+{% set found = namespace(keys=[]) %}
+{% for cls in [class] + class.mro() %}
+  {% for key in cls.members.values() if key.is_attribute %}
+    {% if key.name not in found.keys | map(attribute="name") | list %}
+      {% set found.keys = found.keys + [key] %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+{% with obj = class, docstring_sections = class.docstring.parsed if class.docstring else [] %}
+  {% include "mx/lead.html.jinja" with context %}
+{% endwith %}
+<dl class="mx-params">
+  {% for key in found.keys %}
+    <dt><code>{{ key.name }}</code></dt>
+    <dd>{% if key.docstring %}{{ key.docstring.value|convert_markdown(heading_level, html_id, autoref_hook=AutorefsHook(key, config)) }}{% endif %}</dd>
+  {% endfor %}
+</dl>

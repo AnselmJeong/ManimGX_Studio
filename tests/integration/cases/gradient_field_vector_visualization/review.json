@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 43: Outward yellow field vectors, coordinate grid and formula preserve layout. The corrected crop shows only tiny arrow-tip intersection coverage changes.",
+  "facts": "sha256:4ecb1b3b049a667de2a21a0c790a356199cbe85b25ce75d0fd01ae4635a4ca92",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,38 @@
+{#-
+  The name a scene calls an entry by, before its own name: `m.` for what the package exports,
+  `self.` for a scene's methods, `Circle.` for a class's class methods, and otherwise the
+  instance's usual name: `circle.`, `axes.`, `mobject.`, `path.` (a VMobject's).
+-#}
+{%- macro prefix(obj) -%}
+  {%- set friendly = {
+    "Mobject": "mobject", "VMobject": "path", "TipableVMobject": "line", "Group": "group",
+    "ManimColor": "color", "Animation": "animation", "ValueTracker": "tracker",
+    "ComplexValueTracker": "tracker", "MathTex": "formula", "Tex": "tex", "Typst": "typst",
+    "Text": "text", "DecimalNumber": "number", "NumberLine": "number_line",
+    "VectorField": "field", "ArrowTip": "tip", "Polygram": "polygon",
+  } -%}
+  {%- set parent = obj.parent -%}
+  {%- if parent is none or not parent.is_class -%}
+    {%- set top = obj.package.members -%}
+    {%- if obj.name in top -%}m.
+    {%- elif "audio" in top and obj.name in top["audio"].members -%}m.voices.
+    {%- else -%}{{ parent.path }}.
+    {%- endif -%}
+  {%- elif "classmethod" in obj.labels or "staticmethod" in obj.labels -%}
+    {{- parent.name }}.
+  {%- elif "manimgx.scene.Scene" in ([parent.canonical_path] + parent.mro() | map(attribute="path") | list) -%}
+    self.
+  {%- elif parent.name in friendly -%}
+    {{- friendly[parent.name] }}.
+  {%- else -%}
+    {%- set ns = namespace(out="", previous="") -%}
+    {%- for character in parent.name -%}
+      {%- if character.isupper() and ns.previous and ns.previous.islower() -%}
+        {%- set ns.out = ns.out ~ "_" -%}
+      {%- endif -%}
+      {%- set ns.out = ns.out ~ character.lower() -%}
+      {%- set ns.previous = character -%}
+    {%- endfor -%}
+    {{- ns.out }}.
+  {%- endif -%}
+{%- endmacro -%}

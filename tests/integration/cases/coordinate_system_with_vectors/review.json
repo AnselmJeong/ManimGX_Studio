@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 43: Inspected vector coordinates and enlarged arrowhead/grid crossing. Sparse overlap-edge changes preserve endpoint (3,2), guides, labels and arrow direction.",
+  "facts": "sha256:f2bb45d3b9f97db4fe69d64816c74b2eb90278a2747729a98277b1aad5948f7b",
+  "at": "2026-10-06"
+}

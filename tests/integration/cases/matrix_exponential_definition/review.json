@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 26: Series-definition title and partially written equation are unchanged; sparse glyph-edge differences near exp(X).",
+  "facts": "sha256:b96a27e44416445c917e309e8685d0bb4ce4da189b8300c0c5d04a7f1063349f",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 18: Inspected the eigenvalue instruction and gold determinant equation; two one-level glyph changes preserve mathematical notation and spacing.",
+  "facts": "sha256:1b77fa0a3df1f3d5fbdb39477d916d73ae1b960a2c5d0dbed8af18f346f09987",
+  "at": "2026-10-06"
+}

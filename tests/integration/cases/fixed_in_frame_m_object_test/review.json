@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 0: Screen-fixed text and projected axes preserve placement; two axis/tick junction samples differ.",
+  "facts": "sha256:71937dff29279486706efe4fd167a20b1de56396e83b0e1c82b54ca5c35a2608",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,22 @@
+name: Feature request
+description: Something ManimGX should do, but doesn't.
+type: Feature
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: What you want to make
+      description: The animation or the workflow you're after, and where ManimGX gets in the way.
+    validations:
+      required: true
+  - type: textarea
+    id: code
+    attributes:
+      label: How it could look
+      description: The code you'd like to write. If Manim Community Edition has this, link its documentation.
+      render: python
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What you do now
+      description: Your workaround, if you have one.

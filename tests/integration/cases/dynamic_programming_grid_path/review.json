@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 5: Partially written title preserves its glyphs and layout; two tiny character-edge samples differ.",
+  "facts": "sha256:96fa14c2f37d5f93bc8f650773a07c86317b6f31ef3fe45918a4e17d449fd57b",
+  "at": "2026-10-06"
+}

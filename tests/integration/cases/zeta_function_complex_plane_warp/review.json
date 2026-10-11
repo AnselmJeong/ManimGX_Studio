@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 16: Inspected initial grid and partially revealed title with enlarged Riemann lettering. Small lower-serif changes preserve title and grid positioning.",
+  "facts": "sha256:ae2fa9e1b4730dee73b278048388b36f2ae5e4084290732d7733aafeeb43f93a",
+  "at": "2026-10-06"
+}

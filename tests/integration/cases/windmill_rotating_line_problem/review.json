@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 15: Inspected partial windmill title and enlarged lettering. Two tiny glyph-edge changes preserve text shape and reveal extent.",
+  "facts": "sha256:b8297d4a4617d0d93f7dc127b020dc42ced135d9ce1dc35ad8ea104d4757b038",
+  "at": "2026-10-06"
+}

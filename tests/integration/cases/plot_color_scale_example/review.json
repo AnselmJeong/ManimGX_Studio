@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 0: All three colored plots and tick marks remain aligned; tiny changes occur where the steep curve crosses horizontal ticks.",
+  "facts": "sha256:34793daae7553f24ab377bee935df8e7d5e1be1f645033d87aedadc2df6d2cd0",
+  "at": "2026-10-06"
+}

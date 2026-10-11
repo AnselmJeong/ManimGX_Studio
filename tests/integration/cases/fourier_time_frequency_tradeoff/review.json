@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 30: Both bell curves, axes and captions retain their form; changes are localized where a nearly horizontal curve approaches the axis.",
+  "facts": "sha256:784f8a61d12eb0a850dd8572e6e8899acde13b08811a73d2d0bc1c9a3e63528c",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 9: Inspected the early Bayesian title and enlarged letters; the single one-level glyph-edge change preserves content and reveal.",
+  "facts": "sha256:4db0f1642fc72bff948c1b3473b9343793bb0a266e525eabe21c870e942963dd",
+  "at": "2026-10-06"
+}

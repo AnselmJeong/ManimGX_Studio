@@ -1,0 +1,233 @@
+# Preserved upstream engine workflow; Studio uses its documented local checks.
+# The docs site, on Cloudflare Workers (.github/deploy/docs.jsonc): built on every push and
+# pull request, deployed from main to https://manimgx.academa.ai, and previewed per pull request.
+# The build gets no secrets. Publishing uses the base branch's deployment configuration,
+# checked out separately from the artifact, which contains only the built site.
+
+name: Deploy docs
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: docs-${{ github.event.pull_request.number || github.ref }}
+  # a newer commit supersedes a pull request's run; a deploy always finishes
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  WRANGLER_VERSION: "4.141.0"
+
+jobs:
+  build:
+    name: Build
+    if: ${{ github.repository == 'academa-labs/manimgx' && (github.event.action != 'closed') }}
+    runs-on: macos-26
+    # A cold build compiles the engine and renders the full gallery before hundreds of
+    # short API examples. Measured cold work exceeds 45 minutes; warm builds reuse films.
+    timeout-minutes: 90
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: taiki-e/install-action@4cef1412cce204788f482e778a0b9187f9626a29 # v2.87.21
+        with:
+          tool: just
+
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+
+      - name: Check the docs interactions
+        run: bun test tests/docs
+
+      - uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        with:
+          workspaces: rust
+          shared-key: engine
+          save-if: ${{ github.ref == 'refs/heads/main' }}
+
+      - name: Identify the rendered examples
+        id: films
+        run: |
+          export MANIMGX_DOCS_RENDER_PROFILE="$(rustc --version);macOS=$(sw_vers -productVersion);build=$(sw_vers -buildVersion)"
+          printf 'MANIMGX_DOCS_RENDER_PROFILE=%s\n' "$MANIMGX_DOCS_RENDER_PROFILE" >> "$GITHUB_ENV"
+          uv run --frozen --no-default-groups --group docs python -m docs.examples --cache-key \
+            | jq -r '"key=\(.key)\nprefix=\(.prefix)"' >> "$GITHUB_OUTPUT"
+
+      - name: Validate the reference declarations
+        run: uv run --frozen pytest -q tests/docs/test_reference.py
+
+      - name: Restore rendered examples
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            docs/content/films/
+            docs/.cache/films/
+          key: ${{ steps.films.outputs.key }}-
+          restore-keys: ${{ steps.films.outputs.prefix }}
+
+      - name: Fingerprint restored films
+        id: restored
+        run: |
+          state="$(uv run --frozen --no-default-groups --group docs python -m docs.examples --cache-state)"
+          echo "state=$state" >> "$GITHUB_OUTPUT"
+
+      # The archive is only transport; each film's inputs and checksums decide reuse.
+      - name: Render the examples
+        run: just render-docs
+
+      - name: Fingerprint completed films
+        id: completed
+        if: always() && github.ref == 'refs/heads/main' && steps.restored.outcome == 'success'
+        run: |
+          state="$(uv run --frozen --no-default-groups --group docs python -m docs.examples --cache-state)"
+          echo "state=$state" >> "$GITHUB_OUTPUT"
+
+      # Keep completed films even if another fails or the run is cancelled. Snapshots are
+      # immutable: a fresh key lets retries extend partial sets and retain repairs. Avoid
+      # uploading an unchanged set. Main supplies the shared cache; PRs only read it.
+      - name: Save rendered examples
+        if: >-
+          always() && github.ref == 'refs/heads/main'
+          && steps.completed.outcome == 'success'
+          && hashFiles('docs/.cache/films/*.json') != ''
+          && steps.completed.outputs.state != steps.restored.outputs.state
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            docs/content/films/
+            docs/.cache/films/
+          key: ${{ steps.films.outputs.key }}-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Build the pages
+        run: just build-docs-pages
+
+      - name: Check sidebar layout in browsers
+        working-directory: docs
+        run: |
+          bun install --frozen-lockfile
+          bunx playwright install chromium firefox webkit
+          bun run test
+
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: docs
+          path: docs/site/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 7
+
+  deploy:
+    name: Deploy
+    needs: build
+    if: ${{ github.repository == 'academa-labs/manimgx' && (github.ref == 'refs/heads/main' && github.event_name != 'pull_request') }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    environment:
+      name: docs
+      url: https://manimgx.academa.ai
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.base.sha || github.sha }}
+          persist-credentials: false
+          sparse-checkout: .github/deploy
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: docs
+          path: docs/site
+
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+
+      - name: Deploy the site
+        run: >-
+          bunx "wrangler@${WRANGLER_VERSION}" deploy --config .github/deploy/docs.jsonc
+          --message "${GITHUB_SHA}"
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+
+  preview:
+    name: Preview
+    needs: build
+    # pull requests from forks and from Dependabot get no secrets: they are built, not previewed
+    if: ${{ github.repository == 'academa-labs/manimgx' && (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]') }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    environment:
+      name: docs-preview
+      url: ${{ steps.preview.outputs.url }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.base.sha || github.sha }}
+          persist-credentials: false
+          sparse-checkout: .github/deploy
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: docs
+          path: docs/site
+
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+
+      - name: Preview the site
+        id: preview
+        run: |
+          bunx "wrangler@${WRANGLER_VERSION}" preview --config .github/deploy/docs.jsonc \
+            --name "pr-${PR_NUMBER}" --message "${HEAD_SHA}"
+          url="$(jq -er 'select(.type == "preview") | .preview_urls[0]' "${WRANGLER_OUTPUT_FILE_PATH}")"
+          echo "url=${url}" >> "${GITHUB_OUTPUT}"
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          WRANGLER_OUTPUT_FILE_PATH: ${{ runner.temp }}/wrangler.ndjson
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+
+  delete-preview:
+    name: Delete the ${{ matrix.site }} preview
+    if: ${{ github.repository == 'academa-labs/manimgx' && (github.event.action == 'closed' && github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]') }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        site: [docs, coverage]
+    permissions:
+      contents: read
+    environment:
+      name: ${{ matrix.site }}-preview
+      deployment: false
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.base.sha || github.sha }}
+          persist-credentials: false
+          sparse-checkout: .github/deploy
+          sparse-checkout-cone-mode: false
+
+      - name: Delete the preview
+        # Only an absent preview is ignored; authentication and API failures fail the job.
+        run: python3 .github/deploy/cleanup.py
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          WORKER: manimgx-${{ matrix.site }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}

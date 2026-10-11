@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 10: Inspected partial powers title and enlarged z=1+i expression; one glyph-edge change preserves notation and placement.",
+  "facts": "sha256:1ae4dd09922c8990344a1b7d26417e48553ac70607732d8a6a82cdcc28655b94",
+  "at": "2026-10-06"
+}

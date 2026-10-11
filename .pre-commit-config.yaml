@@ -1,0 +1,54 @@
+# the license texts the crates keep for what they fetch (x264's, FFmpeg's, libopus's, mitex's) are
+# as their projects published them
+exclude: ^rust/[^/]+/(COPYING|LICENSE)
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  # CITATION.cff against the Citation File Format's schema (https://citation-file-format.github.io)
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.38.2
+    hooks:
+      - id: check-citation-file-format
+  # the workflows' security (https://docs.zizmor.sh)
+  - repo: https://github.com/zizmorcore/zizmor-pre-commit
+    rev: v1.30.1
+    hooks:
+      - id: zizmor
+  - repo: local
+    hooks:
+      # ruff's fixes first, then its formatter (a fix can leave code to format); its settings'
+      # exclusions hold for the files the hooks are given too
+      - id: ruff-check
+        name: ruff check
+        entry: uv run --frozen ruff check --fix --force-exclude
+        language: system
+        types_or: [python, pyi]
+      - id: ruff-format
+        name: ruff format
+        entry: uv run --frozen ruff format --force-exclude
+        language: system
+        types_or: [python, pyi, markdown]
+      # what ty checks is in pyproject.toml ([tool.ty.src])
+      - id: ty-check
+        name: ty check
+        entry: uv run --frozen ty check
+        language: system
+        pass_filenames: false
+      - id: typescript-check
+        name: TypeScript and Prettier (browser package)
+        entry: just check-typescript
+        language: system
+        pass_filenames: false
+      # every file's license and copyright, by its SPDX lines or REUSE.toml, with the texts in
+      # LICENSES/ (https://reuse.software)
+      - id: reuse
+        name: reuse lint
+        entry: uv run --frozen reuse lint
+        language: system
+        pass_filenames: false

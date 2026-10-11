@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 71: Triangle values and title remain legible and identically placed; sparse numeral-edge differences in the enlarged row.",
+  "facts": "sha256:cc3ee82d3484e66b6a4e800453253e3ba236c728bbd95e0822bc66e1387d4e94",
+  "at": "2026-10-06"
+}

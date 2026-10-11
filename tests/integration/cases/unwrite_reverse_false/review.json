@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 7: Inspected partially erased lettering and enlarged final ob shapes. Two glyph-edge changes preserve erase extent, contours and fills.",
+  "facts": "sha256:01663e10ec7b2f954e1f05f8e290c4e88e86b1cb48d34fdcd805420ef973b25d",
+  "at": "2026-10-06"
+}

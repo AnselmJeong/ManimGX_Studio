@@ -1,0 +1,12 @@
+[package]
+name = "nasm"
+version = "3.2.0"
+edition = "2024"
+license = "MIT AND BSD-2-Clause"
+publish = false
+description = "NASM 3.02, fetched and built from its source for build scripts: compiled into the one that depends on it."
+links = "nasm"
+
+[build-dependencies]
+cc = { version = "1.5.1", features = ["parallel"] }
+fetch = { path = "../fetch" }

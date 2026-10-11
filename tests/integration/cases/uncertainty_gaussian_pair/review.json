@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 20: Broad cyan and narrow red Gaussian curves, axes and uncertainty formula are unchanged; two near-axis curve samples differ.",
+  "facts": "sha256:fa93d2159c48db75b15f700e786f5fd9e35272d57d7524bd8adf5078ba277808",
+  "at": "2026-10-06"
+}

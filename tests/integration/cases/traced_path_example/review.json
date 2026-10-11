@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 17: Inspected the red circle, tracking point and white growing trail; the one-pixel overlap adjustment preserves the trace, marker and circle geometry.",
+  "facts": "sha256:9f2700a6a6edf0d24a1ffbca881e112ee39cc22819cbab9994e2f7bbaf48d1ac",
+  "at": "2026-10-06"
+}

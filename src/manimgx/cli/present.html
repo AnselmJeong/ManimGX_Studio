@@ -1,0 +1,125 @@
+<!doctype html>
+<!-- A ManimGX film presented: its sections are its slides. ManimGX fills in DECK. -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DECK_TITLE</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  video { width: 100vw; height: 100vh; object-fit: contain; display: block; }
+  #black { position: fixed; inset: 0; background: #000; display: none; }
+  #help { position: fixed; right: 1em; bottom: 1em; color: #aaa; font: 14px system-ui;
+          background: #111d; padding: .8em 1em; border-radius: 8px; display: none; white-space: pre; }
+</style>
+<video id="film" src="DECK_VIDEO" preload="auto" playsinline></video>
+<div id="black"></div>
+<div id="help">→ Space PageDown: next     ← PageUp: back
+Home End: first, last     1–9 then Enter: go to slide
+F: full screen     B: black     Shift+P: presenter view     C: captions     ?: this help</div>
+<script>
+"use strict";
+const deck = DECK_JSON; // {fps, frames, sections: [{name, frame, type, notes}], captions: [[start, end, text]]}
+const film = document.getElementById("film");
+const s = deck.sections;
+const last = deck.frames - 1;
+const at = (frame) => (Math.min(frame, last) + 0.5) / deck.fps; // a frame's middle: seeking lands on it
+const first = (k) => (k < s.length ? s[k].frame : deck.frames); // where section k starts (k = s.length: the end)
+// two states: ready at section k's start (the picture the section before left), or playing it
+let k = 0, playing = false, leaving = false, typed = "";
+
+const track = film.addTextTrack("captions", "Captions");
+for (const [a, b, text] of deck.captions) track.addCue(new VTTCue(a, b, text));
+track.mode = "hidden";
+
+function ready(section) {
+  k = Math.max(0, Math.min(section, s.length));
+  playing = leaving = false;
+  film.pause();
+  film.currentTime = at(first(k));
+  sync();
+}
+function play(section) {
+  if (section >= s.length) return ready(s.length);
+  k = section; playing = true; leaving = false;
+  if (Math.abs(film.currentTime - at(first(k))) > 0.5 / deck.fps) film.currentTime = at(first(k));
+  film.play(); sync(); watch();
+}
+// each frame: at a section's end, by its type, stop there, go on, or play it again
+function watch() {
+  film.requestVideoFrameCallback((_, meta) => {
+    if (!playing) return;
+    if (meta.mediaTime * deck.fps >= first(k + 1) - 1.5 || film.ended) {
+      const type = s[k].type;
+      if (type.endsWith("loop") && !leaving) film.currentTime = at(first(k));
+      else if (type === "presentation.skip" || leaving) return play(k + 1);
+      else return ready(k + 1);
+    }
+    watch();
+  });
+}
+function next() {
+  if (!playing) return play(k);
+  const type = s[k].type;
+  if (type === "presentation.loop") return play(k + 1);
+  if (type === "presentation.complete_loop") return void (leaving = true);
+  ready(k + 1); // the section, finished at once
+}
+function back() { ready(playing ? k : k - 1); }
+
+// ── presenter view: a window this page writes and drives (so it works from a file too)
+let presenter = null;
+function openPresenter() {
+  presenter = window.open("", "presenter", "width=900,height=600");
+  if (!presenter) return;
+  presenter.document.write(`<!doctype html><meta charset="utf-8"><title>Presenter</title>
+    <style>body{margin:0;background:#111;color:#eee;font:18px system-ui;display:grid;
+    grid-template:"now next" 55% "notes notes" 1fr/60% 40%;height:100vh;gap:8px;padding:8px;box-sizing:border-box}
+    video{width:100%;height:100%;object-fit:contain;background:#000}#notes{grid-area:notes;overflow:auto;white-space:pre-wrap}
+    #bar{position:fixed;top:8px;right:16px;color:#8cf}</style>
+    <video id="now" muted></video><video id="next" muted style="grid-area:next"></video>
+    <div id="notes"></div><div id="bar"></div>`);
+  presenter.document.close();
+  for (const id of ["now", "next"]) presenter.document.getElementById(id).src = film.currentSrc || film.src;
+  presenter.document.addEventListener("keydown", key);
+  sync();
+}
+const t0 = Date.now();
+function sync() {
+  if (!presenter || presenter.closed) return;
+  const d = presenter.document, j = Math.min(k, s.length - 1);
+  for (const [id, t] of [["now", at(first(k))], ["next", at(first(k + 1))]]) {
+    const v = d.getElementById(id);
+    if (Math.abs(v.currentTime - t) > 1e-3) v.currentTime = t; // seek only on a change
+  }
+  d.getElementById("notes").textContent = s[j].notes || "";
+  const m = Math.floor((Date.now() - t0) / 60000), sec = Math.floor((Date.now() - t0) / 1000) % 60;
+  d.getElementById("bar").textContent = `${j + 1} / ${s.length}  ${s[j].name}   ${m}:${String(sec).padStart(2, "0")}`;
+}
+setInterval(sync, 1000);
+
+function key(e) {
+  const black = document.getElementById("black"), help = document.getElementById("help");
+  if (/^[0-9]$/.test(e.key)) { typed += e.key; return; }
+  if (e.key === "Enter" && typed) { ready(Number(typed) - 1); typed = ""; return; }
+  typed = "";
+  switch (e.key) {
+    case "ArrowRight": case "ArrowDown": case " ": case "PageDown": case "Enter": case "n": next(); break;
+    case "ArrowLeft": case "ArrowUp": case "PageUp": case "Backspace": case "p": back(); break;
+    case "Home": ready(0); break;
+    case "End": ready(s.length); break;
+    case "f": case "F": document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen(); break;
+    case "b": case "B": case ".": black.style.display = black.style.display === "block" ? "none" : "block"; break;
+    case "P": openPresenter(); break;
+    case "c": case "C": track.mode = track.mode === "showing" ? "hidden" : "showing"; break;
+    case "?": case "h": help.style.display = help.style.display === "block" ? "none" : "block"; break;
+    default: return;
+  }
+  e.preventDefault();
+}
+document.addEventListener("keydown", key);
+film.addEventListener("click", next);
+// the film's own end, which the frames' watch may not see
+film.addEventListener("ended", () => {
+  if (playing) s[k].type.endsWith("loop") && !leaving ? play(k) : ready(s.length);
+});
+film.addEventListener("loadeddata", () => ready(0), { once: true });
+</script>

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 9: Inspected all three tracks and enlarged Ease label. One small glyph-edge change appears in the difference crop; track geometry, dots and label placement are preserved.",
+  "facts": "sha256:06d92e6488acb36b09c33b5f4135e981d69edb509e93de3a5c4046f8ebc18039",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 38: Transformed grid, colored vectors and coordinate labels preserve placement; tiny red arrowhead/shaft contact differences.",
+  "facts": "sha256:bdc4d0dfab01b2dd5d90fd50bd4d129a7e5ae9270b1476ddf3ec19b73ccd0abc",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 84: Inspected circle chord construction and enlarged intersections near a marked vertex. Three small line-edge changes preserve all vertices, chord connections and count text.",
+  "facts": "sha256:85b1a4663c87c0fa6e3fc5cb78235574ac27bf373885c5a838d86b1560d44487",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 35: Inspected the disk, annulus, radial markers and dA formula; the isolated formula-edge change preserves geometry, colors and notation.",
+  "facts": "sha256:9e3f759ac5d0aec520313cfcc68f6e6cc46a3128a3bd911bbca3d49be89b7d34",
+  "at": "2026-10-06"
+}

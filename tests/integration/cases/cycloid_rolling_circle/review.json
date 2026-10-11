@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 13: Ground line and partially written caption retain position and progress; two caption glyph-edge samples change.",
+  "facts": "sha256:7fc2f77dca67ca1fc69a2c154961d2839d1f5bd02f6bbb51b8732073208f5d83",
+  "at": "2026-10-06"
+}

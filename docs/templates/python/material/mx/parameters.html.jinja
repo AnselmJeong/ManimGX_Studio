@@ -1,0 +1,96 @@
+{#-
+  What an entry's call takes, in words: each parameter's name and what it is (its type and
+  its default are the editor's and the call's).
+
+  Its `**kwargs`, a TypedDict of keyword options, is opened by vocabulary. A vocabulary that
+  many entries share (the style keywords, the tip keywords, the animation keywords, the
+  transform keywords) is one link, to where it is told. A vocabulary that one entry owns, as
+  its docstring says ("A [Matrix][manimgx.Matrix]'s keywords …"), is that entry's: its keys
+  are listed on the owner's entry, and every other entry that takes them links to it. What
+  belongs to no one is listed where it is taken.
+
+  Context: section (the docstring's parameters, or none), function (whose call it is, or
+  none), entry (the identifiers of the entry shown), heading_level, html_id, autoref_hook,
+  config.
+-#}
+{% set shared = {
+  "manimgx.drawing.paint.Style": "style",
+  "manimgx.drawing.paint.StyleBase": "style",
+  "manimgx.drawing.paint.Look": "style",
+  "manimgx.drawing.paint.Repaint": "style",
+  "manimgx.mobjects.shapes.Tipped": "tip",
+  "manimgx.mobjects.shapes.TippedBase": "tip",
+  "manimgx.animation.timeline.AnimationOptions": "animation",
+  "manimgx.animation.timeline.Untimed": "animation",
+  "manimgx.animation.transform.TransformOptions": "transform",
+} %}
+{% set vocabularies = {
+  "style": ("the style keywords", "manimgx.drawing.paint.Style"),
+  "tip": ("the tip keywords", "manimgx.mobjects.shapes.TippedBase"),
+  "animation": ("the animation keywords", "manimgx.animation.timeline.AnimationOptions"),
+  "transform": ("the transform keywords", "manimgx.animation.transform.TransformOptions"),
+} %}
+{% set kw = namespace(param=none, options=none, seen=[], covered=[], links=[]) %}
+{% if function %}
+  {% for parameter in function.parameters if parameter.kind.value == "variadic keyword" %}
+    {% if parameter.annotation is not none and parameter.annotation.slice is defined %}
+      {% set target = parameter.annotation.slice %}
+      {% if target.left is defined %}{% set target = target.left %}{% endif %}
+      {% if target.resolved is defined and target.resolved and target.resolved.is_class %}
+        {% set kw.options = target.resolved %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% set named = (section.value if section else []) %}
+{% if named or kw.options %}
+  <dl class="mx-params">
+    {% for parameter in named %}
+      {% if parameter.name.startswith("**") %}
+        {% set kw.param = parameter %}
+      {% else %}
+        <dt><code>{{ parameter.name }}</code></dt>
+        <dd>{{ parameter.description|convert_markdown(heading_level, html_id, autoref_hook=autoref_hook) }}</dd>
+      {% endif %}
+    {% endfor %}
+    {% if kw.options %}
+      {% for options in [kw.options] + kw.options.mro() %}
+        {% if options.path in shared %}
+          {% set link = vocabularies[shared[options.path]] %}
+          {% if link not in kw.links %}{% set kw.links = kw.links + [link] %}{% endif %}
+        {% elif options.path not in kw.covered %}
+          {% set lead = (options.docstring.value if options.docstring else "").split("\n\n")[0] %}
+          {% set owner = namespace(path=none, name="") %}
+          {% if "][" in lead %}
+            {% set after = lead.split("][", 1)[1] %}
+            {% set rest = after.split("]", 1)[1] if "]" in after else "" %}
+            {% if rest.startswith("'s keywords") or rest.startswith("' keywords") %}
+              {% set owner.path = after.split("]", 1)[0] %}
+              {% set owner.name = lead.split("][", 1)[0].split("[")[-1]|replace("`", "") %}
+            {% endif %}
+          {% endif %}
+          {% if owner.path and owner.path not in entry %}
+            {% set link = ("the <code>" ~ owner.name ~ "</code> keywords", owner.path) %}
+            {% if link not in kw.links %}{% set kw.links = kw.links + [link] %}{% endif %}
+            {% set kw.covered = kw.covered + options.mro() | map(attribute="path") | list %}
+          {% else %}
+            {% for key in options.members.values() if key.is_attribute and not key.name.startswith("_") and key.name not in kw.seen %}
+              {% set kw.seen = kw.seen + [key.name] %}
+              <dt><code>{{ key.name }}</code></dt>
+              <dd>{% if key.docstring %}{{ key.docstring.value|convert_markdown(heading_level, html_id, autoref_hook=autoref_hook) }}{% endif %}</dd>
+            {% endfor %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </dl>
+  {% if kw.links %}
+    <p class="mx-also">It also takes
+      {% for text, target in kw.links -%}
+        {% if not loop.first %}{% if loop.last %} and {% else %}, {% endif %}{% endif -%}
+        <autoref identifier="{{ target }}">{{ text|safe }}</autoref>
+      {%- endfor %}.</p>
+  {% elif kw.param and not kw.options %}
+    <div class="mx-also">{{ kw.param.description|convert_markdown(heading_level, html_id, autoref_hook=autoref_hook) }}</div>
+  {% endif %}
+{% endif %}

@@ -1,0 +1,85 @@
+{#-
+  The footer's band, Academa's, as academa.ai's footer is composed: the two things a reader can
+  do, the index of where ManimGX and Academa are, then the signature. The newsletter's field,
+  and the privacy policy that covers what it collects, show once `extra.newsletter` is the
+  door its form posts to; javascripts/manimgx.js sends the address there and says what the
+  door answered. The profiles are `extra.social`'s (zensical.toml).
+-#}
+<div class="mx-footer">
+  <div class="mx-footer__inner md-grid">
+    <div class="mx-footer__top">
+      <div class="mx-footer__invitations">
+        <div>
+          <p class="mx-footer__label">Community</p>
+          <p>Ask a question, show what you made, or tell us what to build next.</p>
+          <a class="mx-footer__button" href="https://discord.gg/efBevJNTHD">
+            {% include ".icons/fontawesome/brands/discord.svg" %}
+            Join the Discord
+          </a>
+        </div>
+        {% if config.extra.newsletter %}
+          <div class="mx-footer__updates">
+            <p class="mx-footer__label">Updates</p>
+            <p>We send an email when we’ve built something worth showing you.</p>
+            <form class="mx-footer__subscribe" method="post" action="{{ config.extra.newsletter }}">
+              <input type="email" name="email" required maxlength="254" placeholder="Email address" autocomplete="email" aria-label="Email address">
+              <button type="submit" aria-label="Sign up for updates">
+                {% include ".icons/lucide/arrow-right.svg" %}
+              </button>
+            </form>
+            <p class="mx-footer__answer" role="status" aria-live="polite"></p>
+          </div>
+        {% endif %}
+      </div>
+      <nav class="mx-footer__index" aria-label="ManimGX and Academa">
+        <div>
+          <p class="mx-footer__label" id="mx-footer-manimgx">ManimGX</p>
+          <ul aria-labelledby="mx-footer-manimgx">
+            <li><a href="{{ config.repo_url }}">GitHub</a></li>
+            <li><a href="https://pypi.org/project/manimgx/">PyPI</a></li>
+            <li><a href="https://www.npmjs.com/package/manimgx">npm</a></li>
+            <li><a href="{{ config.repo_url }}/pkgs/container/manimgx">Docker</a></li>
+            <li><a href="{{ 'llms.txt' | url }}">llms.txt</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="mx-footer__label" id="mx-footer-academa">Academa</p>
+          <ul aria-labelledby="mx-footer-academa">
+            <li><a href="https://academa.ai/lectures">Lectures</a></li>
+            <li><a href="https://studio.academa.ai">Academa Studio</a></li>
+            <li><a href="https://calculus.academa.ai">Multivariable Calculus</a></li>
+            <li><a href="https://academa.ai/team">Team</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="mx-footer__label" id="mx-footer-follow">Follow</p>
+          <ul aria-labelledby="mx-footer-follow">
+            {% for social in config.extra.social %}
+              <li>
+                <a href="{{ social.link }}">
+                  {% include ".icons/" ~ social.icon ~ ".svg" %}
+                  {{ social.name }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="mx-footer__signature">
+      <a class="mx-footer__academa" href="https://academa.ai">
+        <img class="mx-logo--light" src="{{ 'images/academa-light.svg' | url }}" alt="Academa">
+        <img class="mx-logo--dark" src="{{ 'images/academa-dark.svg' | url }}" alt="Academa">
+      </a>
+      <div class="mx-footer__legal">
+        <a href="mailto:founders@academa.ai">founders@academa.ai</a>
+        {% if config.extra.newsletter %}
+          <a href="https://academa.ai/privacy">Privacy</a>
+        {% endif %}
+        <a href="{{ config.repo_url }}/blob/main/LICENSE">License</a>
+      </div>
+      <p>Technical knowledge. Explained visually.</p>
+      <p class="mx-footer__copyright">{{ config.copyright }}</p>
+    </div>
+  </div>
+</div>

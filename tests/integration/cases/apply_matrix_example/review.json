@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 13: Inspected the transformed grid and slanted Hello World text; the single one-level overlap change preserves the shear, axes and lettering.",
+  "facts": "sha256:b56d4e44c566146053b98cca87a7d569f1502dac18b01f1e7e5a79ea8e60494a",
+  "at": "2026-10-06"
+}

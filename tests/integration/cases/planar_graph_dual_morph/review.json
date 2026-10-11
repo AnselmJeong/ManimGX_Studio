@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 16: Inspected the four-node planar graph and partial gold title; three one-level title-edge changes preserve graph connectivity, positions and text.",
+  "facts": "sha256:76a948fa96a8f45f3700ee1eddd1b434213c7fce55109d2b70660f8422be1307",
+  "at": "2026-10-06"
+}

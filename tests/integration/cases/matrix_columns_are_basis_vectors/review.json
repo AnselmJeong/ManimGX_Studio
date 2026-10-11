@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 31: Sheared grid, basis arrows and colored labels are preserved; sparse arrowhead and label-edge coverage changes.",
+  "facts": "sha256:2ba110632e20ab06adced1c32db9516ae0aa8958cf23549a8ed93d9c829c207d",
+  "at": "2026-10-06"
+}

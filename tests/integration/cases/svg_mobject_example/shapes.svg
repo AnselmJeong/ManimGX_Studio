@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" width="200" height="100">
+  <rect x="5" y="5" width="50" height="40" rx="8" fill="#58C4DD" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="90" cy="25" r="20" fill="#FC6255"/>
+  <ellipse cx="150" cy="25" rx="30" ry="15" fill="#83C167" stroke="#FFFF00" stroke-width="3"/>
+  <polygon points="20,95 45,55 70,95" fill="#9A72AC"/>
+  <polyline points="80,90 100,60 120,90 140,60" fill="none" stroke="#F0AC5F" stroke-width="4"/>
+  <text x="5" y="99" font-size="8" fill="#FFFFFF">svg text is not drawn</text>
+  <line x1="150" y1="60" x2="195" y2="95" stroke="#FFFFFF" stroke-width="3"/>
+  <g transform="translate(160 55) rotate(15)">
+    <path d="M 0 0 Q 15 -20 30 0 T 60 0 C 50 20 10 20 0 0 Z" fill="#E07A5F"/>
+  </g>
+</svg>

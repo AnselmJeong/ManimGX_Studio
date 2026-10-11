@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 33: Inspected sphere circle, q endpoints and enlarged partial interpolation label. Two text-edge differences preserve circle geometry and point positions.",
+  "facts": "sha256:b9e29dc900e686f4840218de76b755f88b1bb79fb80e09cb935dcb390e52dc82",
+  "at": "2026-10-06"
+}

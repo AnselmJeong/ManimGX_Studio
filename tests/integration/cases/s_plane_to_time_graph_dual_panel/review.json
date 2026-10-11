@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 55: Inspected s-plane point and exponential response with enlarged tail/axis overlap. Small boundary differences preserve both panels, plotted behavior and labels.",
+  "facts": "sha256:2aceab878a36ff846e14ccd96f3268156f34feec90c073295280a8c1109bc1e2",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,23 @@
+{#-
+  An entry's lead: its film first (the docstring's examples), then what it is (its text and
+  notes, in order). Context: obj, docstring_sections, heading_level, html_id, config.
+-#}
+{% with autoref_hook = AutorefsHook(obj, config) %}
+  {% for section in docstring_sections if section.kind.value == "examples" %}
+    {% for kind, sub in section.value %}
+      {% if kind.value == "text" %}
+        {# the film shows the example; its code is one click under it #}
+        {{ sub|replace("```python\n", "```python fold\n")|convert_markdown(heading_level, html_id, autoref_hook=autoref_hook) }}
+      {% else %}
+        {{ sub|highlight(language="pycon") }}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+  {% for section in docstring_sections %}
+    {% if section.kind.value == "text" %}
+      {{ section.value|convert_markdown(heading_level, html_id, autoref_hook=autoref_hook) }}
+    {% elif section.kind.value == "admonition" %}
+      {% include "docstring/admonition.html.jinja" with context %}
+    {% endif %}
+  {% endfor %}
+{% endwith %}

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 46: Both axes and colored box functions preserve alignment; changes lie at thin line joins on the top plot's baseline.",
+  "facts": "sha256:e282d74c4e413c6e44606a03855b7af40ba8c1514171785840e7fbcdc9181c28",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,354 @@
+# Preserved upstream engine workflow; Studio uses its documented local checks.
+# The checks every change must pass: the pre-commit checks, and the tests on each OS and Python
+# ManimGX supports. Their coverage is combined into one report on Cloudflare: main's at
+# https://coverage.manimgx.academa.ai, a pull request's on its preview URL, and each commit's
+# linked from its "coverage" status. A tagged release requires these checks before publication.
+
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_call:
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: test-${{ github.event.pull_request.number || github.ref }}
+  # a newer branch experiment supersedes its predecessor; main's active run finishes
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+env:
+  WRANGLER_VERSION: "4.141.0"
+
+jobs:
+  pre-commit:
+    if: ${{ github.repository == 'academa-labs/manimgx' }}
+    name: Run pre-commit checks
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: taiki-e/install-action@4cef1412cce204788f482e778a0b9187f9626a29 # v2.87.21
+        with:
+          tool: just
+
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+
+      - name: Run pre-commit checks
+        run: |
+          uv sync --frozen --no-install-project
+          just check
+        env:
+          UV_NO_SYNC: "1"
+
+  typescript:
+    if: ${{ github.repository == 'academa-labs/manimgx' }}
+    name: Test the browser package
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: taiki-e/install-action@4cef1412cce204788f482e778a0b9187f9626a29 # v2.87.21
+        with:
+          tool: just,wasm-bindgen-cli@0.2.128
+
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+
+      - name: Install the browser engine target
+        run: rustup target add wasm32-unknown-unknown
+
+      - uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        with:
+          workspaces: rust
+          shared-key: web-player
+          save-if: ${{ github.event_name != 'pull_request' }}
+
+      - name: Check the browser engine
+        run: just check-rust-web
+
+      - name: Test browser audio ownership
+        run: CHROMEDRIVER="$CHROMEWEBDRIVER/chromedriver" just test-rust-web
+
+      - name: Test the browser package
+        run: just test-typescript
+
+  wheel:
+    if: ${{ github.repository == 'academa-labs/manimgx' }}
+    name: Build and link on ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-26, windows-2025]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: taiki-e/install-action@4cef1412cce204788f482e778a0b9187f9626a29 # v2.87.21
+        with:
+          tool: just
+
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          python-version: "3.13"
+
+      - uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        with:
+          workspaces: rust
+          shared-key: engine
+          save-if: ${{ github.event_name != 'pull_request' }}
+
+      - name: Test source acquisition and linked codecs
+        run: cargo test --locked --release --manifest-path rust/Cargo.toml -p fetch -p ffmpeg
+
+      # The abi3 wheel is the same artifact on both supported Python versions.
+      - name: Build the wheel
+        run: uv build --wheel --python 3.13 --out-dir dist
+
+      # The native tests exercise the renderer too, before the wheel is accepted.
+      - name: Install a GPU driver
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends libvulkan1 mesa-vulkan-drivers
+
+      - name: Test the Rust core
+        run: just test-rust
+
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: wheel-${{ matrix.os }}
+          path: dist/*.whl
+          if-no-files-found: error
+          retention-days: 7
+
+  test:
+    name: Test with Python ${{ matrix.python-version }} on ${{ matrix.os }}
+    needs: wheel
+    if: ${{ github.repository == 'academa-labs/manimgx' && (!cancelled()) }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-26, windows-2025]
+        python-version: ["3.13", "3.14"]
+    runs-on: ${{ matrix.os }}
+    # Leave room for software GPU throughput; individual tests have their own watchdog.
+    timeout-minutes: 180
+    permissions:
+      contents: read
+    defaults:
+      run:
+        shell: bash
+    env:
+      # the job's coverage data, named after the job (its subprocesses add suffixes)
+      COVERAGE_FILE: ${{ github.workspace }}/.coverage.${{ matrix.os }}-python${{ matrix.python-version }}
+      UV_NO_SYNC: "1"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: taiki-e/install-action@4cef1412cce204788f482e778a0b9187f9626a29 # v2.87.21
+        with:
+          tool: just
+
+      # the GPU the tests draw with on Linux, on the CPU: Mesa's lavapipe (macOS has Metal,
+      # Windows WARP)
+      - name: Install a GPU driver
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends libvulkan1 mesa-vulkan-drivers
+
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: wheel-${{ matrix.os }}
+          path: dist
+
+      - name: Install the wheel and test dependencies
+        run: |
+          uv sync --frozen --no-install-project
+          uv pip install --no-deps dist/*.whl
+
+      - name: Check the installed product
+        id: runtime
+        run: uv run --frozen --no-sync python -m scripts.release.smoke_test
+
+      - name: Acquire the latest stable release for corpus comparison
+        run: uv run --frozen --no-sync python -m tests.integration.corpus.release .cache/corpus/release.json
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Test
+        if: ${{ !cancelled() && steps.runtime.outcome == 'success' }}
+        run: just test-coverage -v
+        env:
+          MANIMGX_CORPUS_RELEASE: .cache/corpus/release.json
+
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        if: ${{ !cancelled() }}
+        with:
+          name: coverage-${{ matrix.os }}-python${{ matrix.python-version }}
+          path: .coverage.*
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 7
+
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        if: ${{ !cancelled() }}
+        with:
+          name: rendering-${{ matrix.os }}-python${{ matrix.python-version }}
+          path: |
+            tests/integration/_diffs/
+            .cache/corpus/release.json
+          include-hidden-files: true
+          if-no-files-found: ignore
+          retention-days: 7
+
+  coverage:
+    name: Combine the coverage
+    needs: test
+    # a job that failed leaves the others' coverage to report
+    if: ${{ github.repository == 'academa-labs/manimgx' && (!cancelled()) }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    outputs:
+      total: ${{ steps.combine.outputs.total }}
+    steps:
+      # the report shows the source
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: taiki-e/install-action@4cef1412cce204788f482e778a0b9187f9626a29 # v2.87.21
+        with:
+          tool: just
+
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          pattern: coverage-*
+          path: coverage
+          merge-multiple: true
+
+      - name: Combine the coverage
+        id: combine
+        if: ${{ hashFiles('coverage/.coverage.*') != '' }}
+        run: |
+          uv sync --frozen --no-install-project
+          just combine-coverage coverage >> "$GITHUB_STEP_SUMMARY"
+          total="$(uv run --frozen --no-sync coverage report --format=total --precision=1)"
+          if [[ "${TEST_RESULT}" != success ]]; then
+            echo "Partial coverage: one or more test jobs did not finish successfully." >> "$GITHUB_STEP_SUMMARY"
+            total="partial"
+          fi
+          # the README's badge: https://shields.io/badges/endpoint-badge
+          jq --null-input --arg total "$total" '{
+            schemaVersion: 1, label: "coverage",
+            message: (if $total == "partial" then $total else "\($total)%" end),
+            color: (if $total == "partial" then "lightgrey" else
+                    (($total | tonumber) as $t | if $t >= 90 then "brightgreen"
+                    elif $t >= 75 then "yellow" else "red" end) end)
+          }' > htmlcov/badge.json
+          echo "total=${total}" >> "$GITHUB_OUTPUT"
+        env:
+          TEST_RESULT: ${{ needs.test.result }}
+          UV_NO_SYNC: "1"
+
+      - name: Report unavailable coverage
+        if: steps.combine.outcome == 'skipped'
+        run: echo "Coverage unavailable because no test job produced data." >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        if: steps.combine.outcome == 'success'
+        with:
+          name: coverage-report
+          path: htmlcov/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 7
+
+  publish-coverage:
+    name: Publish the coverage
+    needs: coverage
+    # main's pushes, and pull requests from this repository: pull requests from forks and from
+    # Dependabot get no secrets
+    if: ${{ github.repository == 'academa-labs/manimgx' && (needs.coverage.outputs.total != '' && needs.coverage.outputs.total != 'partial' && ( (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]'))) }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      statuses: write
+    environment:
+      name: ${{ github.event_name == 'push' && 'coverage' || 'coverage-preview' }}
+      url: ${{ steps.publish.outputs.url }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.base.sha || github.sha }}
+          persist-credentials: false
+          sparse-checkout: .github/deploy
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: coverage-report
+          path: htmlcov
+
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+
+      # main's report goes to its domain; every commit's report is also a deployment of its own
+      # (in the Worker's preview "main", or "pr-<number>"), which its status links to
+      - name: Publish the report
+        id: publish
+        run: |
+          if [[ "${GITHUB_EVENT_NAME}" == push ]]; then
+            bunx "wrangler@${WRANGLER_VERSION}" deploy --config .github/deploy/coverage.jsonc \
+              --message "${SHA}"
+            url="https://coverage.manimgx.academa.ai"
+            preview="main"
+          else
+            preview="pr-${PR_NUMBER}"
+          fi
+          bunx "wrangler@${WRANGLER_VERSION}" preview --config .github/deploy/coverage.jsonc \
+            --name "${preview}" --message "${SHA}"
+          deployment="$(jq -er 'select(.type == "preview") | .deployment_urls[0]' "${WRANGLER_OUTPUT_FILE_PATH}")"
+          url="${url:-$(jq -er 'select(.type == "preview") | .preview_urls[0]' "${WRANGLER_OUTPUT_FILE_PATH}")}"
+          echo "url=${url}" >> "${GITHUB_OUTPUT}"
+          gh api "repos/${GITHUB_REPOSITORY}/statuses/${SHA}" --field state=success \
+            --field context=coverage --field description="${TOTAL}% of lines run" \
+            --field target_url="${deployment}"
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          WRANGLER_OUTPUT_FILE_PATH: ${{ runner.temp }}/wrangler.ndjson
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          TOTAL: ${{ needs.coverage.outputs.total }}

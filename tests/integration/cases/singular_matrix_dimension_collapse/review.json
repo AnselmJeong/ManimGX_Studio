@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 38: Nearly collapsed grid, white axes and singular-matrix heading are unchanged geometrically. Tiny coverage changes occur at shallow line intersections.",
+  "facts": "sha256:ddbf2bc9b0a3dbf94ac95e334cbb1cfbb544448723ecee3fac592b71825650c5",
+  "at": "2026-10-06"
+}

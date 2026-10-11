@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 34: Yellow arrows preserve lengths and directions over the cyan grid. Tiny tip/shaft intersection changes leave the field and title unchanged.",
+  "facts": "sha256:cab62aff9ea93bab23dfb3072c89928318e021d707d45f1c739099317528297e",
+  "at": "2026-10-06"
+}

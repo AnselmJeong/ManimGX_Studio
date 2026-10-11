@@ -1,0 +1,21 @@
+{
+  "$schema": "https://www.unpkg.com/wrangler/config-schema.json",
+  // The docs site (`just build-docs` writes it to docs/site/), served as static assets: no Worker
+  // script runs, every request is answered from the files
+  "name": "manimgx-docs",
+  "compatibility_date": "2026-09-25",
+  "assets": {
+    "directory": "../../docs/site",
+    // pages are directories (guide/index.html): /guide redirects to /guide/
+    "html_handling": "auto-trailing-slash",
+    // a path that matches nothing gets the nearest 404.html, with status 404
+    "not_found_handling": "404-page"
+  },
+  // Academa's internal/manimgx-hosting Terraform unit owns the domain and Worker identity.
+  "workers_dev": false,
+  // a pull request is previewed at pr-<number>-manimgx-docs.<account subdomain>.workers.dev
+  // (set explicitly because `workers_dev` is disabled)
+  "preview_urls": true,
+  "previews": {},
+  "observability": { "enabled": true }
+}

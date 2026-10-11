@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 5: Inspected partial derivative/composition formula and enlarged numerator/denominator. One glyph-edge change preserves notation and reveal state.",
+  "facts": "sha256:f850b0d684115d0a6d782f204786bfb0b098bdb970fe1a4ba7ab84c644e4d689",
+  "at": "2026-10-06"
+}

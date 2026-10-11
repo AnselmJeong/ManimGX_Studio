@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 0: Three perspective axis labels and axes remain aligned; two thin axis/tick contact samples change.",
+  "facts": "sha256:fd15d7938426ac01983a930b85d84423050f4dbe5b90d9de42d95b453095a933",
+  "at": "2026-10-06"
+}

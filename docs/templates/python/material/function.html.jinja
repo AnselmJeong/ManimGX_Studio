@@ -1,0 +1,33 @@
+{#-
+  SPDX-FileCopyrightText: 2026 Academa, Inc.
+  SPDX-FileCopyrightText: 2021 Timothée Mazzucotelli
+  SPDX-License-Identifier: MIT AND ISC
+
+  How a function or a method is shown in the reference: its film, what it does, the call as a
+  scene writes it (`self.play(…)`, `circle.surround(…)`, `m.interpolate(…)`), what the call
+  takes, what it gives back, and its source, one click away.
+-#}
+{% extends "_base/function.html.jinja" %}
+
+{% block labels scoped %}{% endblock labels %}
+
+{% block signature scoped %}{% endblock signature %}
+
+{% block contents scoped %}
+  {% set sections = function.docstring.parsed if function.docstring else [] %}
+  {% with obj = function, docstring_sections = sections %}
+    {% include "mx/lead.html.jinja" with context %}
+  {% endwith %}
+  {% import "mx/name.html.jinja" as naming %}
+  {% with call = naming.prefix(function)|trim ~ function.name %}
+    {% include "mx/call.html.jinja" with context %}
+  {% endwith %}
+  {% with obj = function, docstring_sections = sections, entry = [function.path, function.canonical_path] %}
+    {% include "mx/details.html.jinja" with context %}
+  {% endwith %}
+  {% if config.show_source and function.source %}
+    {% with source = function %}
+      {% include "mx/source.html.jinja" with context %}
+    {% endwith %}
+  {% endif %}
+{% endblock contents %}

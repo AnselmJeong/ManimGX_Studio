@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 0: Inspected both intersecting transparent prisms and enlarged top edge; one-level boundary changes preserve dimensions, face overlap and colors.",
+  "facts": "sha256:0da1defa3b6f274af6ac1633c07dbf1e1fac110afbc2b4202ddc40f0dd13fefe",
+  "at": "2026-10-06"
+}

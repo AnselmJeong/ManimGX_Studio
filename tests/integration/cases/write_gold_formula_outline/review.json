@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 19: Inspected the completed-square identity and enlarged fractional term; two one-level glyph-edge changes preserve all mathematical notation and gold styling.",
+  "facts": "sha256:c093e1d5c596beb4225e4077909b611522a6e0711a9c8abae303e074062efae2",
+  "at": "2026-10-06"
+}

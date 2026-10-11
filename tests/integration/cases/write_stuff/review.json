@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 17: Inspected the sentence and gold text reveal, including enlarged partially filled letters; the isolated edge adjustment preserves fill progression and typography.",
+  "facts": "sha256:d49689b720932eee6d0d5098d37fe89f5c1866d232b231ea93ef27793821d773",
+  "at": "2026-10-06"
+}

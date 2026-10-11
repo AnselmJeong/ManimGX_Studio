@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 43: Cyan rotational arrows, sparse cyan grid and title retain their placement; changed samples are localized to arrowhead joins.",
+  "facts": "sha256:4fc01dc8a06862be8942f7e55a13b04baf257446d59968a7a1d647b749b645cc",
+  "at": "2026-10-06"
+}

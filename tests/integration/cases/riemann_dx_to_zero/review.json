@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 65: Inspected axes, yellow curve and refining blue rectangles; one-level lower-edge changes preserve the plot and rectangle intersections.",
+  "facts": "sha256:51f9728fabdf0ac3ddbb9b352d227e21eb4909d3e23aaf4b3690cbe95c8db73f",
+  "at": "2026-10-06"
+}

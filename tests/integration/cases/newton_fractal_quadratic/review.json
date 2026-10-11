@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 44: Inspected two-color basin panel and enlarged boundary label. Sparse yellow glyph changes preserve the basin division, colors and mathematical title.",
+  "facts": "sha256:ef25de2d64f5451e9ae49c40484a7d930fbda3f954d8211b2ebad5e399962243",
+  "at": "2026-10-06"
+}

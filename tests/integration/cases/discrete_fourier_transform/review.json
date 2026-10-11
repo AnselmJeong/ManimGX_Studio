@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 14: Inspected the partially written title and enlarged Fourier lettering; the one-pixel difference preserves glyph shape and placement.",
+  "facts": "sha256:921f8dfccd5effc8ec14c03dc084d8631780f84d6c61f0e60e12d213b937dbba",
+  "at": "2026-10-06"
+}

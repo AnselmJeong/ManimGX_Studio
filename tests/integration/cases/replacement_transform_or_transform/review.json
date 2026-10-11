@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 18: Overlapping replacement-transition text and separate transform column retain their positions and writing state; three red glyph-edge samples change.",
+  "facts": "sha256:1751ec78d755a521584758ba0f761078a83459a2ad2899b1685b5df4b0c3070b",
+  "at": "2026-10-06"
+}

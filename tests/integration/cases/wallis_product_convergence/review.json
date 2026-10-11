@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 84: Inspected the product formula, convergent points and pi-over-two marker; sparse one-level overlap changes preserve the limit position, points and notation.",
+  "facts": "sha256:75722a983e0254479b1d273f525976610a63d8a98ef4fd9ce588a9063c4177d3",
+  "at": "2026-10-06"
+}

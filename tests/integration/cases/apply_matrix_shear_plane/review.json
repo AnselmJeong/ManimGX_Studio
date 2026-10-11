@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Sampled the canonical frames: the grid and arrow undergo the same shear; the arrow ends at (2, 1).\n\nReviewed the exact-area raster correction at frame 30: Sheared grid and diagonal yellow vector remain aligned with unchanged endpoints; one boundary pixel changes near its arrowhead.",
+  "facts": "sha256:7e0d4348a4f84eb381741b3256f9421db04bc65b058aa0065d4c04dc1b15e6e0",
+  "at": "2026-10-06"
+}

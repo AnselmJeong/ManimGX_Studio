@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 5: Inspected the early isomorphism title and enlarged lettering; the single one-level edge change preserves text content and placement.",
+  "facts": "sha256:61ded7872cf332e5d4b54548bc4eaf0e3a5b571cb3d6d06b2b5b65b906579fb5",
+  "at": "2026-10-06"
+}

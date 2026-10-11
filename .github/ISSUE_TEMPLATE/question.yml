@@ -1,0 +1,21 @@
+name: Question
+description: Ask how to do something with ManimGX.
+labels: [question]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        The [documentation](https://manimgx.academa.ai/) may already answer it.
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What you're trying to do, and what you've tried.
+    validations:
+      required: true
+  - type: textarea
+    id: scene
+    attributes:
+      label: Scene
+      description: Your scene so far, if it helps. It is formatted as Python for you.
+      render: python

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 5: Inspected the grid, highlighted unit cell and partial Area label; the single one-level glyph-edge change preserves geometry and label placement.",
+  "facts": "sha256:98f37f0f1b50c5b422b6e76da580c953179bfa4082592600534c209b016709ec",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 4: Inspected the early three-definitions title and enlarged lettering; the one-level edge pixel preserves glyph shape and reveal.",
+  "facts": "sha256:e0925eb442bbca8685c8a6f207bd74cb5940cf80a93b0bcce43e8fb2b7e12946",
+  "at": "2026-10-06"
+}

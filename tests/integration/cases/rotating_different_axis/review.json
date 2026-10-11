@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the rotated geometry and changed edge pixels: accept double-precision plane placement and projection (aa74c9f).\n\nReviewed the exact-area raster correction at frame 3: Cyan solid, yellow arrow and white axes are unchanged; the worst crop is at a white axis/tick junction rather than a new face artifact.",
+  "facts": "sha256:ae172253c4eedca276d8534efec462d4c7c58e5e112705360f59949e251b815b",
+  "at": "2026-10-06"
+}

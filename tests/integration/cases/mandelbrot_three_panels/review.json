@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 7: Inspected the initial Mandelbrot title reveal and enlarged lettering; the isolated glyph-edge adjustment preserves the text and layout.",
+  "facts": "sha256:9e89b0d0af7ea152c2d20c0d545b60858860d8ce5c7d3c494f061bdeace41c0c",
+  "at": "2026-10-06"
+}

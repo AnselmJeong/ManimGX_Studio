@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 4: Inspected the early title frame and enlarged Divergence lettering; the one-pixel edge adjustment preserves the title and layout.",
+  "facts": "sha256:fb1309147d63daa1e641d73f93e3bbea0d4711a6b6d14b1ad597e58379e3c0b8",
+  "at": "2026-10-06"
+}

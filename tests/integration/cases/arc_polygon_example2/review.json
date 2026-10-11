@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 9: Inspected the curved triangular outline and filled side regions; three one-level boundary changes preserve arc shape, joins and fills.",
+  "facts": "sha256:7c37f0167dbe741d72fa826faed9bc57274821042a839319bd5cba726fa2b740",
+  "at": "2026-10-06"
+}

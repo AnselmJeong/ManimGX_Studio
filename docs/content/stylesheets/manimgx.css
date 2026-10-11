@@ -1,0 +1,933 @@
+/* manimgx's look on Zensical's modern theme */
+
+/* Colors: Manim's blue, darkened for contrast on the light scheme */
+:root > * {
+  --md-primary-fg-color: #1a7fa8;
+  --md-primary-fg-color--light: #58c4dd;
+  --md-primary-fg-color--dark: #125e7d;
+  --md-primary-bg-color: #fff;
+  --md-primary-bg-color--light: #ffffffb3;
+  --md-accent-fg-color: #0f9fb8;
+  --md-accent-fg-color--transparent: #0f9fb81a;
+  --md-accent-bg-color: #fff;
+  --md-accent-bg-color--light: #ffffffb3;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-hue: 215;
+  --md-primary-fg-color: #58c4dd;
+  --md-primary-fg-color--light: #9bdcec;
+  --md-primary-fg-color--dark: #2d93ad;
+  --md-accent-fg-color: #5cd0b3;
+  --md-accent-fg-color--transparent: #5cd0b31a;
+}
+
+/* The size: the site as Zensical's at 90% zoom. Its root font size sets every rem, so nine
+   tenths of it scales the site as zooming out does, and the window it steps it up at is
+   nine tenths as wide too (zooming out widens the window in CSS pixels): 125%, then 137.5%
+   at 100em and 150% at 125em, become these */
+html {
+  font-size: 112.5%;
+}
+
+@media screen and (min-width: 90em) {
+  html {
+    font-size: 123.75%;
+  }
+}
+
+@media screen and (min-width: 112.5em) {
+  html {
+    font-size: 135%;
+  }
+}
+
+/* The logo (scripts/showcase/logo.py): the one for the page's scheme, at its own width.
+   Where the header shows it (a wide screen), it is the site's name, so the header's title
+   shows only the page's, once scrolled to; a narrow screen's header writes the name */
+:root {
+  --mx-logo: 1.8rem;
+}
+
+.md-header__button.md-logo,
+.md-nav__button.md-logo {
+  width: auto;
+  height: auto;
+}
+
+.md-logo img.mx-logo {
+  height: var(--mx-logo);
+  max-width: none;
+}
+
+/* The other scheme's image of a logo, wherever it is, is hidden: over every rule that shows a
+   logo (the drawer's is more specific than this) */
+[data-md-color-scheme="slate"] img.mx-logo--light,
+[data-md-color-scheme="default"] img.mx-logo--dark {
+  display: none !important;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-header__title .md-header__topic:first-child {
+    visibility: hidden;
+  }
+
+  .mx-lockup {
+    margin-inline: 0.6rem;
+  }
+}
+
+/* The header's two links share an SVG canvas height and text baseline (showcase/logo.py).
+   Their artwork sets the alignment; CSS only sizes and spaces the single row */
+.mx-lockup {
+  --mx-logo: 1.818rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mx-lockup > .md-logo {
+  margin: 0;
+  padding: 0;
+}
+
+/* The tabs sit directly under the single-line header, with equal space above and below */
+.md-tabs__item {
+  height: auto;
+}
+
+.md-tabs__link {
+  margin-top: 0;
+  padding-block: 0.4rem;
+}
+
+/* The footer's band (partials/academa.html): academa.ai's footer, its ground and its
+   composition, in the site's type: the invitations, the index, then the signature */
+.mx-footer {
+  --mx-ground: oklch(0.955 0.023 244);
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color--light);
+  background-color: var(--mx-ground);
+}
+
+[data-md-color-scheme="slate"] .mx-footer {
+  --mx-ground: oklch(0.22 0.04 255);
+}
+
+.mx-footer a:not(.mx-footer__button) {
+  color: inherit;
+  transition: color 125ms;
+}
+
+.mx-footer a:not(.mx-footer__button):is(:hover, :focus-visible) {
+  color: var(--md-default-fg-color);
+}
+
+.mx-footer p {
+  margin: 0;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.mx-footer .mx-footer__label {
+  margin: 0 0 0.45rem;
+  font-size: 0.66rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+.mx-footer__inner {
+  padding: 2.6rem 1rem 1.5rem;
+}
+
+.mx-footer__top {
+  display: grid;
+  gap: 2.2rem 3.2rem;
+}
+
+@media screen and (min-width: 60em) {
+  .mx-footer__top {
+    grid-template-columns: minmax(14rem, 23rem) 1fr;
+  }
+}
+
+.mx-footer__invitations {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* The invitations: the band's only controls, of one material: the primary color, which
+   deepens under the pointer or the keyboard's focus (darker on a light page, lighter on a dark
+   one), so that their words keep their contrast */
+.mx-footer__button,
+.mx-footer__subscribe button {
+  --mx-control: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  background-color: var(--mx-control);
+  border: 0;
+  border-radius: 0.4rem;
+  transition: background-color 125ms;
+}
+
+[data-md-color-scheme="slate"] :is(.mx-footer__button, .mx-footer__subscribe button) {
+  color: var(--md-default-bg-color);
+}
+
+:is(.mx-footer__button, .mx-footer__subscribe button):is(:hover, :focus-visible) {
+  --mx-control: var(--md-primary-fg-color--dark);
+}
+
+[data-md-color-scheme="slate"]
+  :is(.mx-footer__button, .mx-footer__subscribe button):is(:hover, :focus-visible) {
+  --mx-control: var(--md-primary-fg-color--light);
+}
+
+:is(.mx-footer__button, .mx-footer__subscribe button):focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 2px;
+}
+
+.mx-footer__button {
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: center;
+  margin-top: 0.8rem;
+  padding: 0.4rem 0.75rem;
+  font-weight: 600;
+}
+
+.mx-footer__button svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  fill: currentcolor;
+}
+
+.mx-footer__subscribe {
+  display: flex;
+  gap: 0.4rem;
+  max-width: 17rem;
+  margin-top: 0.8rem;
+}
+
+.mx-footer__subscribe input {
+  flex: 1;
+  min-width: 0;
+  height: 1.85rem;
+  padding: 0 0.65rem;
+  font: inherit;
+  color: var(--md-default-fg-color);
+  background-color: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.4rem;
+  outline: none;
+  transition:
+    border-color 125ms,
+    box-shadow 125ms;
+}
+
+.mx-footer__subscribe input:focus {
+  border-color: var(--md-primary-fg-color);
+  box-shadow: 0 0 0 1px var(--md-primary-fg-color);
+}
+
+.mx-footer__subscribe input::placeholder {
+  color: var(--md-default-fg-color--light);
+}
+
+.mx-footer__subscribe button {
+  display: grid;
+  place-items: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  cursor: pointer;
+}
+
+.mx-footer__subscribe button svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  fill: none;
+  stroke: currentcolor;
+}
+
+/* What academa.ai answered, under the field (javascripts/manimgx.js). Without JavaScript
+   the field is hidden: academa.ai takes an address from another site as JSON only */
+.no-js .mx-footer__updates {
+  display: none;
+}
+
+.mx-footer .mx-footer__answer {
+  margin-top: 0.5rem;
+  color: var(--md-default-fg-color);
+}
+
+.mx-footer .mx-footer__answer--joined {
+  font-weight: 600;
+}
+
+/* The index: lists of words, spread across their track, the profiles' marks the size of their
+   words and in their ink */
+.mx-footer__index {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 1.8rem 2rem;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 45em) {
+  .mx-footer__index {
+    grid-template-columns: repeat(auto-fit, minmax(0, max-content));
+    grid-auto-flow: column;
+  }
+}
+
+.mx-footer__index ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mx-footer__index li {
+  margin: 0;
+}
+
+.mx-footer__index a {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.16rem 0;
+}
+
+.mx-footer__index svg {
+  flex: none;
+  width: 0.62rem;
+  height: 0.62rem;
+  fill: currentcolor;
+}
+
+/* The signature: Academa's wordmark (scripts/showcase/logo.py), which fades under the pointer
+   as the header's links do, where to write, the license, and who is writing */
+.mx-footer__signature {
+  display: grid;
+  gap: 0.45rem 2rem;
+  margin-top: 2.6rem;
+  padding-top: 1.2rem;
+  font-size: 0.65rem;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+
+@media screen and (min-width: 45em) {
+  .mx-footer__signature {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .mx-footer__legal,
+  .mx-footer__copyright {
+    justify-self: end;
+    text-align: right;
+  }
+}
+
+.mx-footer__academa {
+  justify-self: start;
+  transition: opacity 250ms;
+}
+
+.mx-footer__academa:hover {
+  opacity: 0.7;
+}
+
+.mx-footer__academa img {
+  display: block;
+  height: 0.92rem;
+}
+
+.mx-footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.1rem;
+  align-items: center;
+}
+
+/* The sidebars as text, the navigation as the table of contents and both compact, as in
+   Material for MkDocs: a link is its words, in the accent's color when it is hovered or is the
+   page, with no box behind it, and the lines close together. Its words start where they did,
+   in line with the logo and the tabs; the room a box kept after them is the words'. Beside the
+   content only: a narrower screen's drawer keeps Zensical's larger rows, for a finger */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar .md-nav__list {
+    gap: 0;
+  }
+
+  /* the tab's name, above its pages, as a section's (the modern variant hides it) */
+  .md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__link {
+    display: flex;
+  }
+
+  .md-sidebar .md-nav .md-nav__link {
+    margin-inline-end: 0;
+  }
+
+  .md-sidebar .md-nav .md-nav__link:not(.md-nav__container),
+  .md-sidebar .md-nav__container > :nth-child(2) {
+    padding-block: 0.225rem;
+    padding-inline-end: 0;
+  }
+
+  .md-nav--primary .md-nav__item .md-nav__link--active {
+    background: none;
+  }
+
+  .md-nav--primary .md-nav__link:is([href], [for]):is(:focus, :hover):not(.md-nav__link--active) {
+    color: var(--md-accent-fg-color);
+    background-color: transparent;
+  }
+}
+
+/* An example's film, above its code: one card (not a centered figure) */
+.md-typeset .mx-example {
+  display: block;
+  width: auto;
+  margin: 1em 0;
+  overflow: hidden;
+  text-align: initial;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.4rem;
+}
+
+.md-typeset .mx-example .highlight,
+.md-typeset .mx-example pre {
+  margin: 0;
+}
+
+.md-typeset .mx-example pre > code {
+  border-radius: 0;
+}
+
+.md-typeset .mx-film {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #000;
+}
+
+/* A gallery film's code, folded under the film: a row with its file's name, which opens it
+   (not the theme's note, whose box, icon and margins a fold of its own would take) */
+.md-typeset .mx-example .mx-code {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  background: none;
+  border-radius: 0;
+}
+
+.md-typeset .mx-example .mx-code > summary {
+  margin: 0;
+  padding: 0.5rem 0.8rem;
+  font-family: var(--md-code-font-family);
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+}
+
+.md-typeset .mx-example .mx-code > summary::before {
+  display: none;
+}
+
+.md-typeset .mx-example .mx-code > summary:hover {
+  color: var(--md-accent-fg-color);
+}
+
+/* An image the README shows on GitHub and PyPI (its URL ends in #readme), where the site shows
+   the film itself, above the code */
+.md-typeset img[src$="#readme"] {
+  display: none;
+}
+
+/* Instant previews: every link to the site previews its target on hover (docs/previews.py),
+   so no icon marks the links that do. A preview shows what its target is: an API object, as
+   an editor's hover does, by its name, signature, bases and summary (its docstring's first
+   paragraph); a module, by its members' names and summaries */
+.md-typeset [data-preview]::after {
+  display: none;
+}
+
+.md-tooltip2 .doc-contents > :not(:first-child, .doc-class-bases + p),
+.md-tooltip2 .mx-cards p:has(> img) {
+  display: none;
+}
+
+/* A tall film (9:16) is not as wide as the column, which would make it taller than the window:
+   at most 70% of the window's height, as wide as its shape makes it, in the middle */
+.md-typeset .mx-film--tall {
+  width: auto;
+  max-width: 100%;
+  max-height: 70vh;
+  margin-inline: auto;
+}
+
+/* A rate function explorer (manimgx.js), a card as an example is: the functions' names as
+   code, the one shown pressed; the plot in the page's colors; the slider under the plot's
+   time, as wide as it (manimgx.js sets --mx-left and --mx-unit) */
+.md-typeset .mx-rates {
+  margin: 1em 0;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.4rem;
+}
+
+.mx-rates__names {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.mx-rates__names button {
+  padding: 0.15rem 0.45rem;
+  font-family: var(--md-code-font-family);
+  font-size: 0.64rem;
+  color: var(--md-code-fg-color);
+  cursor: pointer;
+  background: var(--md-code-bg-color);
+  border-radius: 0.2rem;
+}
+
+.mx-rates__names button:hover {
+  color: var(--md-accent-fg-color);
+}
+
+.mx-rates__names button[aria-pressed="true"] {
+  color: var(--md-default-bg-color);
+  background: var(--md-primary-fg-color);
+}
+
+.mx-rates :focus-visible {
+  outline: 0.1rem solid var(--md-accent-fg-color);
+  outline-offset: 0.1rem;
+}
+
+.mx-rates__plot {
+  display: block;
+  width: 100%;
+  margin-top: 0.8rem;
+  touch-action: pan-y;
+  cursor: ew-resize;
+  user-select: none;
+}
+
+.mx-rates__plot text {
+  font-size: 0.6rem;
+  fill: var(--md-default-fg-color--light);
+}
+
+.mx-rates__grid,
+.mx-rates__now {
+  fill: none;
+  stroke: var(--md-default-fg-color--lighter);
+}
+
+.mx-rates__now {
+  stroke-dasharray: 2 3;
+}
+
+.mx-rates__curve {
+  fill: none;
+  stroke: var(--md-primary-fg-color);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.mx-rates__dot,
+.mx-rates__square {
+  fill: var(--md-primary-fg-color);
+}
+
+.mx-rates__dot {
+  stroke: var(--md-default-bg-color);
+  stroke-width: 2;
+}
+
+.mx-rates__ghost {
+  fill: var(--md-default-bg-color);
+  stroke: var(--md-default-fg-color--lighter);
+  stroke-width: 1.5;
+}
+
+.mx-rates__controls {
+  display: grid;
+  grid-template-columns: var(--mx-left) var(--mx-unit);
+  align-items: center;
+  margin-top: 0.4rem;
+}
+
+.mx-rates__play {
+  justify-self: end;
+  display: grid;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-right: 0.8rem;
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+  background: var(--md-default-fg-color--lightest);
+  border-radius: 50%;
+}
+
+.mx-rates__play:hover {
+  color: var(--md-accent-fg-color);
+}
+
+.mx-rates__play svg {
+  width: 0.8rem;
+  fill: currentcolor;
+}
+
+/* the thumb's middle runs along the plot's time: the track is a thumb wider */
+.mx-rates input {
+  width: calc(100% + 16px);
+  margin: 0 -8px;
+  accent-color: var(--md-primary-fg-color);
+}
+
+/* A prompt to paste into an agent (a block marked `.mx-prompt`): words, wrapped to the page */
+.md-typeset .mx-prompt code {
+  white-space: pre-wrap;
+}
+
+/* The reference (reference/): each page a part of manimgx's story, each entry a class, a
+   function or a property in it (templates/python/material/) */
+
+/* An index's cards: each card a link as a whole, its still above its name and its words.
+   The name's link covers the card, so the whole card answers the pointer */
+.md-typeset .mx-cards > ul > li {
+  position: relative;
+  transition:
+    border-color 125ms,
+    box-shadow 125ms;
+}
+
+.md-typeset .mx-cards > ul > li:is(:hover, :focus-within) {
+  border-color: var(--md-accent-fg-color);
+  box-shadow: var(--md-shadow-z2);
+}
+
+.md-typeset .mx-cards > ul > li a::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+}
+
+.md-typeset .mx-cards > ul > li a {
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+}
+
+.md-typeset .mx-cards > ul > li:is(:hover, :focus-within) a {
+  color: var(--md-accent-fg-color);
+}
+
+.md-typeset .mx-cards > ul > li > p:first-child img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 0.2rem;
+  background: #000;
+}
+
+/* An entry's heading: its name alone, as large as the page's level makes it */
+.md-typeset .doc-heading code {
+  font-size: inherit;
+}
+
+/* An entry's call: how a scene writes it, on one line that the page wraps (clear of the copy
+   button), quieter than an example */
+.md-typeset .mx-call .highlight pre {
+  margin: 0.55em 0;
+}
+
+.md-typeset .mx-call pre > code {
+  padding: 0.55em 2.6em 0.55em 0.9em;
+  font-size: 0.72rem;
+  white-space: pre-wrap;
+  background: var(--md-code-bg-color);
+}
+
+/* What a call takes: each name, then what it is */
+.md-typeset dl.mx-params {
+  display: grid;
+  grid-template-columns: fit-content(13rem) 1fr;
+  gap: 0.45rem 1.1rem;
+  margin: 0.8em 0 1em;
+}
+
+.md-typeset dl.mx-params > dt {
+  margin: 0;
+  padding-top: 0.05rem;
+  font-weight: 400;
+}
+
+.md-typeset dl.mx-params > dt code {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.md-typeset dl.mx-params > dd {
+  margin: 0;
+}
+
+.md-typeset dl.mx-params > dd > :first-child {
+  margin-top: 0;
+}
+
+.md-typeset dl.mx-params > dd > :last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 44.9375em) {
+  .md-typeset dl.mx-params {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+
+  .md-typeset dl.mx-params > dd {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.md-typeset .mx-also,
+.md-typeset .mx-returns,
+.md-typeset .mx-raises {
+  margin: 0.55em 0;
+}
+
+.md-typeset .mx-also {
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset .mx-label {
+  margin-right: 0.35em;
+  font-weight: 600;
+}
+
+/* An entry's source: a quiet button, which opens the code where the entry is defined */
+.md-typeset details.mx-source {
+  margin: 0.4em 0 0.9em;
+  padding: 0;
+  font-size: inherit;
+  background: none;
+  border: 0;
+  box-shadow: none;
+}
+
+.md-typeset details.mx-source > summary {
+  display: inline-flex;
+  margin: 0;
+  padding: 0.15rem 0.65rem;
+  font-family: var(--md-code-font-family);
+  font-size: 0.62rem;
+  font-weight: 400;
+  color: var(--md-default-fg-color--light);
+  background: none;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.md-typeset details.mx-source > summary::before,
+.md-typeset details.mx-source > summary::after {
+  display: none;
+}
+
+.md-typeset details.mx-source > summary:hover,
+.md-typeset details.mx-source[open] > summary {
+  color: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+}
+
+.md-typeset .mx-source__where {
+  margin: 0.5em 0 0;
+  font-size: 0.62rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset details.mx-source .highlight {
+  margin-top: 0.4em;
+}
+
+/* An entry among others: a class's entry starts with a rule, as a new part of the story */
+.md-typeset h2.doc-heading {
+  margin-top: 2.2em;
+  padding-top: 1.2em;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* A member under its class: its heading says where it belongs, so its contents are not set in
+   (the theme sets each level in, with a rule beside it) */
+.md-typeset div.doc-contents:not(.first) {
+  margin-left: 0;
+  padding-left: 0;
+  border-left: 0;
+}
+
+/* Constants (`m.UP`, `m.PI`, `m.SMALL_BUFF`): a row each, the name beside what it is */
+.md-typeset .mx-constants {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.35rem 1.1rem;
+  align-items: baseline;
+  margin: 1em 0 1.4em;
+}
+
+.md-typeset .mx-constants .doc-object {
+  display: contents;
+}
+
+.md-typeset .mx-constants .doc-attribute > .doc-heading {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.md-typeset .mx-constants .doc-attribute > .doc-contents > :first-child {
+  margin-top: 0;
+}
+
+.md-typeset .mx-constants .doc-attribute > .doc-contents > :last-child {
+  margin-bottom: 0;
+}
+
+/* The palette (colors.md): a swatch for each named color, its names and its hex code */
+.md-typeset .mx-palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  gap: 0.6rem;
+  margin: 1em 0 1.6em;
+}
+
+.md-typeset .mx-swatch {
+  display: grid;
+  grid-template-columns: 1.6rem 1fr;
+  gap: 0.1rem 0.55rem;
+  align-items: center;
+}
+
+.md-typeset .mx-swatch__color {
+  grid-row: span 2;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.3rem;
+}
+
+.md-typeset .mx-swatch__names {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem;
+  font-size: 0.62rem;
+}
+
+.md-typeset .mx-swatch__names code {
+  padding: 0 0.2em;
+}
+
+.md-typeset .mx-swatch__hex {
+  font-family: var(--md-code-font-family);
+  font-size: 0.58rem;
+  color: var(--md-default-fg-color--light);
+}
+
+/* An entry's parts, close together: its words, its call, what it takes, its source */
+.md-typeset .doc-contents > p {
+  margin: 0.55em 0;
+}
+
+.md-typeset h3.doc-heading,
+.md-typeset h4.doc-heading {
+  margin-top: 1.5em;
+}
+
+/* Rows (a family of functions alike, as the easing curves): each a row, its name beside what
+   it does; their calls and their sources are their entries' alike, so they are left out */
+.md-typeset .mx-rows {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.35rem 1.1rem;
+  align-items: baseline;
+  margin: 1em 0 1.4em;
+}
+
+.md-typeset .mx-rows .doc-object {
+  display: contents;
+}
+
+.md-typeset .mx-rows .doc-function > .doc-heading {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.md-typeset .mx-rows .mx-call,
+.md-typeset .mx-rows details.mx-source,
+.md-typeset .mx-rows .mx-returns,
+.md-typeset .mx-rows dl.mx-params {
+  display: none;
+}
+
+.md-typeset .mx-rows .doc-contents > :first-child {
+  margin-top: 0;
+}
+
+.md-typeset .mx-benchmark {
+  width: 100%;
+  max-width: none;
+  margin: 1em 0;
+}
+
+.md-typeset .mx-benchmark > p {
+  max-width: none;
+  margin: 0.5em 0 0;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.65rem;
+  font-style: normal;
+}
+
+.md-typeset .mx-benchmark > p > sub {
+  position: static;
+  font-size: inherit;
+  vertical-align: baseline;
+}
+
+/* Identical crops of the original 1080p benchmark frames; no image resampling. */
+.md-typeset .md-typeset__table:has(img[src*="/benchmark-quality/"]) {
+  display: block;
+}
+
+.md-typeset table:has(img[src*="/benchmark-quality/"]) {
+  display: table;
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem auto 2rem;
+}
+
+.md-typeset table:has(img[src*="/benchmark-quality/"]) td {
+  padding: 0;
+}
+
+.md-typeset table:has(img[src*="/benchmark-quality/"]) th {
+  font-size: clamp(0.55rem, 1.5vw, 0.7rem);
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+}
+
+.md-typeset table:has(img[src*="/benchmark-quality/"]) img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}

@@ -1,0 +1,16 @@
+name: Documentation
+description: Something in the docs is wrong, unclear or missing.
+labels: [documentation]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: The page's address, if the problem is on a page.
+      placeholder: https://manimgx.academa.ai/user-guide/quickstart/
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong or missing
+    validations:
+      required: true

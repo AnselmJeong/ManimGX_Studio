@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 5: Inspected the early Ulam title and enlarged letters; the isolated edge change preserves the text and its position.",
+  "facts": "sha256:cd9e213a0931ba3997c70ce8dfe2e95abdd1946289c79bde4fdd7904ab54709e",
+  "at": "2026-10-06"
+}

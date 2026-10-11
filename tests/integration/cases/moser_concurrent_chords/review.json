@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 74: Inspected the six circle points, intersecting chords and title; two one-level endpoint changes preserve chord topology, locations and circle.",
+  "facts": "sha256:0c246908900311db6a8e31e3e426b1698c64edaddef5bd8e7738e1231cd7fc9b",
+  "at": "2026-10-06"
+}

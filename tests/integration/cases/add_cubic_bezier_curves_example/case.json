@@ -1,0 +1,30 @@
+{
+  "source": "sha256:a349894a602444e55f997111c4742c588c7c4891bbae7fb9b8309b03450aba17",
+  "size": [960, 540],
+  "fps": 10,
+  "manimgx": {
+    "duration": 1.0,
+    "frames": [
+      ["2e842802bccef91c", 1],
+      ["c3ad1b11e462262a", 1],
+      ["eb8eb1f07febb810", 1],
+      ["d6e5ebe0b0a3c1e3", 1],
+      ["ed509652e8741e4d", 1],
+      ["70d53dfbd3428d38", 1],
+      ["55240681edb1042a", 1],
+      ["d01b2a7477b96fed", 1],
+      ["7044ab9dcda7ddbc", 1],
+      ["d96d273a34a8e8f1", 1],
+      ["d763068c027a7d78", 1]
+    ],
+    "timeline": [
+      [0.0, 11]
+    ],
+    "id": "sha256:f21d222be1281b69b83cb69169e89dfd45a5d601ebf5812bdfecc0e71801e85c"
+  },
+  "ce": {
+    "manim": "0.21.0",
+    "error": "ValueError: could not broadcast input array from shape (36,) into shape (36,3)"
+  },
+  "comparison": null
+}

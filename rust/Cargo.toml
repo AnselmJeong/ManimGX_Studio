@@ -1,0 +1,21 @@
+# The engine's crates, each a folder here: the engine (engine/, built into the ManimGX package by
+# maturin), and the ones it is built with from others' sources, which their build scripts fetch
+# (fetch/): x264, NASM, FFmpeg with libopus, and mitex's Typst package. Cargo runs here
+# (`cargo test`, `cargo clippy`); it builds into target/.
+[workspace]
+resolver = "3"
+members = ["*"]
+exclude = ["target"]
+
+[profile.dev]
+opt-level = 2
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+
+# mitex's own spec crate reads a prebuilt spec from a git submodule (made before 0.2.7's
+# commands) or runs whatever `typst` is on the PATH; ours is made from mitex's package
+[patch."https://github.com/mitex-rs/mitex"]
+mitex-spec-gen = { path = "mitex-spec-gen" }

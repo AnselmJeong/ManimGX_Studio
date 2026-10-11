@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 9: Inspected the gray pentagon and cyan moving stroke with its time-width label; two one-level segment-boundary changes preserve highlighted length and polygon shape.",
+  "facts": "sha256:29654a1fc9fce45b0364ff3d90c7a0c7e0e8e29f54e1a3cd0465df20864e4c4c",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 16: Number-line ticks and downward x marker preserve layout; two white arrowhead/shaft samples change.",
+  "facts": "sha256:2e99ef5c4d2f6f0c5732e09f71bf1e1c747f49beeb16bde0c21ad20dab66e46d",
+  "at": "2026-10-06"
+}

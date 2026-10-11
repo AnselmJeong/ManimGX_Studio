@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 48: Inspected the variable labels and green values; the single red glyph-edge adjustment preserves values, alignment and color distinction.",
+  "facts": "sha256:18b3a67827dd809a46045041131aa59a69b159e9dbf33779e6d9f5e188f6d510",
+  "at": "2026-10-06"
+}

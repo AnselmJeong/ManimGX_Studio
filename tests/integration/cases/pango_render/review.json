@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 5: Inspected the partially revealed Tamil-script glyph shapes and enlarged stroke; the isolated one-level edge change preserves the visible letter shapes and spacing.",
+  "facts": "sha256:e71a12ea6e7152fdbc8b717061122a8cefe8cf829cf59633889617f220430ccc",
+  "at": "2026-10-06"
+}

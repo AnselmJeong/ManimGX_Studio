@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: LLVM Project contributors
+# SPDX-FileCopyrightText: 2026 Academa, Inc.
+# SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+--- a/llvm/lib/CodeGen/SplitKit.cpp
++++ b/llvm/lib/CodeGen/SplitKit.cpp
+@@ -593,4 +593,2 @@
+-                                               SlotIndex UseIdx) const {
+-  const MachineInstr *UseMI = LIS.getInstructionFromIndex(UseIdx);
+-  if (!UseMI)
+-    return false;
++                                               SlotIndex UseIdx,
++                                               Register DestReg) const {
+@@ -599,0 +598,7 @@
++  // Rematerialization must preserve the split destination's register class,
++  // including any subregister constraint, even without a use at this boundary.
++  const TargetRegisterClass *DestRC = MRI.getRegClass(DestReg);
++  if (DefMI->getRegClassConstraintEffect(DefOperandIdx, DestRC, &TII, &TRI) !=
++      DestRC)
++    return true;
++
+@@ -607,0 +613,4 @@
++  const MachineInstr *UseMI = LIS.getInstructionFromIndex(UseIdx);
++  if (!UseMI)
++    return false;
++
+@@ -642 +651 @@
+-      if (!rematWillIncreaseRestriction(RM.OrigMI, MBB, UseIdx)) {
++      if (!rematWillIncreaseRestriction(RM.OrigMI, MBB, UseIdx, Reg)) {
+--- a/llvm/lib/CodeGen/SplitKit.h
++++ b/llvm/lib/CodeGen/SplitKit.h
+@@ -386 +386 @@
+-                                    SlotIndex UseIdx) const;
++                                    SlotIndex UseIdx, Register DestReg) const;

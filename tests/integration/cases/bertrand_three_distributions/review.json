@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 23: Inspected the midpoint question, partial colored labels and circular arcs; two one-level glyph-edge changes preserve the diagram reveal and labels.",
+  "facts": "sha256:18b2dc5c4091b7bc278bc768b8575013cd2985d7794a47eb4803bf9a5e2e0fc1",
+  "at": "2026-10-06"
+}

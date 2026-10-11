@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 23: Red sector and caption preserve geometry and color; local change at the short yellow/green boundary transition on the straight edge.",
+  "facts": "sha256:40b8eb2e447c95cda9ba2cf45b4f8a377db1d8f1ed6478e47d0d9affebc80673",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,86 @@
+# Preserved upstream engine workflow; Studio uses its documented local checks.
+# The wheels, one per platform: the engine is abi3, so a platform's wheel serves every CPython
+# from 3.13 on, and x264 is built into it, so a wheel needs nothing from the system; and the
+# browser's, for Pyodide. cibuildwheel builds each one and tests it on every supported Python
+# (its settings are in pyproject.toml). The browser's wheel's engine carries the
+# player for a page, the engine built for the browser's WebAssembly too. The release builds its
+# wheels with this workflow; run it by hand to try a branch's.
+
+name: Create wheels
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  wheel:
+    if: ${{ github.repository == 'academa-labs/manimgx' }}
+    name: Wheel for ${{ matrix.platform }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { platform: linux-x86_64, runner: ubuntu-24.04 }
+          - { platform: linux-arm64, runner: ubuntu-24.04-arm }
+          - { platform: macos-arm64, runner: macos-26 }
+          # cross-compiled on Apple silicon, and tested there under Rosetta
+          - { platform: macos-x86_64, runner: macos-26, archs: x86_64 }
+          - { platform: windows-x86_64, runner: windows-2025 }
+          - { platform: pyodide, runner: ubuntu-24.04, archs: wasm32 }
+    runs-on: ${{ matrix.runner }}
+    defaults:
+      run:
+        shell: bash
+    timeout-minutes: 90
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: taiki-e/install-action@4cef1412cce204788f482e778a0b9187f9626a29 # v2.87.21
+        with:
+          tool: just
+
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+
+      - name: Add Rust's Intel macOS target
+        if: matrix.archs == 'x86_64'
+        run: rustup target add x86_64-apple-darwin
+
+      # Pyodide's Rust, with its Emscripten target (see [tool.cibuildwheel.pyodide])
+      - name: Add Pyodide's Rust
+        if: matrix.platform == 'pyodide'
+        run: >-
+          rustup toolchain install 1.93.0 --profile minimal
+          --target wasm32-unknown-emscripten --target wasm32-unknown-unknown
+
+      # cibuildwheel copies /project into its container; its documented /host mount
+      # lets the verified source store survive the container, alongside the wheel.
+      - name: Retain the Linux builds' sources
+        if: runner.os == 'Linux' && matrix.platform != 'pyodide'
+        run: echo "MANIMGX_SOURCES=/host${GITHUB_WORKSPACE}/sources" >> "${GITHUB_ENV}"
+
+      - name: Build and test the wheel
+        run: just build-wheel "${PLATFORM}"
+        env:
+          PLATFORM: ${{ matrix.platform == 'pyodide' && 'pyodide' || 'auto' }}
+          CIBW_ARCHS: ${{ matrix.archs || 'auto64' }}
+
+      # Keep release wheels separate from the Test wheels in the same tagged run.
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: release-wheel-${{ matrix.platform }}
+          path: dist/*.whl
+          if-no-files-found: error
+
+      # Source packages are selected in the same image that linked/repaired the wheel.
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        if: runner.os == 'Linux' && matrix.platform != 'pyodide'
+        with:
+          name: sources-${{ matrix.platform }}
+          path: sources/
+          if-no-files-found: error

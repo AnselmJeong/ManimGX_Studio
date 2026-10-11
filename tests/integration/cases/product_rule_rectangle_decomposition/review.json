@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 49: Inspected rectangle decomposition and enlarged differential formula. The changed pixel is at the italic f descender; colored component areas and all mathematical content remain intact.",
+  "facts": "sha256:d4e76f04928a2145ede4e944d8e8d9f21600b073b1a6e353ba9fd32c9dcd90a5",
+  "at": "2026-10-06"
+}

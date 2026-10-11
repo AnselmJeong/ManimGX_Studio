@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 43: Inspected the converging yellow points, blue neighborhood circle and title; sparse title-edge changes preserve the limit diagram and wording.",
+  "facts": "sha256:b611f807ced39206d80f4ffa1e94b27ee16c54c3447e4249767b0aebc536895c",
+  "at": "2026-10-06"
+}

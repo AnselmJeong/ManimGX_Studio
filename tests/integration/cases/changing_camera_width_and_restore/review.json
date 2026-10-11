@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Sampled the canonical frames: the camera zooms to the text, holds and restores its original framing.",
+  "facts": "sha256:ed1c200f3cd184a598c137a3634e9eeec6796d74e0cc85d9a0e9d30b659fd9f9",
+  "at": "2026-10-05"
+}

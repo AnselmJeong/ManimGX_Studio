@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 15: Inspected both numbered arrays and enlarged rotated block boundary. Tiny shared-edge differences preserve block geometry, values and rotation.",
+  "facts": "sha256:efd98575add106f45ffea22a98984dacfca9b87a5614255d5456f22768fdd8ea",
+  "at": "2026-10-06"
+}

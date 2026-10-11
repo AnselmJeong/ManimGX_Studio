@@ -1,0 +1,9 @@
+title: Developer Guide
+nav:
+  - index.md
+  - project-management.md
+  - understanding-manimgx.md
+  - engine.md
+  - testing.md
+  - documentation.md
+  - github-workflows.md

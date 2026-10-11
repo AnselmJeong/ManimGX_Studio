@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 78: Divisor lists, sums and partially written explanatory sentence preserve typography; three glyph-edge samples change.",
+  "facts": "sha256:e5a8ba4f6c3f2e55b271cdb947f45c80a103ad1d28adc1d48ee07650023e0613",
+  "at": "2026-10-06"
+}

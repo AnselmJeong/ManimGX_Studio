@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed final combined-package frames 0, 5, 10, 15 and 20 beside the held area render and the previously accepted StreamLines correction. The intended phase produces evenly flowing colored segments and the loop returns to its starting arrangement. The final movie preserves the accepted correction; its remaining 56 changed pixel events differ by one channel level and are consistent with the independently reviewed exact-area correction.",
+  "facts": "sha256:5ad428979bd66607e672fc90a7c1fd60969e0f2cd8c59bbd3fb18da000dd7fc1",
+  "at": "2026-10-06"
+}

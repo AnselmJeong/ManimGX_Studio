@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 14: Inspected the partial Hamming(16,11) title and enlarged parenthesis/letters; the single one-level edge change preserves notation and reveal.",
+  "facts": "sha256:e8b6cc1910f30ab5583475438c5670b43ba2eb9a4cd3e0ae999a1ec4a66ac4eb",
+  "at": "2026-10-06"
+}

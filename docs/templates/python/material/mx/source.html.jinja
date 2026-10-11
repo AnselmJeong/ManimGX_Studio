@@ -1,0 +1,6 @@
+{#- An entry's source, one click away. Context: source (a griffe object with source). -#}
+<details class="mx-source">
+  <summary>Source</summary>
+  <p class="mx-source__where"><code>{{ source|source_location }}</code></p>
+  {{ source.source|highlight(language="python", linestart=source.lineno or 0, linenums=True) }}
+</details>

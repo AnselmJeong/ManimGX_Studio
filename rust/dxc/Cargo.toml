@@ -1,0 +1,14 @@
+[package]
+name = "dxc"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+publish = false
+description = "The pinned DirectX shader compiler resource for Windows wheels and source builds."
+
+[dependencies]
+fetch = { path = "../fetch" }
+zip = { version = "8.6", default-features = false, features = ["deflate-flate2-zlib-rs"] }
+
+[dev-dependencies]
+tempfile = "3.27.0"

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 33: Red point-cloud deformation and cyan grid are preserved; differences lie on the gray horizontal-axis contacts, with unchanged dot positions.",
+  "facts": "sha256:13a24ceb86ebef90a5354de84933903ec85961b76d70617cb50ed6cf475397e4",
+  "at": "2026-10-06"
+}

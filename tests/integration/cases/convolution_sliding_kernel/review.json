@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 19: Inspected complete convolution title and enlarged signal lettering. Two tiny lower-edge changes preserve wording and layout.",
+  "facts": "sha256:979ab7d158a9c63c58508810bb0bb32b7c0fd3f78817ec3e85f1a74913264ae0",
+  "at": "2026-10-06"
+}

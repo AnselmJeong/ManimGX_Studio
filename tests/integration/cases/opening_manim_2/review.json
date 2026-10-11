@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 105: Same warped-grid crossing inspected independently in this case; axes, cyan curves and title remain aligned, with only localized intersection coverage changing.",
+  "facts": "sha256:670f159dbe5d7d4fecfd5181a6b2bc6a997449d41b92aad86189c5eb798e3704",
+  "at": "2026-10-06"
+}

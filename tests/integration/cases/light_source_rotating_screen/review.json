@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 18: Inspected complete title and enlarged varying-angle text. Tiny white letter-edge changes preserve content and positioning.",
+  "facts": "sha256:3423fdadf4671b6ee76e0826d412359c5793d29d9e2fd2eabd2fdf98d7a27b00",
+  "at": "2026-10-06"
+}

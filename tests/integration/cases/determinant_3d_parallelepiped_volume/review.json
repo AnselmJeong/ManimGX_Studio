@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 27: Transparent blue solid, yellow edges and white axes keep depth relationships and geometry. Differences are isolated at boundary junctions; no face disappears or leaks.",
+  "facts": "sha256:35686c25252bae99b4848ab9ce0c3f282f021c5120dafd208e70bffef442130d",
+  "at": "2026-10-06"
+}

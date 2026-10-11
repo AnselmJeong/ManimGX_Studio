@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 28: Inspected the five root markers, circle and grid; the one-level tangent overlap preserves angles, marker locations and circle shape.",
+  "facts": "sha256:c8bb479103594af4095873fb51c83b0ea5a1886bbaea3710a5bb2cdf6ac6b179",
+  "at": "2026-10-06"
+}

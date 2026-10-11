@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 45: Yellow eigenline, green vector and grid remain collinear; local changes at the green arrowhead/shaft contact.",
+  "facts": "sha256:2bfbef7914d630ef026ad9bbaa4e9af9fa3a4761c74fbd059540fad37b0454b0",
+  "at": "2026-10-06"
+}

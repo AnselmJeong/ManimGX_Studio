@@ -1,0 +1,25 @@
+# The site's navigation (awesome-nav): the navbar's tabs. The User Guide is read in this
+# order: Welcome, the home page, which is the README; the Quickstart; Learn, a course in
+# which each chapter needs only the ones before it; then the reference, written by hand. The
+# other sections order themselves (reference/.nav.yml, and gallery/.nav.yml, which
+# scripts/docs/gallery.py writes).
+nav:
+  - User Guide:
+      - Welcome: index.md
+      - user-guide/quickstart.md
+      - Learn:
+          - user-guide/the-basics.md
+          - user-guide/positions.md
+          - user-guide/mobjects.md
+          - user-guide/animations.md
+          - user-guide/text-and-math.md
+          - user-guide/graphs.md
+          - user-guide/updaters.md
+          - user-guide/camera-and-3d.md
+          - user-guide/sound-and-voice.md
+          - user-guide/rendering.md
+          - user-guide/coming-from-manim-ce.md
+      - Reference: reference
+  - Gallery: gallery
+  - Developer Guide: developer-guide
+  - Changelog: changelog.md

@@ -1,0 +1,101 @@
+[package]
+name = "manimgx-engine"
+version = "0.1.1"
+edition = "2024"
+authors = ["Academa Team <team@academa.ai>"]
+license = "MIT"
+publish = false
+description = "ManimGX's engine: typesets with Typst, draws blends of shapes on the GPU and encodes them to MP4."
+
+[lib]
+name = "_engine"
+crate-type = ["cdylib"]
+
+# One engine, three builds. Native (the Python extension): everything, the player in a window
+# too. In Pyodide (the pyemscripten wheel): the Python extension without the GPU (typesetting,
+# content keys, sound read, the take a scene records). In the browser (wasm32-unknown-unknown):
+# the player on a page's canvas, drawing with WebGPU.
+[features]
+default = ["python", "render", "export", "typeset", "window"]
+python = ["dep:pyo3", "dep:ffmpeg", "dep:wasm-bindgen-cli-support", "dep:zstd"]
+render = ["dep:wgpu", "dep:ash", "dep:libc", "dep:dxc", "dep:windows-sys"]
+export = ["render", "dep:rusty_aac", "dep:x264"]
+typeset = ["dep:typst", "dep:typst-kit", "dep:typst-layout", "dep:ttf-parser", "dep:unicode-segmentation", "dep:mitex", "dep:mitex-spec-gen", "dep:bincode", "dep:memmap2", "dep:dirs"]
+# the player (src/player.rs): takes played on a clock, with a face and a sound, on any screen
+player = ["render", "dep:ruzstd", "dep:serde", "dep:serde_json", "dep:rustybuzz", "dep:ttf-parser", "dep:unicode-bidi", "dep:unicode-segmentation", "dep:web-time"]
+window = ["python", "typeset", "player", "dep:winit", "dep:cpal"]
+web = ["player", "dep:wasm-bindgen", "dep:wasm-bindgen-futures", "dep:js-sys", "dep:web-sys", "dep:console_error_panic_hook"]
+
+[dependencies]
+bytemuck = { version = "1.25", features = ["derive", "extern_crate_alloc", "min_const_generics"] }
+xxhash-rust = { version = "0.8.19", features = ["xxh3"] }  # content keys: what names an upload
+pyo3 = { version = "0.29.2", features = ["abi3-py313"], optional = true }
+wgpu = { version = "30.0.1", optional = true }
+# the typesetter: Typst as a library, its layout read directly (see src/typeset.rs)
+typst = { version = "0.15.1", optional = true }
+typst-kit = { version = "0.15.1", default-features = false, features = ["embedded-fonts", "scan-fonts"], optional = true }
+typst-layout = { version = "0.15.1", optional = true }
+ttf-parser = { version = "0.25.1", optional = true }  # glyph outlines and ligature carets, from the fonts Typst loaded
+unicode-segmentation = { version = "1.12", optional = true }  # graphemes: the characters a ligature's colors divide
+bincode = { version = "1.3", optional = true }  # the system fonts' scan, cached on disk
+memmap2 = { version = "0.9", optional = true }  # system fonts mapped, not read whole (a CJK font is 60 MB)
+dirs = { version = "6", optional = true }  # the current user's cache directory
+rusty_aac = { version = "0.5.0", optional = true }  # sound out: AAC-LC in pure Rust (src/aac.rs)
+# sound in: the common audio files decoded by FFmpeg, built from its source (src/audio.rs)
+ffmpeg = { path = "../ffmpeg", optional = true }
+# LaTeX → Typst, natively; its command spec is made from mitex's package, which Typst reads
+# from the engine (../mitex-spec-gen, patched in at the workspace's root)
+mitex = { git = "https://github.com/mitex-rs/mitex", tag = "0.2.7", optional = true }
+mitex-spec-gen = { path = "../mitex-spec-gen", optional = true }
+# the H.264 encoder: x264 built from its source (fetched), with NASM from its source
+x264 = { path = "../x264", optional = true }
+# a take's arrays compressed (src/pack.rs), and decompressed in the browser in pure Rust
+zstd = { version = "0.14", default-features = false, optional = true }
+ruzstd = { version = "0.9", optional = true }
+# the player's face set in lines, shaped as Typst shapes them (src/text.rs), each line's runs in
+# reading order; its notes read; its clock the same in a window and a page
+rustybuzz = { version = "0.20.1", optional = true }
+unicode-bidi = { version = "0.3.18", optional = true }
+serde = { version = "1.0.229", features = ["derive"], optional = true }
+serde_json = { version = "1.0.151", optional = true }
+web-time = { version = "1.1", optional = true }
+# the player's bindings in the browser; its JS is made by the same version of wasm-bindgen (build.rs)
+wasm-bindgen = { version = "=0.2.128", optional = true }
+wasm-bindgen-futures = { version = "0.4", optional = true }
+js-sys = { version = "0.3", optional = true }
+web-sys = { version = "0.3", features = ["HtmlCanvasElement", "AudioContext", "AudioContextState", "BaseAudioContext", "AudioBuffer", "AudioBufferSourceNode", "AudioScheduledSourceNode", "AudioNode", "AudioParam", "GainNode", "AudioDestinationNode"], optional = true }
+console_error_panic_hook = { version = "0.1", optional = true }
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+pollster = "1.0.1"  # a GPU brought up by blocking on it
+winit = { version = "0.30.13", optional = true }  # the window `manimgx preview` plays in
+
+# the window's sound: the system's own audio (CoreAudio, WASAPI); on Linux it would link ALSA
+[target.'cfg(not(any(target_os = "linux", target_arch = "wasm32")))'.dependencies]
+cpal = { version = "0.18.2", optional = true }
+
+# Mesa's lavapipe, which a Linux wheel bundles, loaded where no GPU driver is (src/lavapipe.rs):
+# its Vulkan entry points through ash (wgpu-hal's), and the engine's own folder through dladdr
+[target.'cfg(target_os = "linux")'.dependencies]
+ash = { version = "0.38", optional = true }
+libc = { version = "0.2", optional = true }
+
+# Find the engine's own module, so DXC is loaded beside it rather than searched for on PATH.
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = ["Win32_System_LibraryLoader"], optional = true }
+
+[target.'cfg(target_arch = "wasm32")'.dev-dependencies]
+wasm-bindgen-test = "=0.3.78"
+
+[target.'cfg(not(target_arch = "wasm32"))'.dev-dependencies]
+zstd = { version = "0.14", default-features = false }
+ruzstd = "0.9"
+
+[build-dependencies]
+dxc = { path = "../dxc", optional = true }
+wasm-bindgen-cli-support = { version = "=0.2.128", optional = true }
+
+[lints.clippy]
+correctness = { level = "deny", priority = -1 }
+suspicious = { level = "warn", priority = -1 }
+perf = { level = "warn", priority = -1 }

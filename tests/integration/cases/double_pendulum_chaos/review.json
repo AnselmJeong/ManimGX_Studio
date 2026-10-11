@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 4: Partially written double-pendulum caption preserves progress and glyph geometry; one text-edge sample differs.",
+  "facts": "sha256:700bf5c05197275facf103942f4e3311544201491c44781c7cd127b0897e8a52",
+  "at": "2026-10-06"
+}

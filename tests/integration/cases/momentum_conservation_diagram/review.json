@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 72: Before/after blocks and directional arrows remain unchanged; tiny coverage changes occur at yellow arrowhead joins.",
+  "facts": "sha256:cbd2093243c8c5cce80cf001d4a2b25653efcd62489efa2da7c9d5a2235bfa01",
+  "at": "2026-10-06"
+}

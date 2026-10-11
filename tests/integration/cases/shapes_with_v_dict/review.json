@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 149: White adjoining rectangles, red inscribed circle and numeral list retain geometry; two samples at shared rectangular edge joins change.",
+  "facts": "sha256:c888406bda4363e744ff5b9c8d6581db59af5c89daf49d535119e6a2dad0762d",
+  "at": "2026-10-06"
+}

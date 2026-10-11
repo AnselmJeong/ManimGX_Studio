@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 0: Inspected polygon holes, circular pole marker and enlarged label background. Small boundary differences preserve all holes, label legibility and circle/polygon relationships.",
+  "facts": "sha256:fd8f6a00e01214b34ccdab8db437ca7109cfd9238bd692e6f495d8d209730d5f",
+  "at": "2026-10-06"
+}

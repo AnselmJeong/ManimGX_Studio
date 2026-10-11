@@ -1,0 +1,77 @@
+name: Bug report
+description: Something crashes, renders wrong, or doesn't do what the docs say.
+type: Bug
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Please [search the issues](https://github.com/academa-labs/manimgx/issues?q=is%3Aissue)
+        first. To report a security vulnerability, don't open an issue: follow the
+        [security policy](https://github.com/academa-labs/manimgx/security/policy).
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened
+      description: What you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: scene
+    attributes:
+      label: Scene
+      description: The smallest scene file that shows the problem. It is formatted as Python for you.
+      render: python
+    validations:
+      required: true
+  - type: input
+    id: command
+    attributes:
+      label: Command
+      description: The command you ran.
+      placeholder: manimgx render scene.py
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Output
+      description: What the command printed, including any traceback.
+      render: text
+  - type: upload
+    id: render
+    attributes:
+      label: Frames or video
+      description: What ManimGX made, and what you expected if you can show it.
+  - type: input
+    id: version
+    attributes:
+      label: ManimGX version
+      description: What `manimgx --version` prints.
+      placeholder: manimgx 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: python
+    attributes:
+      label: Python version
+      placeholder: "3.14.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Linux
+        - Windows
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: gpu
+    attributes:
+      label: GPU
+      description: The GPU and its driver, e.g. "Apple M3 Pro", "NVIDIA RTX 4070, driver 580.82", or "Mesa lavapipe".
+    validations:
+      required: true

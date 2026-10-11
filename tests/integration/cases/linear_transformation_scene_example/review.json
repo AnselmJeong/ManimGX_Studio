@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 24: Numbered axes, skewed grid and basis arrows are preserved, including the partially faded prior arrow. Only tiny joint/intersection samples differ.",
+  "facts": "sha256:8e44e92a7b5ac2cf0a4aa9b3125ec36ac4bb282c0d3ad1e774b3480fd785551c",
+  "at": "2026-10-06"
+}

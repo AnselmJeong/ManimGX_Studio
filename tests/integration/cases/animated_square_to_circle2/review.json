@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Sampled the canonical frames: the square rotates, becomes a circle and gains the requested translucent pink fill.",
+  "facts": "sha256:1a4cf94c31548a8efb9fc2ef0047d3a266a100f3e4d750bb4d9206936bdd03b4",
+  "at": "2026-10-05"
+}

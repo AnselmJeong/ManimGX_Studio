@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 74: Inspected all network layers and enlarged title. Sparse glyph-edge changes preserve node positions, connections, yellow fills and text.",
+  "facts": "sha256:9d17b7ee01131fcde60177e0f00a05a2c15f3d574707eb8f129807153f1d5baf",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 2: Inspected partial outcomes label and enlarged digits/letters. Two tiny glyph-edge differences preserve label and reveal state.",
+  "facts": "sha256:1fd8e93f6a81177294835cf89e63daa4c9a14178cc0cfbc22018913216eac803",
+  "at": "2026-10-06"
+}

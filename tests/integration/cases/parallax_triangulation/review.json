@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 75: Inspected Earth/star construction and enlarged baseline endpoint. Sparse contour/endpoint coverage changes preserve sight lines, marker positions and circles.",
+  "facts": "sha256:e18ce0edfc9859f74d05f522f8a4a0a3977d78d0ddc0717636e186e492ce8af4",
+  "at": "2026-10-06"
+}

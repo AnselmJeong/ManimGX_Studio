@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 33: Inspected colored circular paths and tracking dots, including enlarged near-overlapping arcs. Tiny coverage changes preserve arc trajectories, separation and dot positions.",
+  "facts": "sha256:fdf9b656be8e2f5b9ada446f5e8e0f86b4ab57d95786c6999c8aaa304ce5bbcc",
+  "at": "2026-10-06"
+}

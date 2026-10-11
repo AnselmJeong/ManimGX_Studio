@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 12: Inspected partial title and enlarged velocity lettering. Two tiny glyph-edge changes preserve text shape, position and reveal.",
+  "facts": "sha256:afc4f1051c7abccc38bc7ac22a63a1c299908f1fe3775b4cf942ac483f525d04",
+  "at": "2026-10-06"
+}

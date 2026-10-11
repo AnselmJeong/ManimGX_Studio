@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 94: Blue/green sector arrangement and radius/base annotations are unchanged; small top-edge/corner coverage changes in the blue sectors.",
+  "facts": "sha256:fcbbbd3423be214fc477ce8d176f29ba72d552024029a0c763a9d59370a29159",
+  "at": "2026-10-06"
+}

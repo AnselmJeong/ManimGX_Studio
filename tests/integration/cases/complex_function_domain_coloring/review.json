@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 7: Inspected partial domain-coloring title and enlarged lettering; the single glyph-edge change preserves text and reveal.",
+  "facts": "sha256:47d8af57d2c5351c38475fae47afb259f08d3b5a02e4b5b797a4880d6f61b5b5",
+  "at": "2026-10-06"
+}

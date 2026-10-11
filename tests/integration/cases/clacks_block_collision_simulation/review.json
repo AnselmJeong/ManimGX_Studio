@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 6: Inspected partial Clacks title and enlarged letters. One small glyph-edge change preserves text content and position.",
+  "facts": "sha256:d8e3b679038baebba4a32e3dcfd2d1dd69a48794ff0c91e2ea3bbe285ab51862",
+  "at": "2026-10-06"
+}

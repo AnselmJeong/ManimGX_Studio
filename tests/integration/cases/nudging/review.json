@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 19: Red/gray circular paths and colored vector field preserve arrangement; tiny differences lie at diagonal arrowhead/shaft joins.",
+  "facts": "sha256:320ac65f4efb9ac6e0360e0ce3dbb30c78619c537f2daa2d8d60a67546e59c25",
+  "at": "2026-10-06"
+}

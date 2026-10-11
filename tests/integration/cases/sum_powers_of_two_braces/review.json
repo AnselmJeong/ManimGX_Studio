@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 6: Inspected the early sum expression and enlarged numerals and operators; the one-pixel edge adjustment preserves the expression and spacing.",
+  "facts": "sha256:61173abf80b7a7e647ff87dd78850438dca7e213d652b3a5803db69cd3c019c3",
+  "at": "2026-10-06"
+}

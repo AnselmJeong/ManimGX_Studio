@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 9: Inspected partial Koch-curve title and enlarged lettering. Two small glyph-baseline changes preserve title shape and reveal.",
+  "facts": "sha256:6586b1d629a168a3c74f66d9d7e00646db67d68a9e38b0ab7190365844291eab",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 2: Inspected outlined So shiny lettering and enlarged S/o boundary. Two tiny coverage changes preserve the animated border appearance and white/red letter contours.",
+  "facts": "sha256:1908ff6c2123fed9efe00d638972687b15f961a72632af8ee6136bbb46e58788",
+  "at": "2026-10-06"
+}

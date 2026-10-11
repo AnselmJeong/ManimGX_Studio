@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 0: Inspected table and highlighted cell with enlarged upper-left corner. Two small shared-border differences preserve row/column layout, text and red cell selection.",
+  "facts": "sha256:6ce17c51d93c7d0bb632a5def554a8b32d9038bfdf7dc9c30f2c9817712a1902",
+  "at": "2026-10-06"
+}

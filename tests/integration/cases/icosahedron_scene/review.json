@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the before/after frames: accept corrected depth-tested surface strokes and projective plane derivatives (80a7b06, 25f40ad), preserving the scene geometry, materials and labels.\n\nReviewed the exact-area raster correction at frame 0: Transparent cyan icosahedron, white vertex markers and wire edges are preserved; small differences at face/edge/vertex junctions without an observed occlusion change.",
+  "facts": "sha256:5857204f86287bf3a242d51be294ced31327d8272a66cfc022420707a55bf63f",
+  "at": "2026-10-06"
+}

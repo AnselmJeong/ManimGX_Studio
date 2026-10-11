@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 0: Inspected country silhouette, circular label marker and enlarged bounding-axis crossing. Two tiny line-intersection differences preserve coastline, circle, label and extents.",
+  "facts": "sha256:ad8130dbc4f99ea130b8197d61fdb75b500410cb845bd7993a45926e411efbaf",
+  "at": "2026-10-06"
+}

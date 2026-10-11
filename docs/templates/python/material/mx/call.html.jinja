@@ -1,0 +1,8 @@
+{#-
+  How to call an entry, as a scene writes it: `m.Circle(…)`, `self.play(…)`,
+  `circle.surround(…)`, `Circle.from_three_points(…)`; without types, on one line, which the
+  page wraps. Context: function, call.
+-#}
+<div class="mx-call">
+  {% filter format_signature(function, 1000, annotations=False, crossrefs=False) %}{{ call }}{% endfilter %}
+</div>

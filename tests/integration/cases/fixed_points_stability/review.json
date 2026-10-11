@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 59: Inspected stable/unstable vector patterns and enlarged quadratic expression. Three glyph-edge changes preserve fixed-point markers, arrows, colors and formula.",
+  "facts": "sha256:5b0719beb59b2a690da093a71b69c20734563246228b48ee04a42aed1109acd3",
+  "at": "2026-10-06"
+}

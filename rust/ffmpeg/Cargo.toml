@@ -1,0 +1,12 @@
+[package]
+name = "ffmpeg"
+version = "9.0.2"
+edition = "2024"
+license = "MIT AND LGPL-2.1-or-later AND BSD-3-Clause"
+publish = false
+description = "FFmpeg 9.0.2's audio decoders (libopus 1.6.1's for Opus), fetched and built from their sources, behind one safe call."
+links = "ffmpeg"
+
+[build-dependencies]
+cc = { version = "1.5.1", features = ["parallel"] }
+fetch = { path = "../fetch" }

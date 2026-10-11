@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 24: Yellow particle positions and numbered axis are unchanged; two local dot-edge/contact coverage samples differ.",
+  "facts": "sha256:8681e4800ac20188cd921c09936b09bee4277918c1b7d43c71b91e42bf38af61",
+  "at": "2026-10-06"
+}

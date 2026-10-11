@@ -1,0 +1,33 @@
+{#-
+  The rest of an entry's docstring, after its lead: what its call takes, what it gives back,
+  what it raises. Context: obj, docstring_sections, function (or None), heading_level, config.
+-#}
+{% with autoref_hook = AutorefsHook(obj, config) %}
+  {% set ns = namespace(params=false) %}
+  {% for section in docstring_sections %}
+    {% if section.kind.value == "parameters" %}
+      {% set ns.params = true %}
+      {% include "mx/parameters.html.jinja" with context %}
+    {% elif section.kind.value == "returns" %}
+      {% for returned in section.value %}
+        <p class="mx-returns"><span class="mx-label">Returns</span>
+          {{ returned.description|convert_markdown(heading_level, html_id, autoref_hook=autoref_hook, strip_paragraph=True) }}</p>
+      {% endfor %}
+    {% elif section.kind.value == "raises" %}
+      {% for raised in section.value %}
+        <p class="mx-raises"><span class="mx-label">Raises</span> <code>{{ raised.annotation }}</code>
+          {{ raised.description|convert_markdown(heading_level, html_id, autoref_hook=autoref_hook, strip_paragraph=True) }}</p>
+      {% endfor %}
+    {% elif section.kind.value == "yields" %}
+      {% include "docstring/yields.html.jinja" with context %}
+    {% elif section.kind.value == "warns" %}
+      {% include "docstring/warns.html.jinja" with context %}
+    {% elif section.kind.value == "attributes" %}
+      {% include "docstring/attributes.html.jinja" with context %}
+    {% endif %}
+  {% endfor %}
+  {% if not ns.params and function %}
+    {% set section = none %}
+    {% include "mx/parameters.html.jinja" with context %}
+  {% endif %}
+{% endwith %}

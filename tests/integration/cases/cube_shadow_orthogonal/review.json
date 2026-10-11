@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the rotated geometry and changed edge pixels: accept double-precision plane placement and projection (aa74c9f).\n\nReviewed the exact-area raster correction at frame 39: Inspected cube, floor shadow and enlarged upper cube corner. Tiny contour changes preserve face colors, edge alignment, floor placement and shadow silhouette.",
+  "facts": "sha256:7b7897b1f87232c98dbfa28200931a3df4d139e60123520743087f5316a21e8c",
+  "at": "2026-10-06"
+}

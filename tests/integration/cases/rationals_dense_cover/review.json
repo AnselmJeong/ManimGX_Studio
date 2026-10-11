@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 30: Dense yellow interval markers and numbered baseline remain unchanged; two near-baseline coverage samples differ.",
+  "facts": "sha256:efe06d6b8091bd8908f8b74e9de33d34d517dfd3a0df5b15e094712445794f2f",
+  "at": "2026-10-06"
+}

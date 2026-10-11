@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 10: Inspected both tilted gradient images, borders and labels; the isolated one-level border-label overlap preserves gradients, framing and layout.",
+  "facts": "sha256:f3582ce4383433640fc0489c40a5fd154659ba880cb17d538e21d95485df626c",
+  "at": "2026-10-06"
+}

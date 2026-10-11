@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 49: Inspected curve, moving tangent and enlarged contact region. Two sparse near-tangent coverage changes preserve contact point, slope and curve trajectory.",
+  "facts": "sha256:6721741d39829fe342c06dcf11e6b1c10e8d3897eb79cd4a4126aff3e1975d4b",
+  "at": "2026-10-06"
+}

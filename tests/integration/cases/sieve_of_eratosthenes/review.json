@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 29: Number grid and transitional glyph shapes are preserved; isolated grid-corner/glyph-boundary adjustments in the enlarged crop.",
+  "facts": "sha256:140f55e6ba295cf7f41c82ea69486b9711fe7604cc19046502e5b8afed15a09c",
+  "at": "2026-10-06"
+}

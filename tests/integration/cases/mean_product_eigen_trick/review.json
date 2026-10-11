@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 28: Inspected the title and enlarged 2-by-2 matrix; the isolated glyph-edge adjustment preserves all four values and brackets.",
+  "facts": "sha256:ac2643bb900901effaf61266a38d434a09175a86c536b92db1ea5701399cc5a7",
+  "at": "2026-10-06"
+}

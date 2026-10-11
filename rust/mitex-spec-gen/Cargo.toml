@@ -1,0 +1,19 @@
+[package]
+name = "mitex-spec-gen"
+version = "0.2.7"
+edition = "2024"
+license = "MIT AND Apache-2.0"
+publish = false
+description = "mitex's Typst package (0.2.7's, Apache-2.0, fetched), and its default command spec, made from it"
+
+[dependencies]
+mitex-spec = { git = "https://github.com/mitex-rs/mitex", tag = "0.2.7" }
+
+[build-dependencies]
+fetch = { path = "../fetch" }
+
+[dev-dependencies]
+serde_json = "1"
+typst = "0.15.1"
+typst-kit = { version = "0.15.1", default-features = false, features = ["embedded-fonts"] }
+typst-layout = "0.15.1"

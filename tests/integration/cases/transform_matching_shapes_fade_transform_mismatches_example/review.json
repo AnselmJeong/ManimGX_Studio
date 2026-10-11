@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 2: Inspected the a-plus-b expression and enlarged glyphs; the isolated one-level edge change preserves notation and placement.",
+  "facts": "sha256:af7a60871e444b3fea3316460d967cb8aa25cb161ee9c32a1f83ade02a71d64b",
+  "at": "2026-10-06"
+}

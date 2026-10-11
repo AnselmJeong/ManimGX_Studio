@@ -1,0 +1,43 @@
+{#-
+  SPDX-FileCopyrightText: 2026 Academa, Inc.
+  SPDX-FileCopyrightText: 2021 Timothée Mazzucotelli
+  SPDX-License-Identifier: MIT AND ISC
+
+  How a property or a constant is shown in the reference: a constant by the name a scene
+  writes (`m.UP`) and what it is, its value in its words (`(0, 1, 0)`), not in the code that
+  makes it; a property by its name, what it is, how a scene reads it (`mobject.width`), and
+  its source, one click away.
+-#}
+{% extends "_base/attribute.html.jinja" %}
+
+{% block heading scoped %}
+  {% if config.show_symbol_type_heading %}<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>{% endif %}
+  {%- if attribute.parent is not none and attribute.parent.is_class -%}
+    <span class="doc doc-object-name doc-attribute-name">{{ attribute.name }}</span>
+  {%- else -%}
+    {% import "mx/name.html.jinja" as naming %}
+    <span class="doc doc-object-name doc-attribute-name">{{ naming.prefix(attribute)|trim }}{{ attribute.name }}</span>
+  {%- endif -%}
+{% endblock heading %}
+
+{% block labels scoped %}{% endblock labels %}
+
+{% block signature scoped %}{% endblock signature %}
+
+{% block contents scoped %}
+  {% set sections = attribute.docstring.parsed if attribute.docstring else [] %}
+  {% with obj = attribute, docstring_sections = sections %}
+    {% include "mx/lead.html.jinja" with context %}
+  {% endwith %}
+  {% if "property" in attribute.labels %}
+    {% import "mx/name.html.jinja" as naming %}
+    <div class="mx-call">
+      {{- (naming.prefix(attribute)|trim ~ attribute.name)|highlight(language="python", inline=False, linenums=False) -}}
+    </div>
+    {% if config.show_source and attribute.source %}
+      {% with source = attribute %}
+        {% include "mx/source.html.jinja" with context %}
+      {% endwith %}
+    {% endif %}
+  {% endif %}
+{% endblock contents %}

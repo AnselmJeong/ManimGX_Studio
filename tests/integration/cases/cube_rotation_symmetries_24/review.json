@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the rotated geometry and changed edge pixels: accept double-precision plane placement and projection (aa74c9f).\n\nReviewed the exact-area raster correction at frame 77: Tilted cyan cube, yellow outline and axes retain orientation and transparency. Local corner/edge coverage changes do not create cracks or change occlusion.",
+  "facts": "sha256:cfee58f85da0d5f57b45ec85b409044d9e59b1c32658ca9162ba91227018828d",
+  "at": "2026-10-06"
+}

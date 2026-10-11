@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 51: The z-to-z-squared mapping diagram, yellow curved grid and cyan reference grid retain topology and placement. Changes occur at thin-line intersections, with no lost segments.",
+  "facts": "sha256:25176721a9eab79ef4168943eabf84d688de8127458fcf6ccbfb37405e97b6e6",
+  "at": "2026-10-06"
+}

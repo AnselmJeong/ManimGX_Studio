@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 14: Inspected the complete vortex streamlines and enlarged curved segments; sparse one-level edge changes preserve paths, gaps and line thickness.",
+  "facts": "sha256:f4e31138ac811471bf7220f453387139bbd7c856f6d69e67870ae6077b153345",
+  "at": "2026-10-06"
+}

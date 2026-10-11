@@ -1,0 +1,31 @@
+/* Native sticky containment for the desktop sidebars.
+ * Zensical gives the parent zero height and sizes its child from JavaScript. A
+ * failed preview clears that height; a short viewport can leave it stale. Let
+ * the browser own height instead: a real sticky box stops at the main's bottom,
+ * and its contents scroll within the viewport. The !important is intentional:
+ * theme inline height writes must not participate in desktop layout.
+ *
+ * The modern theme's header is 2.4rem and sidebar padding is 1.1rem per side.
+ * Match its two desktop breakpoints; leave the mobile drawer and TOC alone.
+ */
+@media screen and (min-width: 60em) {
+  .md-sidebar--secondary {
+    height: auto;
+  }
+
+  .md-sidebar--secondary .md-sidebar__scrollwrap {
+    height: auto !important;
+    max-height: max(0px, calc(100dvh - 2.4rem - 2.2rem));
+  }
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    height: auto;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    height: auto !important;
+    max-height: max(0px, calc(100dvh - 2.4rem - 2.2rem));
+  }
+}

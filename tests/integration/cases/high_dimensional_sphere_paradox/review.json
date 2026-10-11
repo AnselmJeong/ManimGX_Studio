@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 62: Inscribed circles, square outlines, ratios and explanatory text retain geometry; two red text-edge samples differ.",
+  "facts": "sha256:270b1a753768f75f93466a2609fe6a059f7d1098f79e4de17d28483a5e504ec0",
+  "at": "2026-10-06"
+}

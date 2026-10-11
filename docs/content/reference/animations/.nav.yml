@@ -1,0 +1,10 @@
+title: "Animations"
+nav:
+  - Overview: index.md
+  - animate.md
+  - rate-functions.md
+  - appear-and-disappear.md
+  - transforms.md
+  - move-and-deform.md
+  - emphasis.md
+  - together-and-in-turn.md

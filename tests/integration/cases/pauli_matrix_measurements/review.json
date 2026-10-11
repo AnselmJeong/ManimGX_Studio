@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 40: Inspected all three Pauli matrices and enlarged yellow eigenvalue expression. Small glyph-edge differences preserve matrix values, colors and mathematical notation.",
+  "facts": "sha256:dfec9188f033e547ff9a8fb62f4fa4cdaf49ffcd30cc9dc33552771f68ec4efb",
+  "at": "2026-10-06"
+}

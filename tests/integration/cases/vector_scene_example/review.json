@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 26: Basis and yellow resultant arrows retain directions and endpoints on the grid; tiny yellow arrowhead/shaft contact changes.",
+  "facts": "sha256:ecf33e61e7e92f7b79feb79e7aaabd0fff6867516c0cfcd2ea6715209c9b5087",
+  "at": "2026-10-06"
+}

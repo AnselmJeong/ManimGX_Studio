@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 65: Inspected the restored grid and inverse-matrix instruction; one-level text-axis overlap change preserves grid geometry and notation.",
+  "facts": "sha256:e7b4fa7f8d8f07a5065b33f373a9ea9d90e15b06e19f7fda5104717d01bf0ac9",
+  "at": "2026-10-06"
+}

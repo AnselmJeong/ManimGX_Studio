@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 64: Inspected the circle, dense bisector envelope, focus marker and title; sparse one-level changes preserve the envelope structure and labels.",
+  "facts": "sha256:83461a65081ddb57cc9245eaa63159a4ad3fd84989255dbddeb8d02f579bb207",
+  "at": "2026-10-06"
+}

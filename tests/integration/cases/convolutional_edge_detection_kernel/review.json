@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 8: Inspected the grayscale input grid and enlarged cell intersections; one-level seam changes preserve cell values, grid alignment and label.",
+  "facts": "sha256:37f910abf59dfad0f3176b6873423e345f75f0e246cdbb9368dc18e808705b70",
+  "at": "2026-10-06"
+}

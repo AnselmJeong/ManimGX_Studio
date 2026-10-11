@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Sampled the canonical frames: square creation, shift, scale, rotation and removal match the scene.",
+  "facts": "sha256:3987341664521940f5f7bc0b900ef2532628d6b54ab4f2eb4f629d301feb84a0",
+  "at": "2026-10-05"
+}

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 10: All four curved polygon silhouettes, corners and colored fill boundaries are preserved. The enlarged white corner remains continuous with only coverage-level edge differences.",
+  "facts": "sha256:eb92f756a0f2a378b8a5ae40cc923da9756983937a8d7adf200c56b5eddd738f",
+  "at": "2026-10-06"
+}

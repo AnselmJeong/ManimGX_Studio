@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 43: Yellow vector, green projection and cyan target line/grid are preserved; tiny contact-coverage change at the green tip, with unchanged endpoints.",
+  "facts": "sha256:9032d789549e4ad27f946c52627a78dd9d8c49deb05a7c45bd6d9842830c6ca3",
+  "at": "2026-10-06"
+}

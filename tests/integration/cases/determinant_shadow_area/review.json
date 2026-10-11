@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 46: Small cyan parallelogram and grid retain shape and area; four edge-contact samples change without a shift in vertices.",
+  "facts": "sha256:3aa61aa25e7ac54e0c9fd3d8bbeca1d8c9784829049c3a01f29708ce588aad34",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 47: Yellow fractal trace and its holes, axes and title are preserved. Scattered small changes stay on the densely turning stroke boundary.",
+  "facts": "sha256:e96e628ac280812be9a59d258e0bfadb9bf4c6f1c8785f7370cfc26fd29ad924",
+  "at": "2026-10-06"
+}

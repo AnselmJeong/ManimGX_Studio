@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 4: Inspected the initial two-medium rectangle and enlarged horizontal interface; sparse one-level interface changes preserve position, fill and outlines.",
+  "facts": "sha256:db79061e7d4c278f9268651f35597046407236c618427900cc901a7777ca4e6a",
+  "at": "2026-10-06"
+}

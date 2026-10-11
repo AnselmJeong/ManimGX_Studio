@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 3: Initial partially drawn 3D axis retains its segments and ticks; one thin tick/axis contact changes.",
+  "facts": "sha256:6fc2bdad0570fef83bfdf67c834cb6d654e1d0eb09f5910c5c0bb0288836f28d",
+  "at": "2026-10-06"
+}

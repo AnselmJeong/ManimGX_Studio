@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 0: Inspected spring and axes with enlarged crossings. Two tiny overlap-coverage differences preserve coil spacing, shape and axis placement.",
+  "facts": "sha256:bba14465ba8da955fa7a27cc4bfc30b58b64ffc921fb20c913ad81298a08a911",
+  "at": "2026-10-06"
+}

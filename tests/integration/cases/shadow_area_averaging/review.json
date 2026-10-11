@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 70: Convergence curve, average line and labels are preserved; tiny adjustment where the green estimate approaches the yellow target line.",
+  "facts": "sha256:23e963ffa17c33d3152bd5c0b2147a76455ba058e5bd2063618b64574bde9432",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 19: Inspected labeled triangle and enlarged lower vertex. Two corner-edge differences preserve triangle geometry and x/y/z labels.",
+  "facts": "sha256:67535715ba3471c4f12bc5fcc4c4baec06ce6fbe38c86c9efb4d45f689a1537c",
+  "at": "2026-10-06"
+}

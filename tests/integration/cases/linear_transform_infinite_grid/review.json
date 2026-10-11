@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 56: Inspected the sheared grid, axes and title overlap; the one-pixel intersection change preserves every line direction and the title shape.",
+  "facts": "sha256:3da8dfaa13ac7d1e5592e3d842f96084de4d582a4cc89ed5403fedfbd5d23d1e",
+  "at": "2026-10-06"
+}

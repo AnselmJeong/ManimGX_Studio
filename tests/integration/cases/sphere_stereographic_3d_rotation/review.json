@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the before/after frames: accept corrected depth-tested surface strokes and projective plane derivatives (80a7b06, 25f40ad), preserving the scene geometry, materials and labels.\n\nReviewed the exact-area raster correction at frame 0: Sphere-rotation caption and initial axes preserve alignment; small coverage differences at axis origin/ticks.",
+  "facts": "sha256:0908183db4ec6225b9e91234db41618d0c6a6e6366c094f60e0f6feab9708f6a",
+  "at": "2026-10-06"
+}

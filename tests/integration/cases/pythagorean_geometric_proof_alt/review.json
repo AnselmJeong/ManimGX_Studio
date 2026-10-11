@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 45: Inspected the three labeled squares and central triangle; sparse one-level shared-vertex changes preserve areas, joins and labels.",
+  "facts": "sha256:0ec0d738bd448f665856521ccbad3c26b0fca10ebf8c1ee9ebe604d6f1b87f5d",
+  "at": "2026-10-06"
+}

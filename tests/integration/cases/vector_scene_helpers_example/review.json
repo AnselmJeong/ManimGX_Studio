@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Sampled the canonical frames: basis labels, the (2, -1) vector and its coordinate column are present.\n\nReviewed the exact-area raster correction at frame 6: Inspected vector/grid construction and enlarged arrowhead. Two small edge changes preserve vector endpoint, axes, ticks and labels.",
+  "facts": "sha256:50332cbd0f23a6a367119e73191add69f573ccc3cbc100e8a3553b6a21be0938",
+  "at": "2026-10-06"
+}

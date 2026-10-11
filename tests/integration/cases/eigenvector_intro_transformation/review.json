@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 44: Yellow eigenvector and cyan comparison vector retain endpoints, labels and transformed grid. Two changed samples lie near arrow boundary/grid intersections.",
+  "facts": "sha256:344e9bfb76b8dc77c5c5f2985eee4c7014db463c9ff0e2ab6c651fec6c636589",
+  "at": "2026-10-06"
+}

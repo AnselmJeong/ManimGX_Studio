@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 41: Sine-like cyan curve and signed red/green arrows remain unchanged; sparse arrowhead/shaft samples differ.",
+  "facts": "sha256:2c60bd251908176d2ef59c3d9d379ccbc41e27e6ecd24447d9157f687b10bc90",
+  "at": "2026-10-06"
+}

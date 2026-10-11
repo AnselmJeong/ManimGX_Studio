@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 0: Dense colored swirl streamlines retain layout, continuous curves and gradient; small scattered stroke-boundary differences.",
+  "facts": "sha256:e49901773887591d913f68e8daea54c2c79356b495b2fa43672bedeecb3083df",
+  "at": "2026-10-06"
+}

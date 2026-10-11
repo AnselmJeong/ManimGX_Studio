@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 44: Cyan/red partitioned rectangle and conditional-area wedge retain geometry and labels; sparse boundary samples on the red upper edge change.",
+  "facts": "sha256:8382cf3274fe87ea32ef14de46ed07c71d164f8d5b5b5257201d31bfe8578835",
+  "at": "2026-10-06"
+}

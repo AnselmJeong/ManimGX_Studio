@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 57: Colored component arrows, grid and series formula preserve positions; local change at the yellow arrowhead/shaft join.",
+  "facts": "sha256:4cf9473e5492bc75e349e888166c5e2f46201acec0383d1a1aaf977172005280",
+  "at": "2026-10-06"
+}

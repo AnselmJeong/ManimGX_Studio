@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 37: Formula labels and horizontal/vertical transform arrows retain spacing and legibility. Three changed samples occur along the italic formula boundary.",
+  "facts": "sha256:a54583068c5cd20059aad235177eb92c6d4b0be31eeeb6cbeeacd96d34858636",
+  "at": "2026-10-06"
+}

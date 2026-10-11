@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 0: Inspected all four tables and enlarged red cell/white rule intersection; the isolated one-level corner change preserves cell boundaries, labels and styling.",
+  "facts": "sha256:380afa1657f0c956d1b05eecec135aef13bd2c946f9f3ef9e6d90eeb11b8387e",
+  "at": "2026-10-06"
+}

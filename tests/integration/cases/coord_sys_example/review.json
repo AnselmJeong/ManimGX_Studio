@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 0: Inspected dense power-curve family, labels and enlarged upper-left axis intersection. Sparse edge changes do not alter the curve envelope, labels or endpoint alignment.",
+  "facts": "sha256:1ddd55f8d436e7922b9c1a513ec660c7e8ee9448ac416b99f6a62a2d9becaa9b",
+  "at": "2026-10-06"
+}

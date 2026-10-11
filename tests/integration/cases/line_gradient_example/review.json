@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 0: Both sine-shaped strokes preserve shape, width and gradient. Enlarged red stroke has less visible periodic dark seam modulation after correction; the difference follows its edge rather than moving the curve.",
+  "facts": "sha256:84b47782831f5dfecf808cf2feb99f6977807a2bdb6f7df9ff16204879da8920",
+  "at": "2026-10-06"
+}

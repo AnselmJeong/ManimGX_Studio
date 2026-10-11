@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 13: Product-rule equation and writing progress are unchanged; three isolated glyph-edge samples differ in the derivative expression.",
+  "facts": "sha256:4763e58e03bfb93ba8bd7e3095dc4fd1d076a6a565b5f4915442c7ad68a38659",
+  "at": "2026-10-06"
+}

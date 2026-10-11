@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 22: Overlapping equation glyphs in this transition preserve their shapes and positions; two small white glyph-edge samples change.",
+  "facts": "sha256:a7263e04a7bde033d501c8b9f37f389344ce3367174b96e3c6ec272c168b248c",
+  "at": "2026-10-06"
+}

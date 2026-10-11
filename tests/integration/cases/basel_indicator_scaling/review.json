@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 3: Inspected partial summation expression and enlarged infinity/sum/subscript. Three glyph-edge changes preserve notation and reveal extent.",
+  "facts": "sha256:f83740a65a986076587052637eef0730b7b35d804dea907f9f3fdefa4a05262b",
+  "at": "2026-10-06"
+}

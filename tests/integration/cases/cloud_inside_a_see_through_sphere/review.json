@@ -1,0 +1,6 @@
+{
+  "verdict": null,
+  "note": "Reviewed points inside the translucent sphere: accept float depth and unique slab boundaries (96a0a95).",
+  "facts": "sha256:e012c73aecc888573545f6d332a99da6e16dda0e9f9bf1250cff6a04653ebb66",
+  "at": "2026-10-06"
+}

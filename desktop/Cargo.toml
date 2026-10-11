@@ -1,0 +1,24 @@
+[package]
+name = "manimgx-studio"
+version = "0.2.0"
+edition = "2024"
+publish = false
+license = "MIT"
+description = "A native workspace for learning through mathematical films"
+
+[dependencies]
+gpui-kit = { version = "=0.7.1", features = ["tree-sitter-python"] }
+anyhow = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[dev-dependencies]
+gpui-kit = { version = "=0.7.1", features = ["test-support", "tree-sitter-python"] }
+tempfile = "3"
+
+[profile.dev]
+debug = 0
+
+[profile.release]
+strip = true
+opt-level = 2

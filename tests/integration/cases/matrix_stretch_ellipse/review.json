@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 44: Circle, colored basis arrows and grid remain aligned; local red arrowhead/shaft coverage adjustment.",
+  "facts": "sha256:310ec4ad72f33b27408c8448f6ce5cb6b349fe28b588402640903a9c41ccfc39",
+  "at": "2026-10-06"
+}

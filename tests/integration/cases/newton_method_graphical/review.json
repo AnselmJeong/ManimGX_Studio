@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 17: Inspected polynomial title and enlarged cubic/minus term. Two glyph-edge changes preserve the equation and title layout.",
+  "facts": "sha256:1840bdd396cdf191bc4caafbeb7d38c626ca388d49bff5c6fb68dd7dac277e49",
+  "at": "2026-10-06"
+}

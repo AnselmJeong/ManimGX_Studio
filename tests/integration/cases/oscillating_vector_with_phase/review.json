@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 14: Partially written title preserves layout and writing progress; two isolated text-edge samples differ.",
+  "facts": "sha256:abde52a75546c50bdd57360a3f66cadcdbcf87b09004cd2c71e4a540777d5f38",
+  "at": "2026-10-06"
+}

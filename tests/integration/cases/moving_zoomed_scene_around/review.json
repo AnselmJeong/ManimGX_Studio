@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 105: Inspected the grayscale field, white point and colored zoom rectangle; the isolated one-level corner change preserves the field and frame geometry.",
+  "facts": "sha256:753ebb2a27e7201f0cd02769891fcec8dbe4f54197184aba93a8e77f7beee930",
+  "at": "2026-10-06"
+}

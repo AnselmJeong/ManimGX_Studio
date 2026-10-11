@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 49: Yellow probability curve, axes and title are preserved; two samples change where the curve meets the right axis arrowhead.",
+  "facts": "sha256:e1a83c623923753ad6e99f54e971a2e45541ee0eef6f45044b5edb99f531f2bd",
+  "at": "2026-10-06"
+}

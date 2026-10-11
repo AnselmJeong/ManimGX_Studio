@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 67: Inspected Bayes equation and color-coded definitions with enlarged red expression. One glyph-edge change preserves all notation and layout.",
+  "facts": "sha256:c3cec803e489910e94b8fecf40f33f17c996ae512f4cc13722a5c3ebfa9378d2",
+  "at": "2026-10-06"
+}

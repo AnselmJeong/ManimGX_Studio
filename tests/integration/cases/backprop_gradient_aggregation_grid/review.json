@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 48: Translucent cyan gradient arrows and yellow aggregate keep their geometry; local yellow arrowhead/shaft coverage changes.",
+  "facts": "sha256:a810881f4a3a367b7bdf449bde7dc4ccee168ebdc7f6be3e8cff8d7e50374912",
+  "at": "2026-10-06"
+}

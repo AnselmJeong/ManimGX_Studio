@@ -1,0 +1,10 @@
+# Every issue starts from one of the forms beside this file (maintainers can still open a blank
+# one). Questions are issues too: the repository has no Discussions.
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://manimgx.academa.ai/
+    about: The guide, the API reference and the examples.
+  - name: Security vulnerability
+    url: https://github.com/academa-labs/manimgx/security/advisories/new
+    about: Report it privately, so it can be fixed before it is public.

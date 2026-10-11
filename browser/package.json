@@ -1,0 +1,53 @@
+{
+  "name": "manimgx",
+  "version": "0.0.0",
+  "description": "The animation engine for agents, in the browser: blazingly fast math and 3D videos with Manim's Python API, run by Pyodide in a Web Worker, on a Rust GPU core with WebGPU.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/manimgx.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "check": "bun run format:check && tsc --project tsconfig.json && tsc --project tsconfig.worker.json && tsc --project tsconfig.build.json",
+    "format": "prettier --write src tests build.ts '*.json'",
+    "format:check": "prettier --check src tests build.ts '*.json'",
+    "build": "bun run check && bun run build.ts && tsc --project tsconfig.json --noEmit false --declaration --emitDeclarationOnly --outDir dist",
+    "test": "bun run build && bun test tests && bun run test:types",
+    "test:types": "tsc --project tests/tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/bun": "1.4.2",
+    "prettier": "3.9.9",
+    "typescript": "7.0.2"
+  },
+  "license": "MIT",
+  "author": "Academa Team <team@academa.ai>",
+  "contributors": [
+    "Sina Atalay <sina.atalay@academa.ai>",
+    "Abdullah Geduk <geduk@academa.ai>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/academa-labs/manimgx.git",
+    "directory": "browser"
+  },
+  "homepage": "https://manimgx.academa.ai/",
+  "keywords": [
+    "manim",
+    "manimgx",
+    "animation",
+    "math",
+    "python",
+    "pyodide",
+    "webgpu",
+    "video",
+    "player"
+  ]
+}

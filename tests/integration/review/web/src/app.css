@@ -1,0 +1,97 @@
+/* The panel's page and its palette; each component styles itself. */
+
+:root {
+  --bg: #0e1014;
+  --panel: #14171d;
+  --raised: #1b1f27;
+  --line: #262b36;
+  --text: #d8dce4;
+  --dim: #8b93a5;
+  --faint: #5b6375;
+  --accent: #56b6d4;
+
+  --working: #3fcf72;
+  --not-matching: #e3a33b;
+  --not-working: #e5534b;
+  --stale: #5b6375;
+
+  /* the timeline's legend */
+  --same: #3fcf72;
+  --differs: #e5534b;
+  --manimgx-only: #4f8ff7;
+  --ce-only: #b77ee6;
+
+  --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  color-scheme: dark;
+  font: 13px/1.4 var(--sans);
+  color: var(--text);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+/* buttons, as the panel draws them everywhere */
+.button {
+  padding: 3px 9px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--raised);
+}
+
+.button:hover:not(:disabled) {
+  border-color: var(--faint);
+}
+
+.button.on {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--raised));
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.field {
+  padding: 3px 7px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--panel);
+}
+
+.field:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.label {
+  color: var(--faint);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

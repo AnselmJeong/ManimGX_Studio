@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 0: Inspected the logarithmic-axis plot and enlarged lower crossing; two one-level overlap changes preserve tick values, curve and axes.",
+  "facts": "sha256:1dbc8113a5188130a06293fb277c014ac0ec428275590cdb32273ffa33fe89b0",
+  "at": "2026-10-06"
+}

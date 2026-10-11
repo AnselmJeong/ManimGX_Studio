@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 17: Inspected complete mapping title and enlarged output-plane text. Sparse serif/curve coverage differences preserve mathematical expression and typography placement.",
+  "facts": "sha256:d32c708449eb591172404d61fc60f40fa4e35dfefba0d6925619ce1817f44d25",
+  "at": "2026-10-06"
+}

@@ -1,0 +1,6 @@
+{
+  "verdict": "working",
+  "note": "Reviewed the exact-area raster correction at frame 0: Inspected the four colored arcs, dashed axes and coordinate labels; the isolated one-level shared tangent change preserves corner geometry and symmetry.",
+  "facts": "sha256:a73aae08c31c386eb94d4cd7003ab33eb944a97d18e0e170e8a402ce88b45016",
+  "at": "2026-10-06"
+}

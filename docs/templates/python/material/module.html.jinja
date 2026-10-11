@@ -1,0 +1,17 @@
+{#-
+  How a module is shown in the reference. A module's docstring is a note for the engine's
+  developers (its design, or its license), so only its members are shown. With the option
+  `palette: true`, its colors are shown as a palette: a swatch for each color, with its names
+  and its hex code (mx/palette.html.jinja).
+-#}
+{% extends "_base/module.html.jinja" %}
+
+{% block docstring scoped %}{% endblock docstring %}
+
+{% block contents scoped %}
+  {% if config.extra.palette %}
+    {% include "mx/palette.html.jinja" with context %}
+  {% else %}
+    {{ super() }}
+  {% endif %}
+{% endblock contents %}
