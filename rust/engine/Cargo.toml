@@ -37,9 +37,9 @@ typst-kit = { version = "0.15.1", default-features = false, features = ["embedde
 typst-layout = { version = "0.15.1", optional = true }
 ttf-parser = { version = "0.25.1", optional = true }  # glyph outlines and ligature carets, from the fonts Typst loaded
 unicode-segmentation = { version = "1.12", optional = true }  # graphemes: the characters a ligature's colors divide
-bincode = { version = "1.3", optional = true }  # the system fonts' scan, cached on disk
+bincode = { version = "3.0", optional = true }  # the system fonts' scan, cached on disk
 memmap2 = { version = "0.9", optional = true }  # system fonts mapped, not read whole (a CJK font is 60 MB)
-dirs = { version = "6", optional = true }  # the current user's cache directory
+dirs = { version = "7", optional = true }  # the current user's cache directory
 rusty_aac = { version = "0.5.0", optional = true }  # sound out: AAC-LC in pure Rust (src/aac.rs)
 # sound in: the common audio files decoded by FFmpeg, built from its source (src/audio.rs)
 ffmpeg = { path = "../ffmpeg", optional = true }
