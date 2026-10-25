@@ -23,8 +23,8 @@
     "test:types": "tsc --project tests/tsconfig.json"
   },
   "devDependencies": {
-    "@types/bun": "1.4.2",
-    "prettier": "3.9.9",
+    "@types/bun": "1.4.3",
+    "prettier": "3.9.10",
     "typescript": "7.0.2"
   },
   "license": "MIT",
