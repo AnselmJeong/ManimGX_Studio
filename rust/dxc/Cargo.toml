@@ -8,7 +8,7 @@ description = "The pinned DirectX shader compiler resource for Windows wheels an
 
 [dependencies]
 fetch = { path = "../fetch" }
-zip = { version = "8.6", default-features = false, features = ["deflate-flate2-zlib-rs"] }
+zip = { version = "9.0", default-features = false, features = ["deflate-flate2-zlib-rs"] }
 
 [dev-dependencies]
 tempfile = "3.27.0"

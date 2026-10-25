@@ -29,7 +29,7 @@ web = ["player", "dep:wasm-bindgen", "dep:wasm-bindgen-futures", "dep:js-sys", "
 [dependencies]
 bytemuck = { version = "1.25", features = ["derive", "extern_crate_alloc", "min_const_generics"] }
 xxhash-rust = { version = "0.8.19", features = ["xxh3"] }  # content keys: what names an upload
-pyo3 = { version = "0.29.2", features = ["abi3-py313"], optional = true }
+pyo3 = { version = "0.30.1", features = ["abi3-py313"], optional = true }
 wgpu = { version = "30.0.1", optional = true }
 # the typesetter: Typst as a library, its layout read directly (see src/typeset.rs)
 typst = { version = "0.15.1", optional = true }
@@ -37,10 +37,10 @@ typst-kit = { version = "0.15.1", default-features = false, features = ["embedde
 typst-layout = { version = "0.15.1", optional = true }
 ttf-parser = { version = "0.25.1", optional = true }  # glyph outlines and ligature carets, from the fonts Typst loaded
 unicode-segmentation = { version = "1.12", optional = true }  # graphemes: the characters a ligature's colors divide
-bincode = { version = "1.3", optional = true }  # the system fonts' scan, cached on disk
+bincode = { version = "3.0", optional = true }  # the system fonts' scan, cached on disk
 memmap2 = { version = "0.9", optional = true }  # system fonts mapped, not read whole (a CJK font is 60 MB)
-dirs = { version = "6", optional = true }  # the current user's cache directory
-rusty_aac = { version = "0.5.0", optional = true }  # sound out: AAC-LC in pure Rust (src/aac.rs)
+dirs = { version = "7", optional = true }  # the current user's cache directory
+rusty_aac = { version = "1.1.1", optional = true }  # sound out: AAC-LC in pure Rust (src/aac.rs)
 # sound in: the common audio files decoded by FFmpeg, built from its source (src/audio.rs)
 ffmpeg = { path = "../ffmpeg", optional = true }
 # LaTeX → Typst, natively; its command spec is made from mitex's package, which Typst reads
