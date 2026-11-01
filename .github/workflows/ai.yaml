@@ -68,7 +68,7 @@ jobs:
 
       # it may only read the workspace (not /proc, where the AWS session is), and must answer in
       # the schema: a reply and related issues
-      - uses: anthropics/claude-code-action@756cc22e19660d20e8cc9496b4f242475a7f7790 # v1.0.235
+      - uses: anthropics/claude-code-action@925afb53776cf1a2b738c6bdbed37b4d4000ef13 # v1.0.262
         id: claude
         with:
           use_bedrock: "true"
@@ -161,7 +161,7 @@ jobs:
           role-to-assume: ${{ vars.AWS_ROLE }}
           aws-region: ${{ env.AWS_REGION }}
 
-      - uses: anthropics/claude-code-action@756cc22e19660d20e8cc9496b4f242475a7f7790 # v1.0.235
+      - uses: anthropics/claude-code-action@925afb53776cf1a2b738c6bdbed37b4d4000ef13 # v1.0.262
         with:
           use_bedrock: "true"
           plugin_marketplaces: https://github.com/anthropics/claude-code.git
@@ -210,7 +210,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: taiki-e/install-action@4cef1412cce204788f482e778a0b9187f9626a29 # v2.87.21
+      - uses: taiki-e/install-action@1e29709c0ec63babbe8f266397a465f29a825f91 # v2.87.31
         with:
           tool: just
 
@@ -224,12 +224,12 @@ jobs:
             bubblewrap socat
           sudo sysctl --write kernel.apparmor_restrict_unprivileged_userns=0
 
-      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
 
       - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
 
       # main's pushes save the compiled dependencies; this run only reads them
-      - uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+      - uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
         with:
           workspaces: rust
           shared-key: engine
@@ -245,7 +245,7 @@ jobs:
 
       # its commands reach only GitHub, PyPI, crates.io and npm, and never see the AWS session; on a
       # fork's pull request it may only read
-      - uses: anthropics/claude-code-action@756cc22e19660d20e8cc9496b4f242475a7f7790 # v1.0.235
+      - uses: anthropics/claude-code-action@925afb53776cf1a2b738c6bdbed37b4d4000ef13 # v1.0.262
         with:
           use_bedrock: "true"
           additional_permissions: |
