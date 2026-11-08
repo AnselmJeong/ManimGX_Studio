@@ -12,12 +12,12 @@ repos:
       - id: trailing-whitespace
   # CITATION.cff against the Citation File Format's schema (https://citation-file-format.github.io)
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.38.2
+    rev: 0.39.0
     hooks:
       - id: check-citation-file-format
   # the workflows' security (https://docs.zizmor.sh)
   - repo: https://github.com/zizmorcore/zizmor-pre-commit
-    rev: v1.30.1
+    rev: v1.31.1
     hooks:
       - id: zizmor
   - repo: local
