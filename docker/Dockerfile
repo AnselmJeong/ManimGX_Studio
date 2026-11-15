@@ -7,8 +7,8 @@
 # is its context, as it installs ManimGX from PyPI.
 
 # Mount this pinned installer only while adding Python packages.
-FROM ghcr.io/astral-sh/uv:0.12.19 AS uv
-FROM python:3.14-slim-trixie AS runtime
+FROM ghcr.io/astral-sh/uv:0.13.8 AS uv
+FROM python:3.15-slim-trixie AS runtime
 
 # Vulkan's loader and Mesa's drivers (lavapipe on the CPU; RADV, ANV, NVK on /dev/dri); NVIDIA's
 # driver, which the NVIDIA Container Toolkit mounts in, needs libEGL and libXext to start
